@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-27T14:16:19.279Z",
+  "generatedAt": "2026-09-27T14:20:20.307Z",
   "items": [
     {
       "feed": "tech",
       "feedLabel": "Tech & Hardware",
-      "title": "Best Gaming PC Deals 2026 — deals from Amazon, Best Buy, Newegg, Dell, Lenovo, and others - tomshardware.com",
+      "title": "Best Gaming PC Deals 2026 — deals from Amazon, Best Buy, Newegg, Dell, Lenovo, and others - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQLW03bHZtT3VvMno5T2FaUnhqdkZNSmZDQlowUUI2U2RXVnh5V0hhQk9FVTJoTERzZUlkSHBVZ0N4bVZhZVRYaXQzRkpmRW10Vzczb0YtckV6MU1WYXBHUUN2ZnduTjN3UnlweVBtT08xT0VRT1BqTFV2U19scWJxVVEyWWVpUQ?oc=5",
       "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
       "ts": 1789714800000
@@ -28,7 +28,7 @@
     {
       "feed": "tech",
       "feedLabel": "Tech & Hardware",
-      "title": "Best gaming GPU deals 2026 — deals on Nvidia, AMD, and Intel graphics cards - tomshardware.com",
+      "title": "Best gaming GPU deals 2026 — deals on Nvidia, AMD, and Intel graphics cards - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOd21TM0VUZVF2ek8yNWxRbDRnek9PU3c3eG0ycnRqaFJvUFNpTHFMa3hPZnhITjhKd0NwZzgwc1M3Nk8yZnFYN0VNNmZvZC1PNV9pVzN6RmlSY3lEaE1vcmRRQ3cta19udklHR3laaU9aTmdYRk1ISHJETVRCM1RYR2tMR01oeF9nMk5F?oc=5",
       "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
       "ts": 1789455600000
@@ -36,7 +36,15 @@
     {
       "feed": "tech",
       "feedLabel": "Tech & Hardware",
-      "title": "GPU price tracking 2026 — Lowest price on every graphics card from Nvidia, AMD, and Intel today - tomshardware.com",
+      "title": "AMD's Radeon RX 9070 GRE graphics card returns to its lowest-ever price of $499 — rare deal places this current-generation 12GB GPU below its MSRP launch price - Tom's Hardware",
+      "link": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNOXdHZzhlb0pLZnlMTXZERzhlbmNBR1FxMjI2TlNKVUR6RGxCTExucVl3U19KM3NzNC1MWWFPZW5SZUY3d1Y0cFRKY05vNy04dkdXRmhDZTlTUmZkcldUN3lWZTNZMDhxemNSVmhEZ1o2ci1PM1RqYUM1SUdXWHZzOGFnclo3VWgyNDdwMFpBRUJhZVVHZU9mYnYtekowR1BoU0NyVnpyWGtDTmZDbDhvM21MUExTN3BsUmlKWWowMGV4VkdFXzJ3emdiNEVCZmZBSkJmSk5CRTZ2NUpQa2NXV1RLUVp2QkVLZkpJVzFSbjhnOFVrTFB1djFGdThtVmx1RkRMb1l4VEdEUmtJR1BGZU15b0JzTmlZQXBsSm5tY2Y1Z3pUaVdvbXJqSHZuMEU?oc=5",
+      "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
+      "ts": 1789455600000
+    },
+    {
+      "feed": "tech",
+      "feedLabel": "Tech & Hardware",
+      "title": "GPU price tracking 2026 — Lowest price on every graphics card from Nvidia, AMD, and Intel today - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBhTEV0WktCaVlybTNSQk83V2RiQ05UUG4ySzNuWVRHSE5hYTBTMUVMaUFUTXJ3dDkxWUVFYXJZeWQ1bTZVS0ZDS1NXTF9MTzM0andZT0xfcElyTFpob3laRDV6QkJvU3RILXR6WG9hMUswQUd2dlpjUmJycHJ1QXM?oc=5",
       "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
       "ts": 1789369200000
@@ -60,18 +68,10 @@
     {
       "feed": "tech",
       "feedLabel": "Tech & Hardware",
-      "title": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original - tomshardware.com",
+      "title": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYm9td29NWG9COFRMZEJickpxang3THpuQ3ZtWW82ZzE0bldKQ2phbnJxNmU5UEJoeUpUc2hBWmo1WVB3Ny1uNTdOUFNfdzEyNXh0WFAtNVZ2QVk5VnVrZHM4c1Fyc0VKaWVrVmtnSWdJVHlJMDBBOU9QT1FIT0RuS0doamFXX291dXlQYnlxU1dHLUVpdHBzU3JqMEZ0eFVmY1ZkRnlDZEtLZVRwVWVnOU83b24yRWU2Wm5UMWdya1V6Rms2bmJWMDF1ZE9TWG1UY3RJSVJFbHk3aE53MzNQZlFFbnUtV3hHSVgwNXpyU0ttNlhnTXpfZHNPU0xfTWFKeVdBYVpFakczdUJLTkItc3o0bFEyenZsYzZhRng2QnNPVDIxM2JB?oc=5",
       "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
       "ts": 1789110000000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "Tech & Hardware",
-      "title": "Both Nvidia's RTX 50-series cards and AMD's RX 90-series cards may go up in price—again - PC Gamer",
-      "link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQR1Vab0tzb1dtTXVtS0MybExmUy1SZG5EUFUzYUhuR3EzNWNIM0M5Z1hMRGJJa0xKd3I0RFZIdExjNm8yVTJwTzVlbkxMeGcwUmxnNzdTaFpmQTltOTRkenpZWjRlRUcyblBmTzdIZWdva1dCRnAwTHdDdEY4QjJyT0hESnFtV1JMZjJOZVJxMkRVQ2FiQ0xaN2NFQnQwZkdkelg2MFA0YTgtUGQ3dERuVDVaRy0tQzNRblFqTnVmbGV0MlY1VVd1RDZSU3g0QWtCUk1oTUtvUFM2WmRKTkFBYkhVZndKU1NQckVsNzJpTkpiZDBKOWUtN1RmLUdBMVBMR1oyb3I2WmxBUQ?oc=5",
-      "pubDate": "Wed, 09 Sep 2026 07:00:00 GMT",
-      "ts": 1788937200000
     },
     {
       "feed": "trade",
@@ -84,7 +84,7 @@
     {
       "feed": "trade",
       "feedLabel": "China-Saudi Trade & Economy",
-      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - english.news.cn",
+      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - Xinhua",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBYcjE5cFlNWE5xMGNFb3c1YVJwUmZMT3NuMnM5WkxKZU45VU9CcC1XSEl0dVZlamNidlFEbGZsMzU2ODZRUUNTMmNvMGpuc2lLSkVOeFZXYTc0WEpyMFk4aUk4ZC1mMy12Z2NEci1tZkUxRklTYlV5MWk5WmE?oc=5",
       "pubDate": "Tue, 25 Aug 2026 07:00:00 GMT",
       "ts": 1787641200000
@@ -92,7 +92,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "China’s Yuan Is Quietly Becoming A Stronger-Currency Story - exchangerates.org.uk",
+      "title": "China’s Yuan Is Quietly Becoming A Stronger-Currency Story - Exchange Rates UK",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUVpDZ2FPUVhMNnlES3pKTHY2cDhMdWpPMlFBUVFVb3hWVlIxTTBwcVZTV1pzdnBVZW1CeTZYdHk5eHB2WVRwdDNBOXJNcU83Y1ZqQ1Q1dENNbXlhSkxxUjlnZXN0YnMwTkQ3dEs0X2VlMDRhYXQtTi1TR3pRQmRmOUl3X2I2ODVFOVQ2S29aYWlRQlFXN0h2U2VaR0lwODVtdzVtc3N6aHVia2lyWUVGOVlydzBqR2U5cmc?oc=5",
       "pubDate": "Tue, 25 Aug 2026 07:00:00 GMT",
       "ts": 1787641200000
@@ -108,7 +108,7 @@
     {
       "feed": "travel",
       "feedLabel": "Flights & Travel",
-      "title": "Saudi Air Connectivity Program, Saudia Boost Operational Capacity to China and the US - english.aawsat.com",
+      "title": "Saudi Air Connectivity Program, Saudia Boost Operational Capacity to China and the US - ASHARQ AL-AWSAT English",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNOXgyNTB3bW9RUEtFOWF0WjhIamd3b0VSUnA1T09mbl9JcW1xcTNZNzdVZi1mTjVPRGctLVJ1Z1RNSEJfbWdaU0k4Vm5VR01iVDAweFktb2xqUGo5WDlKWDJkb0NCT2hnamRQUnZISWVyRXRhNGZKT21CQWFUOHdMNnZtMENGZk8zZ1l5eVBHNUhuV19XVGZlQm5KS1AxakVhWDJad3BvVlFscU5vT2x3aEstYTRoR1R6c3U1TWlR?oc=5",
       "pubDate": "Thu, 20 Aug 2026 07:00:00 GMT",
       "ts": 1787209200000
@@ -124,7 +124,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - Carnegie Endowment for International Peace",
+      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - carnegieendowment.org",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQlBkZGZGcEc1ZXlxdTFZakl6NndJTTRyd19mVXNKbGwyR1VXWVlyTkI1UGhzd3FZcFVLWk1kLWtlRlV1X1E2cGlGaENmMzFGMXQyVnBFWWptNHdXNmlTUXZxV1JkSDRMWmZhTU0tb2hseGlBUmVnZHI1V2tJMWtraHNNbmR6MkJ0ZHAzczMwaEg4YXEyaTJxekt4dm5YSXlM?oc=5",
       "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
       "ts": 1785222000000
@@ -148,7 +148,7 @@
     {
       "feed": "travel",
       "feedLabel": "Flights & Travel",
-      "title": "Routes & Networks Latest: Rolling Daily Updates (W/C July 20, 2026) - aviationweek.com",
+      "title": "Routes & Networks Latest: Rolling Daily Updates (W/C July 20, 2026) - Aviation Week",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPblM3YjNCakd3RjNwOG9JQVozSmJGaFFGTmJlcllPWlV3UHZBTGlURFd1SGNnVV9fZXk2Qm5aeklRVDVzc0NrbWU5X1dObFZsNjcyaUhzeDJBMzdRMnh2SWFtaDhxWmcyQUZubU5rYVV2UW9obHN5eTF6NWxseVR3VmczYlNRV3BmSmpmWE1Wa1NHOG5YdjNyV2VPcEVuWnRMTG42V3pXLXB3dV9RdExLZ21ncDZmc0lY?oc=5",
       "pubDate": "Mon, 20 Jul 2026 07:00:00 GMT",
       "ts": 1784530800000
@@ -156,7 +156,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "Charting the renminbi's path to global currency - weforum.org",
+      "title": "Charting the renminbi's path to global currency - The World Economic Forum",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbnA5dUxaRzl2eTY2V1RoYzZiZ2ZIRU15TC10ZzZTVDItclZQMDFKY1dIZXNPc25jN2JrZm9ZWjBuTWduTy1oQlpYcEc3ajQ4YW1ieEtBSl9WUFI1TUJoZ0MwWmlKQTVFUEtZUjh5empENGk5UzVrZzNONC1GeVd4YnJXQmh1V094NHllejFwV2o3VnZ5Yi1GUWNDOFBVeE5NUllOQUNONWtkQUs0bXFHOW92OA?oc=5",
       "pubDate": "Mon, 13 Jul 2026 07:00:00 GMT",
       "ts": 1783926000000
@@ -164,7 +164,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - barrons.com",
+      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - Barron's",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNEFORUJKRVhhNGUtUC1pUFVkTkhyS0pzMEE0dzFnSWJGcjZ5OHMzcW94SzJQS3ZTTUMwVWVveG43SjFqNm5pc2ZJSWV0MWtUMWdxRHpzTWE5bG5mQTA4WHRIcGt1TnVFMlVpQjE2eGRsdEZPS3BUNzQ3RzRGdTZWZ251NV95NV9pZ2lPU2NmUmxHanQzbWJVVGVPS2lrUW5DODBsdlppRDI0TzBJcS05Y1RadVM1TUk?oc=5",
       "pubDate": "Thu, 09 Jul 2026 07:00:00 GMT",
       "ts": 1783580400000
@@ -172,7 +172,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "Can The Chinese Yuan Replace The US Dollar? UniCredit Says Not Yet - exchangerates.org.uk",
+      "title": "Can The Chinese Yuan Replace The US Dollar? UniCredit Says Not Yet - Exchange Rates UK",
       "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdHdMUUZROTRnMG1lM2pSNi03NHEtWGI4Wng3LW80bUZnT2J4NmxjN1lRNVgxQ2ZaOFlKTUFsMjM4SlhqTnYyNndac1FjXzRDbld5SEJ6ZHR6ams4cmlGaTl6cTdRa1F3ZE9abFlMa1R4ZVRuWENNNGlhQS1YcHhFLUdjSjlTRGxkZHh5QTEyS2dTY2VoMFdfQS1OQWJSa3JCbktnZFpZYjJqVFQ4WUdvanBVQ2piTTRtd0hZYVBjei13SVk?oc=5",
       "pubDate": "Wed, 01 Jul 2026 07:00:00 GMT",
       "ts": 1782889200000

@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-27",
+  "generatedAt": "2026-09-27T14:20:20.307Z",
+  "model": "typesafe/jev-router",
+  "usedFallback": false,
+  "ms": 15510,
+  "errors": [],
+  "brief": "Today remains WATCH, unchanged from the first recorded decision. FX is neutral: 1 SAR = 1.794409 CNY, 0.03% above the nine-point average with a -0.35% drift, so there is no conversion edge. Core landed cost is 28,415 SAR, leaving 16,585 SAR before the 5,000 SAR reserve. The server core is 3,546.61 SAR over its 12,000 SAR line, while no targets are crossed; the closest is the 360mm AIO at 4.7% above target. Trip readiness is 85/100, blocked only by a second tracked fare check. Preserve reserve and keep the 50,000 SAR cap.",
+  "keyMoves": [
+    "Run and record a second live fare check",
+    "Rebalance the server overage within the 50,000 SAR cap",
+    "Shortlist and verify Phase 1 SKUs"
+  ],
+  "watch": "Monitor whether FX breaks the neutral range or a tracked target is crossed tomorrow."
+}
