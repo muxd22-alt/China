@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "project": "China Buy-Plan Dashboard",
+    "owner": "SAR budget, buy-in-China trip",
+    "currency": "SAR"
+  },
+  "budgets": {
+    "total": 50000,
+    "serverTech": 12000,
+    "homeFurnishing": 38000,
+    "contingencyPct": 0.1
+  },
+  "logistics": {
+    "shippingSAR": 8500,
+    "taxRate": 0.15,
+    "taxOn": "goods",
+    "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
+  },
+  "fx": {
+    "primary": "open.er-api.com",
+    "secondary": "fawazahmed0/currency-api@latest (jsDelivr)",
+    "historyPoints": 8,
+    "historyStepDays": 7,
+    "divergenceWarnPct": 0.3,
+    "favorablePct": 2.0
+  },
+  "newsQueries": [
+    { "id": "trade", "label": "China-Saudi Trade & Economy", "q": "Saudi Arabia China trade investment", "max": 6 },
+    { "id": "fx", "label": "Currency & Markets", "q": "yuan renminbi exchange rate oil", "max": 6 },
+    { "id": "tech", "label": "Tech & Hardware", "q": "GPU graphics card prices PC hardware", "max": 6 },
+    { "id": "travel", "label": "Flights & Travel", "q": "flights China Saudi Arabia airline", "max": 5 }
+  ],
+  "travel": {
+    "routes": [
+      {
+        "id": "jed-szx",
+        "from": "Jeddah (JED)",
+        "to": "Shenzhen (SZX)",
+        "via": "1 stop",
+        "sarLow": 2200,
+        "sarHigh": 3800,
+        "note": "Best for Huaqiangbei / SEG electronics run",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Shenzhen&curr=SAR"
+      },
+      {
+        "id": "ruh-szx",
+        "from": "Riyadh (RUH)",
+        "to": "Shenzhen (SZX)",
+        "via": "1 stop",
+        "sarLow": 2400,
+        "sarHigh": 4000,
+        "note": "Compare both gateways before booking",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shenzhen&curr=SAR"
+      },
+      {
+        "id": "jed-bjs",
+        "from": "Jeddah (JED)",
+        "to": "Beijing (BJS)",
+        "via": "1 stop",
+        "sarLow": 1800,
+        "sarHigh": 3200,
+        "note": "Often cheaper than SZX - useful if route is flexible",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Beijing&curr=SAR"
+      },
+      {
+        "id": "ruh-pvg",
+        "from": "Riyadh (RUH)",
+        "to": "Shanghai (PVG)",
+        "via": "1 stop",
+        "sarLow": 2300,
+        "sarHigh": 3600,
+        "note": "Furniture clusters: Foshan is a train ride away",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shanghai&curr=SAR"
+      }
+    ],
+    "stays": [
+      { "city": "Shenzhen", "cnyNightLow": 120, "cnyNightHigh": 450, "link": "https://www.booking.com/searchresults.html?ss=Shenzhen" },
+      { "city": "Guangzhou / Foshan", "cnyNightLow": 110, "cnyNightHigh": 400, "link": "https://www.booking.com/searchresults.html?ss=Foshan" },
+      { "city": "Beijing", "cnyNightLow": 130, "cnyNightHigh": 480, "link": "https://www.booking.com/searchresults.html?ss=Beijing" }
+    ]
+  },
+  "tips": [
+    "Order of arms: case / motherboard / CPU / PSU first - they age slowest. RAM next. GPUs and HDDs LAST - both are the most volatile line items in this build.",
+    "PSU and UPS: buy new only. Everything else in the server can be used - but run a VRAM + 10-minute fan load test before you pay.",
+    "When CNY sits below the 8-week average, convert and place the big-ticket orders the same week. The dashboard flags this automatically.",
+    "Shipping is a fixed ~8,500 SAR - heavier carts lower cost per kilo. Consolidate furniture AND tech into ONE shipment.",
+    "Budget the full 15% import tax on goods value. Keep every receipt - customs math must be honest to stay painless.",
+    "Xianyu for parts (negotiate 10-15% down). Huaqiangbei / SEG for GPUs. Never pay before a live GPU-Z VRAM check.",
+    "Anti-cheat titles (Valorant, Fortnite, PUBG) refuse to run inside a VM - the dedicated 3060 Windows box is non-negotiable if those are your games.",
+    "Single 3090 = one full-quality gaming session at a time. Schedule local AI workloads around play, not during it.",
+    "Landing cost = goods + 15% tax + shipping share. If that total exceeds ~90% of the local price, do not ship it.",
+    "Hold back 10% of the 50K as contingency - freight quotes and FX both move. Surplus shown today is not free money.",
+    "Sea freight runs 3-6 weeks. Order Phase 1 (case/mobo/CPU/PSU) the day you land; verify GPU prices locally before committing Phase 3.",
+    "Sofas are the heaviest, bulkiest line item - measure every doorway, elevator and stair turn before ordering. A sofa that will not fit is scrap.",
+    "Bedroom and lighting gear is where China beats local retail hardest right now - same quality tier, roughly half the price after tax.",
+    "Compare the same SKU on 1688 vs Xianyu: factory-refurbished units often run 30-40% under retail with warranty still traceable."
+  ]
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Buy-Plan Dashboard</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">CN</span>
+    <div>
+      <h1>China Buy-Plan Dashboard</h1>
+      <p class="sub" id="metaLine">loading…</p>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span class="pill live" id="refreshPill">daily refresh via GitHub Actions</span>
+  </div>
+</header>
+
+<main>
+  <section class="grid fx-grid" id="fxSection" aria-label="Exchange rates"></section>
+
+  <section class="panel" aria-label="Smart calls">
+    <div class="panel-head">
+      <h2>Smart Calls</h2>
+      <span class="pill" id="tipPill">tip of the day</span>
+    </div>
+    <div class="calls" id="calls"></div>
+  </section>
+
+  <section class="panel" aria-label="Price history">
+    <div class="panel-head">
+      <h2>Price History</h2>
+      <div class="tier-switch" id="histRange" role="tablist"></div>
+    </div>
+    <div class="grid hist-grid" id="histGrid"></div>
+    <div class="edits" id="priceEdits"></div>
+  </section>
+
+  <section class="panel" aria-label="Budgets">
+    <div class="panel-head">
+      <h2>Budget vs Landed Cost</h2>
+      <div class="tier-switch" id="tierSwitch" role="tablist"></div>
+    </div>
+    <div class="grid budget-grid" id="budgetGrid"></div>
+    <p class="hint" id="budgetHint"></p>
+  </section>
+
+  <section class="panel" aria-label="Landed cost calculator">
+    <div class="panel-head"><h2>Landed-Cost Calculator</h2></div>
+    <div class="calc" id="calc">
+      <div class="calc-row">
+        <label>Item price (CNY)
+          <input type="number" id="calcCny" value="1000" min="0" step="10">
+        </label>
+        <label>Your local price for the same item (SAR, optional)
+          <input type="number" id="calcLocal" placeholder="e.g. 900" min="0" step="10">
+        </label>
+      </div>
+      <div class="calc-out" id="calcOut"></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Buy list">
+    <div class="panel-head">
+      <h2>Buy List</h2>
+      <span class="hint" id="listStats"></span>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="table-wrap">
+      <table id="listTable">
+        <thead>
+          <tr>
+            <th data-sort="name">Item</th>
+            <th data-sort="bundle">Bundle</th>
+            <th data-sort="priority" class="num">Pri</th>
+            <th data-sort="phase" class="num">Phase</th>
+            <th data-sort="qty" class="num">Qty</th>
+            <th data-sort="cny" class="num">CNY</th>
+            <th data-sort="sarLine" class="num">Landed (SAR)</th>
+          </tr>
+        </thead>
+        <tbody id="listBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="News">
+    <div class="panel-head">
+      <h2>Daily Reading</h2>
+      <span class="hint" id="newsMeta"></span>
+    </div>
+    <div class="grid news-grid" id="newsGrid"></div>
+  </section>
+
+  <section class="panel" aria-label="Travel">
+    <div class="panel-head">
+      <h2>Flights &amp; Stays <span class="est-tag">estimates</span></h2>
+      <span class="hint">fare bands are educated guesses — verify via the links</span>
+    </div>
+    <div class="grid travel-grid" id="travelGrid"></div>
+  </section>
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<script src="data/dashboard.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

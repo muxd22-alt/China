@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-09-27T13:05:53.161Z",
+  "budgets": {
+    "server": {
+      "tiers": {
+        "P0": {
+          "goods": 5283.08,
+          "tax": 792.46,
+          "shipping": 2167.29,
+          "landed": 8242.83,
+          "budget": 12000,
+          "remaining": 3757.17,
+          "pct": 68.69,
+          "status": "ok"
+        },
+        "P1": {
+          "goods": 9964.28,
+          "tax": 1494.64,
+          "shipping": 4087.68,
+          "landed": 15546.61,
+          "budget": 12000,
+          "remaining": -3546.61,
+          "pct": 129.56,
+          "status": "over"
+        },
+        "P2": {
+          "goods": 10354.38,
+          "tax": 1553.16,
+          "shipping": 4247.71,
+          "landed": 16155.26,
+          "budget": 12000,
+          "remaining": -4155.26,
+          "pct": 134.63,
+          "status": "over"
+        },
+        "P3": {
+          "goods": 10354.38,
+          "tax": 1553.16,
+          "shipping": 4247.71,
+          "landed": 16155.26,
+          "budget": 12000,
+          "remaining": -4155.26,
+          "pct": 134.63,
+          "status": "over"
+        }
+      }
+    },
+    "home": {
+      "tiers": {
+        "P0": {
+          "goods": 4123.92,
+          "tax": 618.59,
+          "shipping": 1691.77,
+          "landed": 6434.28,
+          "budget": 38000,
+          "remaining": 31565.72,
+          "pct": 16.93,
+          "status": "ok"
+        },
+        "P1": {
+          "goods": 8247.84,
+          "tax": 1237.18,
+          "shipping": 3383.54,
+          "landed": 12868.56,
+          "budget": 38000,
+          "remaining": 25131.44,
+          "pct": 33.86,
+          "status": "ok"
+        },
+        "P2": {
+          "goods": 10086.89,
+          "tax": 1513.03,
+          "shipping": 4137.98,
+          "landed": 15737.9,
+          "budget": 38000,
+          "remaining": 22262.1,
+          "pct": 41.42,
+          "status": "ok"
+        },
+        "P3": {
+          "goods": 10365.53,
+          "tax": 1554.83,
+          "shipping": 4252.29,
+          "landed": 16172.65,
+          "budget": 38000,
+          "remaining": 21827.35,
+          "pct": 42.56,
+          "status": "ok"
+        }
+      }
+    },
+    "overview": {
+      "totalBudget": 50000,
+      "contingencyReserve": 5000,
+      "deployable": 45000,
+      "coreLanded": 29443.94,
+      "coreWithinDeployable": true,
+      "shippingSAR": 8500,
+      "taxRate": 0.15,
+      "sarPerCny": 0.557287
+    }
+  },
+  "tip": {
+    "index": 4,
+    "total": 14,
+    "text": "Budget the full 15% import tax on goods value. Keep every receipt - customs math must be honest to stay painless."
+  },
+  "travel": {
+    "routes": [
+      {
+        "id": "jed-szx",
+        "from": "Jeddah (JED)",
+        "to": "Shenzhen (SZX)",
+        "via": "1 stop",
+        "sarLow": 2200,
+        "sarHigh": 3800,
+        "note": "Best for Huaqiangbei / SEG electronics run",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Shenzhen&curr=SAR"
+      },
+      {
+        "id": "ruh-szx",
+        "from": "Riyadh (RUH)",
+        "to": "Shenzhen (SZX)",
+        "via": "1 stop",
+        "sarLow": 2400,
+        "sarHigh": 4000,
+        "note": "Compare both gateways before booking",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shenzhen&curr=SAR"
+      },
+      {
+        "id": "jed-bjs",
+        "from": "Jeddah (JED)",
+        "to": "Beijing (BJS)",
+        "via": "1 stop",
+        "sarLow": 1800,
+        "sarHigh": 3200,
+        "note": "Often cheaper than SZX - useful if route is flexible",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Beijing&curr=SAR"
+      },
+      {
+        "id": "ruh-pvg",
+        "from": "Riyadh (RUH)",
+        "to": "Shanghai (PVG)",
+        "via": "1 stop",
+        "sarLow": 2300,
+        "sarHigh": 3600,
+        "note": "Furniture clusters: Foshan is a train ride away",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shanghai&curr=SAR"
+      }
+    ],
+    "stays": [
+      {
+        "city": "Shenzhen",
+        "cnyNightLow": 120,
+        "cnyNightHigh": 450,
+        "link": "https://www.booking.com/searchresults.html?ss=Shenzhen"
+      },
+      {
+        "city": "Guangzhou / Foshan",
+        "cnyNightLow": 110,
+        "cnyNightHigh": 400,
+        "link": "https://www.booking.com/searchresults.html?ss=Foshan"
+      },
+      {
+        "city": "Beijing",
+        "cnyNightLow": 130,
+        "cnyNightHigh": 480,
+        "link": "https://www.booking.com/searchresults.html?ss=Beijing"
+      }
+    ]
+  },
+  "logistics": {
+    "shippingSAR": 8500,
+    "taxRate": 0.15,
+    "taxOn": "goods",
+    "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
+  },
+  "warnings": [],
+  "newsCount": 23
+}
