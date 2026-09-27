@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T13:15:24.058Z",
+  "generatedAt": "2026-09-27T14:16:19.279Z",
   "budgets": {
     "server": {
       "tiers": {
@@ -175,6 +175,171 @@
     "taxOn": "goods",
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
-  "warnings": [],
-  "newsCount": 23
+  "warnings": [
+    "LLM brief skipped - OPENROUTER_API_KEY not set (local run or GitHub secret missing)"
+  ],
+  "newsCount": 23,
+  "call": {
+    "verdict": "WATCH",
+    "confidence": "VERIFIED",
+    "driver": "no statistical edge today",
+    "reasoning": "1 SAR = 1.7944 CNY - 0.03% above its 9-point average (signal NEUTRAL, -0.35% drift); dual-source FX verified. Core plan lands at 28,415 SAR vs 45,000 deployable - 16,585 SAR headroom, 5,000 SAR reserve held back. 29 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (BUILDING) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; awaiting a second tracked fare check. Call: WATCH - driven by no statistical edge today.",
+    "inputs": {
+      "sarCny": 1.794409,
+      "pctVsAvg": 0.03,
+      "signal": "NEUTRAL",
+      "landed": 28415,
+      "headroom": 16585,
+      "crossed": 0,
+      "readiness": 85,
+      "goodsCny": 37180
+    }
+  },
+  "diff": "First recorded call - baseline saved as WATCH.",
+  "crossed": {
+    "crossed": [],
+    "withTargets": 29,
+    "total": 29,
+    "closest": {
+      "item": {
+        "id": "srv-aio",
+        "bundle": "server",
+        "category": "Cooling",
+        "name": "360mm AIO liquid cooler",
+        "qty": 1,
+        "cny": 450,
+        "confidence": "estimate",
+        "priority": "P1",
+        "phase": 1,
+        "why": "Sustained AI + gaming loads on a 7900X",
+        "target_cny": 430
+      },
+      "abovePct": 4.7
+    }
+  },
+  "readiness": {
+    "score": 85,
+    "band": "BUILDING",
+    "booked": false,
+    "components": [
+      {
+        "key": "fx",
+        "label": "FX trend stability",
+        "score": 100,
+        "value": "-0.35% drift over 8 pts"
+      },
+      {
+        "key": "targets",
+        "label": "P0/P1 target coverage",
+        "score": 100,
+        "value": "23 of 23 items have targets"
+      },
+      {
+        "key": "fare",
+        "label": "Flight-fare movement",
+        "score": 50,
+        "value": "awaiting a second tracked fare check"
+      }
+    ],
+    "fare": {
+      "score": 50,
+      "deltaPct": null,
+      "note": "awaiting a second tracked fare check",
+      "low": 2200
+    }
+  },
+  "checklist": {
+    "items": [
+      {
+        "id": "shortlist",
+        "label": "Exact SKUs shortlisted and prices verified in the dashboard",
+        "group": "Before trip",
+        "done": false
+      },
+      {
+        "id": "visa",
+        "label": "China visa / entry requirements sorted",
+        "group": "Before trip",
+        "done": false
+      },
+      {
+        "id": "cables",
+        "label": "Ethernet runs planned per room (before furniture lands)",
+        "group": "Before trip",
+        "done": false
+      },
+      {
+        "id": "measure",
+        "label": "Doorway / elevator measurements for sofas and server case",
+        "group": "Before trip",
+        "done": false
+      },
+      {
+        "id": "fare-check",
+        "label": "Live fare check via flight links - update config bands",
+        "group": "Before trip",
+        "done": false
+      },
+      {
+        "id": "flights",
+        "label": "Flights booked",
+        "group": "Booking",
+        "done": false
+      },
+      {
+        "id": "hotel",
+        "label": "Hotel booked (Shenzhen / Foshan)",
+        "group": "Booking",
+        "done": false
+      },
+      {
+        "id": "cash",
+        "label": "Bank notified + CNY cash plan",
+        "group": "Booking",
+        "done": false
+      },
+      {
+        "id": "phase1",
+        "label": "Phase 1 order list ready (case / mobo / CPU / PSU)",
+        "group": "On arrival",
+        "done": false
+      },
+      {
+        "id": "freight",
+        "label": "Freight forwarder / consolidation contact confirmed",
+        "group": "On arrival",
+        "done": false
+      },
+      {
+        "id": "gputest",
+        "label": "GPU test kit ready (GPU-Z + 10-min load test)",
+        "group": "On arrival",
+        "done": false
+      },
+      {
+        "id": "xianyu",
+        "label": "Xianyu account + payment method ready",
+        "group": "On arrival",
+        "done": false
+      }
+    ]
+  },
+  "decisionsTail": [
+    {
+      "date": "2026-09-27",
+      "verdict": "WATCH",
+      "confidence": "VERIFIED",
+      "driver": "no statistical edge today",
+      "inputs": {
+        "sarCny": 1.794409,
+        "pctVsAvg": 0.03,
+        "signal": "NEUTRAL",
+        "landed": 28415,
+        "headroom": 16585,
+        "crossed": 0,
+        "readiness": 85,
+        "goodsCny": 37180
+      }
+    }
+  ]
 }

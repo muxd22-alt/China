@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "shortlist",
+      "label": "Exact SKUs shortlisted and prices verified in the dashboard",
+      "group": "Before trip",
+      "done": false
+    },
+    {
+      "id": "visa",
+      "label": "China visa / entry requirements sorted",
+      "group": "Before trip",
+      "done": false
+    },
+    {
+      "id": "cables",
+      "label": "Ethernet runs planned per room (before furniture lands)",
+      "group": "Before trip",
+      "done": false
+    },
+    {
+      "id": "measure",
+      "label": "Doorway / elevator measurements for sofas and server case",
+      "group": "Before trip",
+      "done": false
+    },
+    {
+      "id": "fare-check",
+      "label": "Live fare check via flight links - update config bands",
+      "group": "Before trip",
+      "done": false
+    },
+    {
+      "id": "flights",
+      "label": "Flights booked",
+      "group": "Booking",
+      "done": false
+    },
+    {
+      "id": "hotel",
+      "label": "Hotel booked (Shenzhen / Foshan)",
+      "group": "Booking",
+      "done": false
+    },
+    {
+      "id": "cash",
+      "label": "Bank notified + CNY cash plan",
+      "group": "Booking",
+      "done": false
+    },
+    {
+      "id": "phase1",
+      "label": "Phase 1 order list ready (case / mobo / CPU / PSU)",
+      "group": "On arrival",
+      "done": false
+    },
+    {
+      "id": "freight",
+      "label": "Freight forwarder / consolidation contact confirmed",
+      "group": "On arrival",
+      "done": false
+    },
+    {
+      "id": "gputest",
+      "label": "GPU test kit ready (GPU-Z + 10-min load test)",
+      "group": "On arrival",
+      "done": false
+    },
+    {
+      "id": "xianyu",
+      "label": "Xianyu account + payment method ready",
+      "group": "On arrival",
+      "done": false
+    }
+  ]
+}

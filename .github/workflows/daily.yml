@@ -25,7 +25,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Refresh rates, news and signals
+      - name: Refresh rates, news, decisions and brief
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: node scripts/update.mjs
 
       - name: Commit refreshed data

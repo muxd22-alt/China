@@ -21,6 +21,41 @@
 </header>
 
 <main>
+  <section class="panel call-panel" aria-label="Today's call">
+    <div class="panel-head">
+      <h2>Today's Call</h2>
+      <span class="hint" id="callStamp"></span>
+    </div>
+    <div class="call-layout">
+      <div class="verdict-side">
+        <div class="verdict-badge" id="verdictBadge">—</div>
+        <span class="badge" id="confBadge"></span>
+        <div class="recent-strip" id="recentStrip"></div>
+      </div>
+      <div class="reason-side">
+        <p class="reason" id="callReason"></p>
+        <p class="changed" id="changedLine"></p>
+      </div>
+    </div>
+    <div class="brief-box" id="briefBox" hidden>
+      <div class="brief-head">
+        <span class="brief-title">Daily Brief</span>
+        <span class="pill" id="briefModel"></span>
+      </div>
+      <p class="brief-text" id="briefText"></p>
+      <ul class="brief-moves" id="briefMoves"></ul>
+      <p class="brief-watch" id="briefWatch"></p>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Crossed thresholds">
+    <div class="panel-head">
+      <h2>Crossed Thresholds</h2>
+      <span class="hint" id="crossedMeta"></span>
+    </div>
+    <div class="grid crossed-grid" id="crossedGrid"></div>
+  </section>
+
   <section class="grid fx-grid" id="fxSection" aria-label="Exchange rates"></section>
 
   <section class="panel" aria-label="Smart calls">
@@ -80,6 +115,7 @@
             <th data-sort="phase" class="num">Phase</th>
             <th data-sort="qty" class="num">Qty</th>
             <th data-sort="cny" class="num">CNY</th>
+            <th data-sort="target" class="num">Target</th>
             <th data-sort="sarLine" class="num">Landed (SAR)</th>
           </tr>
         </thead>
@@ -94,6 +130,26 @@
       <span class="hint" id="newsMeta"></span>
     </div>
     <div class="grid news-grid" id="newsGrid"></div>
+  </section>
+
+  <section class="panel" aria-label="Trip readiness">
+    <div class="panel-head">
+      <h2>Trip Readiness</h2>
+      <span class="hint">FX stability + target coverage + fare movement — distinct from in-China buy phases</span>
+    </div>
+    <div id="readinessBox"></div>
+  </section>
+
+  <section class="panel" aria-label="Pre-trip checklist">
+    <div class="panel-head">
+      <h2>Pre-Trip Checklist</h2>
+      <div class="check-actions">
+        <span class="hint" id="checkMeta"></span>
+        <button id="copyChecklist" type="button">Copy checklist.json</button>
+      </div>
+    </div>
+    <div id="checkListBox"></div>
+    <p class="hint" id="checkHint"></p>
   </section>
 
   <section class="panel" aria-label="Travel">

@@ -2,6 +2,10 @@ import { readFile, writeFile, access } from "node:fs/promises";
 import { constants } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  crossedThresholds, tripReadiness, buildCall, diffDecisions,
+  recordDecision, buildPrompt, askOpenRouter,
+} from "./decide.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(ROOT, "data");
@@ -156,7 +160,7 @@ function budgetEngine(products, rates, cfg) {
 }
 const round = (n, d = 2) => Math.round(n * 10 ** d) / 10 ** d;
 
-async function trackSnapshot(dateKey, rates, budgets, products) {
+async function trackSnapshot(dateKey, rates, budgets, products, cfg) {
   let doc = { points: [] };
   if (await exists("history.json")) {
     try {
@@ -178,12 +182,14 @@ async function trackSnapshot(dateKey, rates, budgets, products) {
   core.t = round(core.s + core.h);
   const all = { s: budgets.server.tiers.P3.landed, h: budgets.home.tiers.P3.landed };
   all.t = round(all.s + all.h);
+  const route = cfg.travel.routes[0];
   const point = {
     date: dateKey,
     sarCny: round(rates.CNY, 6),
     sarUsd: round(rates.USD, 6),
     goodsCny: round(goodsCny),
     goodsSar: round(goodsCny * sarPerCny),
+    fare: { id: route.id, low: route.sarLow, high: route.sarHigh },
     core, all, p,
   };
   const i = doc.points.findIndex((x) => x.date === dateKey);
@@ -194,6 +200,37 @@ async function trackSnapshot(dateKey, rates, budgets, products) {
   const txt = '{\n"points": [\n' + doc.points.map((x) => JSON.stringify(x)).join(",\n") + '\n]\n}\n';
   await writeFile(path.join(DATA, "history.json"), txt);
   return doc.points;
+}
+
+const DEFAULT_CHECKLIST = [
+  { id: "shortlist", label: "Exact SKUs shortlisted and prices verified in the dashboard", group: "Before trip", done: false },
+  { id: "visa", label: "China visa / entry requirements sorted", group: "Before trip", done: false },
+  { id: "cables", label: "Ethernet runs planned per room (before furniture lands)", group: "Before trip", done: false },
+  { id: "measure", label: "Doorway / elevator measurements for sofas and server case", group: "Before trip", done: false },
+  { id: "fare-check", label: "Live fare check via flight links - update config bands", group: "Before trip", done: false },
+  { id: "flights", label: "Flights booked", group: "Booking", done: false },
+  { id: "hotel", label: "Hotel booked (Shenzhen / Foshan)", group: "Booking", done: false },
+  { id: "cash", label: "Bank notified + CNY cash plan", group: "Booking", done: false },
+  { id: "phase1", label: "Phase 1 order list ready (case / mobo / CPU / PSU)", group: "On arrival", done: false },
+  { id: "freight", label: "Freight forwarder / consolidation contact confirmed", group: "On arrival", done: false },
+  { id: "gputest", label: "GPU test kit ready (GPU-Z + 10-min load test)", group: "On arrival", done: false },
+  { id: "xianyu", label: "Xianyu account + payment method ready", group: "On arrival", done: false },
+];
+
+async function loadChecklist() {
+  if (!(await exists("checklist.json"))) {
+    warnings.push("checklist.json missing - created default");
+    await writeFile(path.join(DATA, "checklist.json"), JSON.stringify({ items: DEFAULT_CHECKLIST }, null, 2));
+    return { items: DEFAULT_CHECKLIST };
+  }
+  try {
+    const c = await readJson("checklist.json");
+    if (!Array.isArray(c.items)) throw new Error("items[] missing");
+    return c;
+  } catch (e) {
+    warnings.push(`checklist.json invalid (${e.message}) - using default`);
+    return { items: DEFAULT_CHECKLIST };
+  }
 }
 
 function pickTip(cfg) {
@@ -221,7 +258,53 @@ async function main() {
 
   const budgets = budgetEngine(products, { CNY: currentCny }, cfg);
   const now = new Date().toISOString();
-  const tracked = await trackSnapshot(now.slice(0, 10), base.rates, budgets, products);
+  const dateKey = now.slice(0, 10);
+  const tracked = await trackSnapshot(dateKey, base.rates, budgets, products, cfg);
+
+  const checklist = await loadChecklist();
+  const dualOk = bigDivergence.length === 0;
+  const crossedInfo = crossedThresholds(products);
+  const readiness = tripReadiness({ signal, products, checklist, tracked, dateKey });
+  const call = buildCall({ signal, budgets, crossedInfo, readiness, dualOk, checklist, cfg });
+  call.inputs.goodsCny = tracked.length ? tracked[tracked.length - 1].goodsCny : null;
+
+  let decDoc = { entries: [] };
+  if (await exists("decisions.json")) {
+    try {
+      decDoc = await readJson("decisions.json");
+      if (!Array.isArray(decDoc.entries)) decDoc = { entries: [] };
+    } catch { warnings.push("decisions.json unreadable - restarted log"); }
+  }
+  const prevDecision = decDoc.entries.filter((e) => e.date < dateKey).pop() || null;
+  const entry = { date: dateKey, verdict: call.verdict, confidence: call.confidence, driver: call.driver, inputs: call.inputs };
+  const diff = diffDecisions(prevDecision, entry);
+  decDoc = recordDecision(decDoc, entry);
+  await writeFile(path.join(DATA, "decisions.json"), '{\n"entries": [\n' + decDoc.entries.map((e) => JSON.stringify(e)).join(",\n") + '\n]\n}\n');
+
+  let brief = (await exists("brief.json")) ? await readJson("brief.json") : null;
+  const llmKey = process.env.OPENROUTER_API_KEY || "";
+  if (!(brief && brief.date === dateKey)) {
+    if (!llmKey) {
+      warnings.push("LLM brief skipped - OPENROUTER_API_KEY not set (local run or GitHub secret missing)");
+    } else {
+      try {
+        const plan = await readFile(path.join(ROOT, "PLAN.md"), "utf8").catch(() => "");
+        const prompt = buildPrompt({
+          plan, dateKey, call, signal, budgets, crossedInfo, readiness,
+          checklist, decisions: decDoc.entries, tracked, news,
+          briefWords: cfg.llm?.briefWords ?? 110,
+        });
+        const out = await askOpenRouter(cfg, prompt, llmKey);
+        brief = { date: dateKey, generatedAt: now, ...out };
+        await writeFile(path.join(DATA, "brief.json"), JSON.stringify(brief, null, 2));
+        console.log(`OK brief: ${out.model}${out.usedFallback ? " (fallback)" : ""} in ${out.ms}ms`);
+        if (out.usedFallback) warnings.push(`LLM primary failed - brief served by ${out.model}: ${out.errors.join(" | ")}`);
+      } catch (e) {
+        warnings.push(`LLM brief failed: ${e.message}`);
+        if (brief) warnings.push(`stale brief from ${brief.date} kept`);
+      }
+    }
+  }
 
   const ratesDoc = {
     generatedAt: now, base: base.source, baseDate: base.date, check: check.source, checkDate: check.date,
@@ -231,10 +314,13 @@ async function main() {
   const summaryDoc = {
     generatedAt: now, budgets, tip: pickTip(cfg), travel: cfg.travel,
     logistics: cfg.logistics, warnings, newsCount: news.length,
+    call, diff, crossed: crossedInfo, readiness, checklist,
+    decisionsTail: decDoc.entries.slice(-14),
   };
   const dashboard = {
     meta: { generatedAt: now, project: cfg.meta.project, dailyRefresh: "GitHub Actions 05:00 UTC (08:00 Riyadh)" },
-    config: cfg, products, rates: ratesDoc, news: newsDoc, summary: summaryDoc, history: tracked,
+    config: cfg, products, rates: ratesDoc, news: newsDoc, summary: summaryDoc,
+    history: tracked, brief: brief || null,
   };
 
   await writeFile(path.join(DATA, "rates.json"), JSON.stringify(ratesDoc, null, 2));
@@ -244,7 +330,8 @@ async function main() {
 
   console.log(`OK rates: SAR/CNY=${currentCny} history=${history.length}pts signal=${signal.key}`);
   console.log(`OK news: ${news.length} items | budgets: server P1 landed=${budgets.server.tiers.P1.landed} home P1 landed=${budgets.home.tiers.P1.landed}`);
-  console.log(`OK tracked: ${tracked.length} daily point(s) in history.json since ${tracked[0]?.date || "-"}`);
+  console.log(`OK tracked: ${tracked.length} daily point(s) since ${tracked[0]?.date || "-"} | decisions: ${decDoc.entries.length}`);
+  console.log(`OK call: ${call.verdict} (${call.confidence}) - ${call.driver} | readiness ${readiness.score}/100 ${readiness.band} | crossed ${crossedInfo.crossed.length}/${crossedInfo.withTargets}`);
   if (warnings.length) console.log("WARN:\n - " + warnings.join("\n - "));
 }
 

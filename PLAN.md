@@ -68,3 +68,11 @@ GitHub Actions runs the same command daily at 05:00 UTC and commits `data/`.
 Edit prices freely in `data/products.json`; budgets/logistics/tips live in `data/config.json`.
 
 **Price history:** every run writes a daily snapshot to `data/history.json` (FX, landed totals, goods value, all 29 list prices). The **Price History** charts graph it since day one — the FX chart also backfills weekly points, and any edit you make to a price shows up as a logged change event on the next refresh. Snapshots are capped at 730 days; same-day re-runs replace that day's point.
+
+## 8. Daily decision engine
+
+- **Today's Call** — one rule-engine verdict (`BUY NOW / HOLD / WATCH / BOOK FLIGHT`) synthesized from FX signal + budget headroom + crossed targets + trip readiness, with numeric reasoning and a `VERIFIED / ESTIMATE` confidence tag. Every run appends to `data/decisions.json`; the panel shows the diff since yesterday and a strip of recent calls.
+- **Crossed thresholds** — items in `products.json` carry an optional `target_cny`; anything at/below target is pulled out of the list into an actionable panel and drives `BUY NOW`. Optional `checked` (YYYY-MM-DD) upgrades confidence to VERIFIED within 30 days.
+- **Trip readiness** (separate from in-China phases) — FX trend stability (40%) + P0/P1 target coverage (30%) + flight-fare movement (30%). Fare movement needs two tracked checks: after a live fare search, edit the route bands in `config.json` and history records the change. Band `READY` flips the daily call to `BOOK FLIGHT`.
+- **Pre-trip checklist** — `data/checklist.json` (visa, fares, flights, phase-1 list…) with persisted state; toggle locally, then **Copy checklist.json** and commit to sync.
+- **Daily Brief (LLM, once per day)** — `scripts/update.mjs` sends the master plan + verified numbers + decision log + trend + headlines to OpenRouter (`typesafe/jev-router`, falling back to the free Nemotron/Gemma models) and stores strict-JSON output in `data/brief.json`. Key lives in the `OPENROUTER_API_KEY` GitHub secret; local runs without a key skip it gracefully. The gate makes at most one paid call per UTC day.

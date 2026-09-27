@@ -24,6 +24,16 @@
     "divergenceWarnPct": 0.3,
     "favorablePct": 2.0
   },
+  "llm": {
+    "primary": "typesafe/jev-router",
+    "fallbacks": [
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "google/gemma-4-31b-it:free",
+      "nvidia/nemotron-3-super-120b-a12b:free"
+    ],
+    "onceDaily": true,
+    "briefWords": 110
+  },
   "newsQueries": [
     { "id": "trade", "label": "China-Saudi Trade & Economy", "q": "Saudi Arabia China trade investment", "max": 6 },
     { "id": "fx", "label": "Currency & Markets", "q": "yuan renminbi exchange rate oil", "max": 6 },

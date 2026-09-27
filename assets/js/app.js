@@ -235,6 +235,7 @@
       let x, y;
       if (sortKey === "sarLine") { x = lineMath(a).landed; y = lineMath(b).landed; }
       else if (sortKey === "priority") { x = priOrder[a.priority]; y = priOrder[b.priority]; }
+      else if (sortKey === "target") { x = a.target_cny ?? Infinity; y = b.target_cny ?? Infinity; }
       else { x = a[sortKey]; y = b[sortKey]; }
       if (typeof x === "string") return sortDir * x.localeCompare(y);
       return sortDir * (x - y);
@@ -244,13 +245,18 @@
 
     $("listBody").innerHTML = items.map((i) => {
       const m = lineMath(i);
-      return `<tr>
-        <td>${esc(i.name)} <span class="tag ${i.priority.toLowerCase()}">${i.priority}</span>${i.added ? `<span class="tag added">smart add</span>` : ""}<span class="why">${esc(i.why || "")}</span></td>
+      const hit = typeof i.target_cny === "number" && i.cny <= i.target_cny;
+      const tgt = typeof i.target_cny === "number"
+        ? `<span class="tgt-cell ${hit ? "hit" : "miss"}">¥${fmt(i.target_cny)}</span>`
+        : `<span class="tgt-cell miss">—</span>`;
+      return `<tr class="${hit ? "crossed" : ""}">
+        <td>${esc(i.name)} <span class="tag ${i.priority.toLowerCase()}">${i.priority}</span>${i.added ? `<span class="tag added">smart add</span>` : ""}${hit ? `<span class="tag" style="color:var(--ok);border-color:rgba(61,220,132,.5)">target hit</span>` : ""}<span class="why">${esc(i.why || "")}</span></td>
         <td>${i.bundle === "server" ? "Server" : "Home"} · ${esc(i.category)}</td>
         <td class="num">${i.priority}</td>
         <td class="num">${i.phase}</td>
         <td class="num">${i.qty}</td>
         <td class="num">¥${fmt(i.cny)}</td>
+        <td class="num">${tgt}</td>
         <td class="num">${fmt(m.landed)}</td>
       </tr>`;
     }).join("");
@@ -409,7 +415,147 @@
     $("priceEdits").innerHTML = `Tracking since <b>${full[0].date}</b> · ${full.length} snapshot(s), one per day.` + editHtml;
   }
 
+  const todayUtc = () => new Date().toISOString().slice(0, 10);
+
+  function renderToday() {
+    const call = summary.call;
+    const vb = $("verdictBadge");
+    vb.textContent = call.verdict;
+    vb.className = "verdict-badge v-" + call.verdict.replace(/\s+/g, "-").toLowerCase();
+    const cb = $("confBadge");
+    cb.textContent = call.confidence;
+    cb.className = "badge " + (call.confidence === "VERIFIED" ? "ok" : "warn");
+    cb.title = call.confidence === "VERIFIED"
+      ? "Built from live dual-source FX and tracked history"
+      : "Depends on estimated list prices or static fare bands - verify before acting";
+    $("callStamp").textContent = `generated ${new Date(summary.generatedAt).toUTCString().slice(5, 16)} · driver: ${call.driver}`;
+    $("callReason").textContent = call.reasoning;
+    $("changedLine").textContent = summary.diff;
+
+    const tail = summary.decisionsTail || [];
+    $("recentStrip").innerHTML = tail.length > 1
+      ? `<div class="strip-label">recent calls</div>` + tail.map((d) =>
+          `<span class="chip c-${d.verdict.replace(/\s+/g, "-").toLowerCase()}" title="${esc(d.date)}: ${esc(d.driver || "")}"><b>${d.date.slice(5)}</b> ${d.verdict}</span>`
+        ).join("")
+      : "";
+
+    const box = $("briefBox"), b = D.brief;
+    box.hidden = false;
+    if (b && b.brief) {
+      const stale = b.date !== todayUtc();
+      $("briefModel").textContent = `${b.model}${b.usedFallback ? " · fallback" : ""}${stale ? " · from " + b.date : ""}`;
+      $("briefModel").className = "pill" + (stale ? " stale" : " live");
+      $("briefText").textContent = b.brief;
+      $("briefMoves").innerHTML = (b.keyMoves || []).map((m) => `<li>${esc(m)}</li>`).join("");
+      $("briefWatch").innerHTML = b.watch ? `<b>Watch:</b> ${esc(b.watch)}` : "";
+    } else {
+      $("briefModel").textContent = "pending";
+      $("briefModel").className = "pill";
+      $("briefText").textContent = "No brief yet - add the OPENROUTER_API_KEY repository secret and run the daily workflow (or OPENROUTER_API_KEY=... node scripts/update.mjs locally). The router model writes it once per day; free models cover it if the paid one fails.";
+      $("briefMoves").innerHTML = "";
+      $("briefWatch").textContent = "";
+    }
+  }
+
+  function renderCrossed() {
+    const x = summary.crossed;
+    $("crossedMeta").textContent = `${x.crossed.length} crossed of ${x.withTargets} targets · ${x.total} items tracked`;
+    if (x.crossed.length) {
+      $("crossedGrid").innerHTML = x.crossed.map((i) => `
+        <div class="card crossed-card hit">
+          <div class="cc-name">${esc(i.name)}</div>
+          <div class="cc-nums"><span class="now">¥${fmt(i.cny)}</span><span class="tgt">target ¥${fmt(i.target_cny)}</span><span class="badge ok">−${i.pctUnder}%</span></div>
+          <div class="cc-sub">${i.bundle === "server" ? "Server" : "Home"} · ${i.priority} · unit lands ~${fmt(i.cny * sarPerCny * (1 + taxRate))} SAR + freight · ${esc(i.why || "")}</div>
+        </div>`).join("");
+    } else {
+      const c = x.closest;
+      $("crossedGrid").innerHTML = `
+        <div class="card">
+          <div class="hint">No targets crossed yet - nothing to buy on signal today.</div>
+          ${c ? `<div class="cc-nums" style="margin-top:10px"><span class="cc-name">${esc(c.item.name)}</span><span class="now">¥${fmt(c.item.cny)}</span><span class="tgt">target ¥${fmt(c.item.target_cny)}</span><span class="badge warn">+${c.abovePct}%</span></div>` : ""}
+          <div class="hint">Closest miss shown above. When a tracked estimate hits its target it appears here and drives a BUY NOW call.</div>
+        </div>`;
+    }
+  }
+
+  function renderReadiness() {
+    const r = summary.readiness;
+    const cls = r.band === "READY" ? "ok" : r.band === "BUILDING" ? "warn" : "info";
+    const note = r.band === "READY"
+      ? "Ready to book - readiness crossed 70 with fare movement actually tracked. The daily call will read BOOK FLIGHT until flights are checked off."
+      : r.fare.deltaPct == null
+        ? "Fare movement needs a second tracked check: do a live fare search via the links below, then update the route bands in data/config.json - the change lands in history and unlocks READY."
+        : "Building: push target coverage and FX stability up, and watch the fare band - READY flips the daily call to BOOK FLIGHT.";
+    $("readinessBox").innerHTML = `
+      <div class="ready-layout">
+        <div class="ready-score">
+          <div class="score-num">${r.score}<small>/100</small></div>
+          <span class="badge ${cls}">${r.band}</span>
+          ${r.booked ? `<div style="margin-top:8px"><span class="badge info">FLIGHTS BOOKED</span></div>` : ""}
+        </div>
+        <div class="ready-comps">
+          ${r.components.map((c) => `
+            <div class="comp">
+              <div class="comp-row"><span>${esc(c.label)}</span><b>${c.score}</b></div>
+              <div class="bar mini"><i style="width:${c.score}%"></i></div>
+              <div class="hint">${esc(c.value)}</div>
+            </div>`).join("")}
+        </div>
+        <div class="ready-note hint">${esc(note)}</div>
+      </div>`;
+  }
+
+  let checkOverrides = {};
+  try { checkOverrides = JSON.parse(localStorage.getItem("checklist-ov") || "{}"); } catch { checkOverrides = {}; }
+  const checkDone = (it) => (it.id in checkOverrides ? !!checkOverrides[it.id] : !!it.done);
+  const checkSynced = () => summary.checklist.items.every((i) => checkDone(i) === !!i.done);
+
+  function renderChecklist() {
+    const items = summary.checklist.items;
+    const done = items.filter(checkDone).length;
+    const groups = [...new Set(items.map((i) => i.group))];
+    $("checkMeta").textContent = `${done}/${items.length} done`;
+    $("checkListBox").innerHTML = groups.map((g) => `
+      <div class="check-group">
+        <div class="check-group-title">${esc(g)}</div>
+        ${items.filter((i) => i.group === g).map((i) => `
+          <label class="check-item ${checkDone(i) ? "done" : ""}">
+            <input type="checkbox" data-id="${esc(i.id)}" ${checkDone(i) ? "checked" : ""}>
+            <span>${esc(i.label)}</span>
+          </label>`).join("")}
+      </div>`).join("");
+    $("checkListBox").querySelectorAll("input[data-id]").forEach((el) =>
+      el.addEventListener("change", () => {
+        checkOverrides[el.dataset.id] = el.checked;
+        try { localStorage.setItem("checklist-ov", JSON.stringify(checkOverrides)); } catch {}
+        renderChecklist();
+      })
+    );
+    $("checkHint").innerHTML = checkSynced()
+      ? `State matches <b>data/checklist.json</b>. Toggles persist locally; commit the file to sync across machines.`
+      : `Local toggles differ from <b>data/checklist.json</b> - click "Copy checklist.json", paste over the file and commit to make them permanent (the rule engine reads the committed file).`;
+  }
+
+  function wireCopyChecklist() {
+    $("copyChecklist").addEventListener("click", async () => {
+      const items = summary.checklist.items.map((i) => ({ ...i, done: checkDone(i) }));
+      const txt = JSON.stringify({ items }, null, 2) + "\n";
+      try {
+        await navigator.clipboard.writeText(txt);
+        $("checkHint").textContent = "Copied - paste over data/checklist.json and commit.";
+      } catch {
+        const ta = document.createElement("textarea");
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); $("checkHint").textContent = "Copied - paste over data/checklist.json and commit."; }
+        catch { $("checkHint").textContent = "Copy failed - select the JSON from data/checklist.json manually."; }
+        ta.remove();
+      }
+    });
+  }
+
   renderMeta();
+  renderToday();
+  renderCrossed();
   renderFx();
   renderHistRange();
   renderHistory();
@@ -419,6 +565,9 @@
   renderFilters();
   renderList();
   renderNews();
+  renderReadiness();
+  renderChecklist();
+  wireCopyChecklist();
   renderTravel();
   renderFoot();
   renderCalc();
