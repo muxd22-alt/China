@@ -20,8 +20,17 @@
   </div>
 </header>
 
+<nav class="jumpnav" aria-label="Sections">
+  <a href="#sec-call">Today</a>
+  <a href="#fxSection">Money</a>
+  <a href="#sec-route">Route</a>
+  <a href="#sec-buy">Buy</a>
+  <a href="#sec-trip">Trip</a>
+  <a href="#sec-news">News</a>
+</nav>
+
 <main>
-  <section class="panel call-panel" aria-label="Today's call">
+  <section class="panel call-panel" id="sec-call" aria-label="Today's call">
     <div class="panel-head">
       <h2>Today's Call</h2>
       <span class="hint" id="callStamp"></span>
@@ -84,6 +93,27 @@
     <p class="hint" id="budgetHint"></p>
   </section>
 
+  <section class="panel" id="sec-route" aria-label="Server route decision">
+    <div class="panel-head">
+      <h2>Server Route · 15K cap</h2>
+      <span class="hint" id="routeMeta"></span>
+    </div>
+    <div class="chips" id="routeChips" role="tablist"></div>
+    <div class="route-verdict" id="routeVerdict"></div>
+    <div class="grid route-grid" id="routeGrid"></div>
+  </section>
+
+  <section class="panel" aria-label="Local model fit">
+    <div class="panel-head">
+      <h2>What Runs Where — local model fit</h2>
+      <span class="hint" id="fitMeta"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="fit-table" id="fitTable"></table>
+    </div>
+    <p class="hint fit-legend" id="fitLegend"></p>
+  </section>
+
   <section class="panel" aria-label="Landed cost calculator">
     <div class="panel-head"><h2>Landed-Cost Calculator</h2></div>
     <div class="calc" id="calc">
@@ -99,7 +129,7 @@
     </div>
   </section>
 
-  <section class="panel" aria-label="Buy list">
+  <section class="panel" id="sec-buy" aria-label="Buy list">
     <div class="panel-head">
       <h2>Buy List</h2>
       <span class="hint" id="listStats"></span>
@@ -124,7 +154,7 @@
     </div>
   </section>
 
-  <section class="panel" aria-label="News">
+  <section class="panel" id="sec-news" aria-label="News">
     <div class="panel-head">
       <h2>Daily Reading</h2>
       <span class="hint" id="newsMeta"></span>
@@ -132,7 +162,7 @@
     <div class="grid news-grid" id="newsGrid"></div>
   </section>
 
-  <section class="panel" aria-label="Trip readiness">
+  <section class="panel" id="sec-trip" aria-label="Trip readiness">
     <div class="panel-head">
       <h2>Trip Readiness</h2>
       <span class="hint">FX stability + target coverage + fare movement — distinct from in-China buy phases</span>

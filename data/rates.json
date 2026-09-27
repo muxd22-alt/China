@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-27T14:20:20.307Z",
+  "generatedAt": "2026-09-27T14:40:27.478Z",
   "base": "open.er-api.com",
   "baseDate": "Sun, 27 Sep 2026 00:02:31 +0000",
   "check": "fawazahmed0/currency-api (jsDelivr)",
-  "checkDate": "2026-09-26",
+  "checkDate": "2026-09-27",
   "rates": {
     "SAR": 1,
     "AED": 0.979333,
@@ -173,10 +173,10 @@
     "ZWL": 7.101173
   },
   "divergence": {
-    "CNY": 0.2409,
+    "CNY": 0.2055,
     "USD": 0.0001,
-    "EUR": -0.0412,
-    "GBP": 0.0217
+    "EUR": -0.0345,
+    "GBP": 0.0413
   },
   "history": [
     {

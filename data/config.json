@@ -35,10 +35,13 @@
     "briefWords": 110
   },
   "newsQueries": [
-    { "id": "trade", "label": "China-Saudi Trade & Economy", "q": "Saudi Arabia China trade investment", "max": 6 },
-    { "id": "fx", "label": "Currency & Markets", "q": "yuan renminbi exchange rate oil", "max": 6 },
-    { "id": "tech", "label": "Tech & Hardware", "q": "GPU graphics card prices PC hardware", "max": 6 },
-    { "id": "travel", "label": "Flights & Travel", "q": "flights China Saudi Arabia airline", "max": 5 }
+    { "id": "localai", "label": "Local AI & LLMs", "q": "local LLM Ollama llama.cpp news", "max": 5 },
+    { "id": "platforms", "label": "AI Hardware Platforms", "q": "DGX Spark Strix Halo Mac Studio AI workstation", "max": 5 },
+    { "id": "openmodels", "label": "Open Model Releases", "q": "open source LLM Qwen Llama DeepSeek release", "max": 5 },
+    { "id": "tech", "label": "GPU & PC Hardware", "q": "GPU graphics card prices PC hardware", "max": 5 },
+    { "id": "trade", "label": "China-Saudi Trade", "q": "Saudi Arabia China trade investment", "max": 5 },
+    { "id": "fx", "label": "Currency & Markets", "q": "yuan renminbi exchange rate oil", "max": 5 },
+    { "id": "travel", "label": "Flights & Travel", "q": "flights China Saudi Arabia airline", "max": 4 }
   ],
   "travel": {
     "routes": [
@@ -89,6 +92,155 @@
       { "city": "Beijing", "cnyNightLow": 130, "cnyNightHigh": 480, "link": "https://www.booking.com/searchresults.html?ss=Beijing" }
     ]
   },
+  "route": {
+    "capSAR": 15000,
+    "checked": "2026-09-26",
+    "fxNote": "USD→SAR fixed 3.75; CNY→SAR at live rate (~1.79). DRAM shortage has pushed 128GB Strix boxes up sharply during 2026 — re-check prices before ordering.",
+    "priorities": [
+      { "id": "allround", "label": "All-in home server", "pick": "custom",
+        "why": "Only row with Proxmox + GPU passthrough + anti-cheat games + 8TB ZFS + 10GbE — and it lands around 12K, under the cap." },
+      { "id": "ai-per-riyal", "label": "Most AI per riyal", "pick": "strix-cn",
+        "why": "128GB unified from ~7.8K SAR (Xiaomi Youpin Linglong ¥13,999 crowdfund). Same silicon as the $3.5K boxes. Runs 70B Q4 and gpt-oss-120b inside the cap." },
+      { "id": "cuda-value", "label": "CUDA on a budget", "pick": "used-trp",
+        "why": "Used Threadripper PRO (P620) + 3090: 8-channel ~204 GB/s, ECC, 128 lanes for a 2nd GPU — CUDA + virtualization for 7.5–14.5K." },
+      { "id": "cuda-lab", "label": "CUDA fine-tune lab", "pick": "dgx",
+        "why": "vLLM/NIM/ConnectX-7 and 70B fine-tuning out of the box — but 4,699 USD ≈ 17.6K SAR pre-tax: over the hard cap. Only used/gray-market or a cap raise makes it real." },
+      { "id": "silence", "label": "Silent 24/7", "pick": "mac",
+        "why": "M5 Max 128GB (est. 12.4–14.6K SAR, verify at apple.com): ~20W idle, 460–614 GB/s, MLX. No Proxmox/Windows story though." },
+      { "id": "wait", "label": "Wait & watch", "pick": "cube",
+        "why": "Xiaomi AI Cube is still a prototype (3B–120B, 150W, price TBD). The news feeds track launches — decide when price and ship date are public." }
+    ],
+    "overall": "Keep the custom PC as the core — it is the only platform that does virtualization, gaming and storage inside the cap. The real 15K question is a later AI add-on: Chinese Strix Halo is today's value pick (7.8–13.7K for 128GB), used TR PRO is the CUDA pick, DGX and Mac sit near/over the line, Xiaomi's cube stays on the watchlist."
+  },
+  "platforms": [
+    {
+      "id": "custom", "fitKey": "custom3090", "badge": "recommended", "badgeClass": "b-rec",
+      "name": "New custom build (this plan)",
+      "priceLow": 11000, "priceHigh": 13000, "checked": "2026-09-26",
+      "priceNote": "PLAN.md spec: Ryzen 9 7900X, X670E, 128GB DDR5, RTX 3090, 8TB. Used 3090 now ~$1,050-1,180 (AI demand, rising) — budget accordingly.",
+      "mem": "128GB DDR5 (~90 GB/s) + 24GB RTX 3090 VRAM",
+      "bw": "936 GB/s VRAM · ~90 GB/s host",
+      "power": "400-700W load · ~80W idle",
+      "ai": "≤32B GPU-fast · 70B Q4 via offload · 2nd 3090 later = 48GB",
+      "os": "Proxmox · Windows VM · Linux",
+      "variants": ["Plan AM5 build ≈ 12K SAR", "Cheaper AM4: used 5950X + 128GB DDR4 + 3090 ≈ 8-9K", "2nd 3090 upgrade ≈ +4K later"],
+      "pros": ["Only option with Proxmox + GPU passthrough + anti-cheat gaming", "8TB ZFS, Jellyfin, cameras, 10GbE — whole plan in one box", "CUDA on the 3090; VRAM upgrade path to 48GB"],
+      "cons": ["24GB VRAM ceiling for AI today", "Loudest and hungriest option", "You assemble, test and configure it"],
+      "bestFor": "The home server core: games + media + AI + security, under the cap."
+    },
+    {
+      "id": "used-trp", "fitKey": "trp", "badge": "CUDA value", "badgeClass": "b-val",
+      "name": "Used Threadripper PRO workstation",
+      "priceLow": 7500, "priceHigh": 14500, "checked": "2026-09-26",
+      "priceNote": "Refurb Lenovo P620 / Dell 7920 / HP Z4 G4 class with 128GB+ DDR4 RDIMM; + your 3090. Street varies wildly — Xianyu / eBay under 14.5K is the line.",
+      "mem": "128-256GB DDR4 ECC RDIMM (8-channel) + 24GB GPU",
+      "bw": "~204 GB/s host (DDR4-3200 ×8)",
+      "power": "500-800W load · 60-120W idle (server-class)",
+      "ai": "70B Q4 comfy across GPU+RAM · 235B Q3 if 256GB",
+      "os": "Proxmox · passthrough · Windows",
+      "variants": ["P620 12C + 128GB + GPU ≈ 7.5-9K", "16-32C 3965WX + 256GB ≈ 11-14.5K"],
+      "pros": ["8-channel bandwidth: ~2.3× this plan's host RAM", "ECC, 128 PCIe lanes, dual/triple GPU slots", "Same virtualization story as the custom build"],
+      "cons": ["Old platform: DDR4 era, higher idle power, big tower", "Used enterprise gear = no warranty, noisy fans", "No iGPU — needs the dGPU for everything"],
+      "bestFor": "CUDA + huge RAM + passthrough when you want more than 128GB for the money."
+    },
+    {
+      "id": "strix-cn", "fitKey": "strix", "badge": "best AI value", "badgeClass": "b-val",
+      "name": "Chinese Strix Halo 128GB (value picks)",
+      "priceLow": 6400, "priceHigh": 13700, "checked": "2026-09-26",
+      "priceNote": "Xiaomi Youpin 'Star Core' (Linglong) ¥13,999 intro ≈ 7.8K · ACEMAGIC M1A $2,799-3,099 ≈ 10.5-11.6K · NextNuc 128GB/8TB $2,999 ≈ 11.2K · GEEKOM A9 Mega $3,199 ≈ 12K · GMKtec EVO-X2 $3,499-3,649 ≈ 13.1-13.7K · Bosgame $1,699 promo ≈ 6.4K (no-name, pre-order risk).",
+      "mem": "128GB LPDDR5X-8000 unified (96GB GPU-allocatable)",
+      "bw": "256 GB/s (~215 real)",
+      "power": "~120-150W load · ~12W idle",
+      "ai": "70B Q4 ~5-10 tok/s · gpt-oss-120b ~31 tok/s",
+      "os": "Windows 11 · Linux (ROCm / Vulkan / llama.cpp)",
+      "variants": ["Budget: Youpin Linglong / Bosgame ≈ 6.4-7.8K", "Safe mid: ACEMAGIC / NextNuc / GEEKOM ≈ 10.5-12K", "Brand: GMKtec / Beelink ≈ 13-16K (Beelink now $4,349)"],
+      "pros": ["Same APU as every $3-4K box — you pay for chassis, not silicon", "Cheapest 128GB anywhere: 70B+ models under the cap", "Tiny, near-silent, 12W idle — runs 24/7 cheaply"],
+      "cons": ["RAM soldered: buy the 128GB SKU at checkout, ever", "No discrete GPU: weak gaming, no CUDA", "No-name brands (Bosgame etc.) = thin support; check returns"],
+      "bestFor": "The AI add-on appliance: biggest model per riyal, zero fuss."
+    },
+    {
+      "id": "strix-global", "fitKey": "strix", "badge": "same silicon", "badgeClass": "b-plain",
+      "name": "Framework / Beelink / Minisforum / AMD Strix",
+      "priceLow": 9400, "priceHigh": 17500, "checked": "2026-09-26",
+      "priceNote": "Framework DIY from $1,269, 128GB ≈ $3,449 (verify) · AMD Ryzen AI Halo dev box $3,999 ≈ 15.0K · Minisforum MS-S1 ~$2,900-3,800 · Beelink GTR9 Pro $4,349 ≈ 16.3K (over) · HP Z2 Mini 128GB ~$6.8K (way over).",
+      "mem": "128GB LPDDR5X-8000 unified (identical APU)",
+      "bw": "256 GB/s (~215 real)",
+      "power": "~120-150W load · ~12W idle",
+      "ai": "Identical inference speed to the CN boxes",
+      "os": "Windows 11 · Linux · Framework = open firmware + mini-ITX board",
+      "variants": ["Framework Desktop: repairable, can move into your own case", "Beelink GTR9 Pro: dual 10GbE (NAS/cluster)", "AMD dev box: 10GbE, Windows or Linux SKU"],
+      "pros": ["Warranty, reviews, English support, easy returns", "Framework board is mini-ITX: reuse in a bigger case later", "Beelink dual-10GbE if the mini PC doubles as NAS"],
+      "cons": ["2026 DRAM shortage: prices roughly doubled YoY", "Beelink/AMD options now sit at or over the 15K cap", "Still soldered, still no CUDA"],
+      "bestFor": "Peace of mind when the CN-channel savings don't matter to you."
+    },
+    {
+      "id": "dgx", "fitKey": "dgx", "badge": "over cap", "badgeClass": "b-over",
+      "name": "NVIDIA DGX Spark",
+      "priceLow": 17500, "priceHigh": 20500, "checked": "2026-09-26",
+      "priceNote": "4,699 USD US marketplace (was 3,999) ≈ 17.6K SAR before import tax — over the 15K hard cap even pre-tax.",
+      "mem": "128GB LPDDR5X unified (273 GB/s)",
+      "bw": "273 GB/s",
+      "power": "240W PSU · ~140W chip",
+      "ai": "CUDA/vLLM/NIM · 200B inference claim · 70B fine-tune · dual-link 405B",
+      "os": "DGX OS (ARM Linux) — no gaming, no Windows VMs",
+      "variants": ["New: ~17.6K+ pre-tax", "Used/gray-market: only way near the cap"],
+      "pros": ["Full NVIDIA stack: vLLM, NIM, ConnectX-7 10GbE", "Only sub-cap-adjacent box that fine-tunes 70B locally", "Dual-unit 405B scaling path"],
+      "cons": ["Blows the 15K hard cap", "ARM Linux appliance: no gaming, no passthrough", "Not the home-server replacement — it would sit beside it"],
+      "bestFor": "CUDA-first fine-tuning lab — only if the cap rises or used stock lands."
+    },
+    {
+      "id": "mac", "fitKey": "mac", "badge": "silence play", "badgeClass": "b-plain",
+      "name": "Mac Studio (M5 Max, 128GB est.)",
+      "priceLow": 12400, "priceHigh": 14600, "checked": "2026-09-26",
+      "priceNote": "M5 Max base 36GB $2,499 ≈ 9.4K; 128GB config est. $3.3-3.9K ≈ 12.4-14.6K — VERIFY at apple.com (128GB returns with M5 Max). M5 Ultra 96GB $5,499 ≈ 20.6K: over cap. Ships from 2026-09-22.",
+      "mem": "36GB base → 128GB M5 Max (est.) · Ultra 96GB",
+      "bw": "460-614 GB/s (Max) · 1.2 TB/s (Ultra)",
+      "power": "~120W load · ~20W idle",
+      "ai": "70B Q5 ✓ · MLX + LM Studio · Thunderbolt 5 4-node cluster",
+      "os": "macOS — no KVM passthrough, no anti-cheat gaming",
+      "variants": ["M5 Max 128GB = the only cap-fit AI config", "M5 Ultra 96GB = 20.6K, over cap", "Used M2/M3 Max 128GB ≈ 10-12K (older, still fast)"],
+      "pros": ["Best tokens-per-watt: silent, ~20W idle, runs 24/7", "460-614 GB/s: ~2.5× Strix bandwidth", "Mature desktop local-AI stack (MLX, LM Studio)"],
+      "cons": ["No virtualization/passthrough path, no anti-cheat gaming", "Memory soldered — fixed at purchase, no resale-upgrade", "Apple margin: you pay close to the cap for 128GB"],
+      "bestFor": "A silent always-on inference/media appliance — not the server core."
+    },
+    {
+      "id": "cube", "fitKey": "cube", "badge": "watchlist", "badgeClass": "b-watch",
+      "name": "Xiaomi AI Cube (prototype)",
+      "priceLow": null, "priceHigh": null, "checked": "2026-09-26",
+      "priceNote": "Unveiled 2026-08-24 (XRING conference). Claims 3B-120B local in a 150W cube. Price and ship date unknown — can't buy today.",
+      "mem": "XRING O3 + O100 + D100 · up to 160GB unified (D100, 2027 devices)",
+      "bw": "1.22 TB/s 'near-memory' claim (O100) — not conventional DRAM BW, verify",
+      "power": "150W",
+      "ai": "Official: 3B-120B local on this box",
+      "os": "TBA",
+      "variants": ["Now: prototype only", "D100 chip (200B class): devices in 2027"],
+      "pros": ["If it ships at Xiaomi pricing it rewrites the value math", "150W for up to 120B is an intriguing perf/watt claim", "Aluminum cube, China-direct channel"],
+      "cons": ["Prototype — nothing to order today", "1.22 TB/s needs careful interpretation (near-memory, not DRAM)", "Software stack, quantization support and price all unknown"],
+      "bestFor": "Watchlist — the Local AI / AI Hardware news feeds will flag the launch."
+    }
+  ],
+  "modelClasses": [
+    { "name": "8-14B assistants", "examples": "Qwen3-8B · Gemma-3-12B · gpt-oss-20b", "gb": 14,
+      "fits": { "custom3090": "fast", "trp": "fast", "strix": "fast", "dgx": "fast", "mac": "fast", "cube": "fast" } },
+    { "name": "27-35B workhorses", "examples": "Gemma-3-27B · Qwen3-30B-A3B · Qwen3-32B", "gb": 22,
+      "fits": { "custom3090": "fast", "trp": "fast", "strix": "fast", "dgx": "fast", "mac": "fast", "cube": "fast" } },
+    { "name": "70B class (Q4)", "examples": "Llama-3.3-70B · Qwen2.5-72B ≈ 42GB", "gb": 42,
+      "fits": { "custom3090": "slow", "trp": "fits", "strix": "fits", "dgx": "fits", "mac": "fits", "cube": "fits" } },
+    { "name": "120B MoE (gpt-oss-120b)", "examples": "gpt-oss-120b Q4 ≈ 61GB", "gb": 61,
+      "fits": { "custom3090": "slow", "trp": "fits", "strix": "fits", "dgx": "fits", "mac": "fits", "cube": "fits" } },
+    { "name": "200B+ (235B-A22B Q3)", "examples": "Qwen3-235B-A22B Q3 ≈ 105GB", "gb": 105,
+      "fits": { "custom3090": "tight", "trp": "tight", "strix": "slow", "dgx": "fits", "mac": "tight", "cube": "no" } },
+    { "name": "405B / cluster class", "examples": "Llama-3.1-405B Q3 ≈ 190GB+ KV", "gb": 200,
+      "fits": { "custom3090": "no", "trp": "tight", "strix": "no", "dgx": "dual", "mac": "dual", "cube": "no" } }
+  ],
+  "fitColumns": [
+    { "key": "custom3090", "label": "3090 build" },
+    { "key": "trp", "label": "Used TR PRO" },
+    { "key": "strix", "label": "Strix 128GB" },
+    { "key": "dgx", "label": "DGX Spark" },
+    { "key": "mac", "label": "Mac 128GB" },
+    { "key": "cube", "label": "AI Cube" }
+  ],
   "tips": [
     "Order of arms: case / motherboard / CPU / PSU first - they age slowest. RAM next. GPUs and HDDs LAST - both are the most volatile line items in this build.",
     "PSU and UPS: buy new only. Everything else in the server can be used - but run a VRAM + 10-minute fan load test before you pay.",

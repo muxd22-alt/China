@@ -157,7 +157,7 @@ export function recordDecision(doc, entry) {
   return { entries };
 }
 
-export function buildPrompt({ plan, dateKey, call, signal, budgets, crossedInfo, readiness, checklist, decisions, tracked, news, briefWords = 110 }) {
+export function buildPrompt({ plan, dateKey, call, signal, budgets, crossedInfo, readiness, checklist, decisions, tracked, news, route, platforms, briefWords = 110 }) {
   const L = [];
   L.push(`# MASTER PLAN (source of truth - do not contradict)`);
   L.push(plan.slice(0, 5500));
@@ -185,6 +185,20 @@ export function buildPrompt({ plan, dateKey, call, signal, budgets, crossedInfo,
   L.push(`## Pre-trip checklist (${checklist.items.filter((i) => i.done).length}/${checklist.items.length} done)`);
   L.push(undone.length ? `undone: ${undone.join("; ")}` : "all done");
   L.push("");
+  if (route && platforms && platforms.length) {
+    L.push(`## Server-route decision context (hard cap ${route.capSAR} SAR, prices checked ${route.checked})`);
+    L.push(`Standing recommendation: ${route.overall}`);
+    L.push("Platforms (SAR range):");
+    platforms.forEach((p) => {
+      const price = p.priceLow != null ? `${p.priceLow}-${p.priceHigh}` : "TBA";
+      L.push(`- ${p.name} [${p.badge}]: ${price} SAR | ${p.mem} | AI: ${p.ai}`);
+    });
+    L.push("Priority picks:");
+    (route.priorities || []).forEach((p) => L.push(`- ${p.label} -> ${p.pick}`));
+    L.push("");
+    L.push("Flag in the brief when a headline affects this choice: price moves or stock changes on these platforms, new local-model releases that change what fits, or Xiaomi AI Cube launch/price news. Otherwise keep the route out of the brief.");
+    L.push("");
+  }
   L.push(`## Today's headlines`);
   news.slice(0, 10).forEach((n) => L.push(`- ${n.title}`));
   L.push("");

@@ -184,6 +184,117 @@
     $("calls").innerHTML = calls.map((c) => `<div class="call ${c.cls}"><b>${c.title}</b>${esc(c.body)}</div>`).join("");
   }
 
+  /* ---------- server route (15K cap decision) ---------- */
+  let routePick = null;
+  function renderRoute() {
+    const route = cfg.route, platforms = cfg.platforms || [];
+    if (!route || !platforms.length) {
+      $("routeGrid").innerHTML = `<p class="hint">Route data missing from data/config.json.</p>`;
+      return;
+    }
+    if (!routePick) routePick = (route.priorities[0] || {}).id;
+    const active = route.priorities.find((p) => p.id === routePick) || route.priorities[0];
+    const cap = route.capSAR;
+    $("routeMeta").textContent = `${platforms.length} platforms · hard cap ${fmt(cap)} SAR · prices checked ${route.checked}`;
+
+    $("routeChips").innerHTML = route.priorities
+      .map((p) => `<button data-p="${p.id}" class="${p.id === active.id ? "active" : ""}">${esc(p.label)}</button>`)
+      .join("");
+    $("routeChips").querySelectorAll("button").forEach((b) =>
+      b.addEventListener("click", () => { routePick = b.dataset.p; renderRoute(); })
+    );
+
+    const picked = platforms.find((p) => p.id === active.pick);
+    $("routeVerdict").innerHTML = `
+      <div><b>${esc(active.label)} → ${esc(picked ? picked.name : active.pick)}</b></div>
+      <div style="margin-top:4px">${esc(active.why)}</div>
+      <div class="hint" style="margin-top:8px">${esc(route.overall)}</div>`;
+
+    $("routeGrid").innerHTML = platforms.map((p) => {
+      const hasPrice = p.priceLow != null && p.priceHigh != null;
+      const mid = hasPrice ? (p.priceLow + p.priceHigh) / 2 : null;
+      const over = hasPrice && mid > cap;
+      const pct = hasPrice ? Math.min((mid / cap) * 100, 100) : 0;
+      const price = hasPrice
+        ? `<span class="amt ${over ? "over" : "within"}">${fmt(p.priceLow)}–${fmt(p.priceHigh)} <small style="font-size:12px">SAR</small></span>
+           <span class="src">mid ${fmt(mid)} · cap ${fmt(cap)}</span>`
+        : `<span class="amt tbd">price TBA</span><span class="src">prototype — nothing to order</span>`;
+      const capBar = hasPrice
+        ? `<div class="rc-cap"><i class="${over ? "over" : ""}" style="width:${pct}%"></i></div>`
+        : `<div class="rc-cap-na">watch the news feeds for launch pricing</div>`;
+      const variants = (p.variants || []).length
+        ? `<div class="rc-sub">cheaper routes</div><div class="rc-variants">${p.variants.map((v) => `<span>${esc(v)}</span>`).join("")}</div>`
+        : "";
+      return `<div class="card route-card ${p.id === active.pick ? "picked" : ""}">
+        <div class="rc-top"><h3>${esc(p.name)}</h3><span class="rc-badge ${p.badgeClass}">${esc(p.badge)}</span></div>
+        <div class="rc-price">${price}</div>
+        ${capBar}
+        <div class="rc-specs">
+          <div><span class="k">memory</span><span class="v">${esc(p.mem)}</span></div>
+          <div><span class="k">bandwidth</span><span class="v">${esc(p.bw)}</span></div>
+          <div><span class="k">power</span><span class="v">${esc(p.power)}</span></div>
+          <div><span class="k">local AI</span><span class="v">${esc(p.ai)}</span></div>
+          <div><span class="k">OS</span><span class="v">${esc(p.os)}</span></div>
+        </div>
+        ${variants}
+        <div class="rc-sub">pros</div><ul class="rc-list pros">${p.pros.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+        <div class="rc-sub">cons</div><ul class="rc-list cons">${p.cons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+        <p class="rc-note">${esc(p.priceNote)}</p>
+        <div class="rc-best"><b>Best for:</b> ${esc(p.bestFor)}</div>
+      </div>`;
+    }).join("");
+  }
+
+  /* ---------- model fit matrix ---------- */
+  const FIT_TEXT = { fast: "fast", fits: "fits", slow: "slow", tight: "tight", dual: "2-node", no: "—" };
+  function renderFit() {
+    const classes = cfg.modelClasses, cols = cfg.fitColumns;
+    if (!classes || !cols) { $("fitTable").innerHTML = ""; return; }
+    $("fitMeta").textContent = `est. ${cfg.route.checked} · quantized weights (Q4/Q3) · hand-edited in data/config.json`;
+    $("fitTable").innerHTML = `
+      <thead><tr>
+        <th>Model class</th><th class="num">Size</th>
+        ${cols.map((c) => `<th class="fit-cell">${esc(c.label)}</th>`).join("")}
+      </tr></thead>
+      <tbody>${classes.map((m) => `
+        <tr>
+          <td><span class="fit-name">${esc(m.name)}</span><span class="fit-ex">${esc(m.examples)}</span></td>
+          <td class="num fit-gb">~${m.gb}GB</td>
+          ${cols.map((c) => {
+            const lv = (m.fits || {})[c.key] || "no";
+            return `<td class="fit-cell"><span class="fit-${lv}">${FIT_TEXT[lv]}</span></td>`;
+          }).join("")}
+        </tr>`).join("")}
+      </tbody>`;
+    $("fitLegend").innerHTML = [
+      `<b class="fit-fast">fast</b> comfortable GPU-class speed`,
+      `<b class="fit-fits">fits</b> loads with usable speed`,
+      `<b class="fit-slow">slow</b> CPU/host offload heavy`,
+      `<b class="fit-tight">tight</b> barely fits, little context room`,
+      `<b class="fit-dual">2-node</b> needs a linked pair`,
+      `<b class="fit-no">—</b> does not fit`,
+    ].map((s) => `<span>${s}</span>`).join("");
+  }
+
+  function wireNav() {
+    const links = [...document.querySelectorAll(".jumpnav a")];
+    links.forEach((a) => a.addEventListener("click", () => {
+      links.forEach((l) => l.classList.remove("active"));
+      a.classList.add("active");
+    }));
+    if (!("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === "#" + e.target.id));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    links.forEach((a) => {
+      const el = document.querySelector(a.getAttribute("href"));
+      if (el) io.observe(el);
+    });
+  }
+
   function renderCalc() {
     const cny = Math.max(0, parseFloat($("calcCny").value) || 0);
     const localRaw = parseFloat($("calcLocal").value);
@@ -250,14 +361,14 @@
         ? `<span class="tgt-cell ${hit ? "hit" : "miss"}">¥${fmt(i.target_cny)}</span>`
         : `<span class="tgt-cell miss">—</span>`;
       return `<tr class="${hit ? "crossed" : ""}">
-        <td>${esc(i.name)} <span class="tag ${i.priority.toLowerCase()}">${i.priority}</span>${i.added ? `<span class="tag added">smart add</span>` : ""}${hit ? `<span class="tag" style="color:var(--ok);border-color:rgba(61,220,132,.5)">target hit</span>` : ""}<span class="why">${esc(i.why || "")}</span></td>
-        <td>${i.bundle === "server" ? "Server" : "Home"} · ${esc(i.category)}</td>
-        <td class="num">${i.priority}</td>
-        <td class="num">${i.phase}</td>
-        <td class="num">${i.qty}</td>
-        <td class="num">¥${fmt(i.cny)}</td>
-        <td class="num">${tgt}</td>
-        <td class="num">${fmt(m.landed)}</td>
+        <td data-label="Item">${esc(i.name)} <span class="tag ${i.priority.toLowerCase()}">${i.priority}</span>${i.added ? `<span class="tag added">smart add</span>` : ""}${hit ? `<span class="tag" style="color:var(--ok);border-color:rgba(61,220,132,.5)">target hit</span>` : ""}<span class="why">${esc(i.why || "")}</span></td>
+        <td data-label="Bundle">${i.bundle === "server" ? "Server" : "Home"} · ${esc(i.category)}</td>
+        <td class="num" data-label="Pri">${i.priority}</td>
+        <td class="num" data-label="Phase">${i.phase}</td>
+        <td class="num" data-label="Qty">${i.qty}</td>
+        <td class="num" data-label="CNY">¥${fmt(i.cny)}</td>
+        <td class="num" data-label="Target">${tgt}</td>
+        <td class="num" data-label="Landed">${fmt(m.landed)}</td>
       </tr>`;
     }).join("");
   }
@@ -562,6 +673,9 @@
   renderTierSwitch();
   renderBudgets();
   renderCalls();
+  renderRoute();
+  renderFit();
+  wireNav();
   renderFilters();
   renderList();
   renderNews();

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T14:20:20.307Z",
+  "generatedAt": "2026-09-27T14:40:27.478Z",
   "budgets": {
     "server": {
       "tiers": {
@@ -175,8 +175,10 @@
     "taxOn": "goods",
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
-  "warnings": [],
-  "newsCount": 23,
+  "warnings": [
+    "LLM brief skipped - OPENROUTER_API_KEY not set (local run or GitHub secret missing)"
+  ],
+  "newsCount": 34,
   "call": {
     "verdict": "WATCH",
     "confidence": "VERIFIED",

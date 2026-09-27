@@ -1,9 +1,57 @@
 {
-  "generatedAt": "2026-09-27T14:20:20.307Z",
+  "generatedAt": "2026-09-27T14:40:27.478Z",
   "items": [
     {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "LM Studio and Gemma 4, a local AI guide for private business documents - Pasquale Pillitteri",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdVZHTzhuSkQ5TjlVZ0ZhY2xka1U1djA4a1FUdEE2eUNReUtaQjhBQi1lNjRpZUEtWWw5S2pVTHN3NUE5enhEbzJYZWpINTUxMEFnZGJUU1NBRUxoM2E3cHppYncydnAyYXVRUnhITW5qZ2FwN0Jvb1RzeHk1VUMzRkRUdi03alJHM09QVjZTV21CVTg?oc=5",
+      "pubDate": "Fri, 25 Sep 2026 14:42:08 GMT",
+      "ts": 1790347328000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "Cisco CAIRN detects AI malware without opening the binary - Techzine Global",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVHRnUThiTFRnbVd0S0R3REt1V2hGMzRzcGVhRVVUU1M3d0ZWS3N2QnEzRjlaQVdfaU1CTm5zaFk3VUp2bzVsd0FxcTZjX0dMOTdNLTJTX05ZYmVScjRaXzlQdU44c0lRSU9MWTNnRlJMOUZDNjRuMXhDSzYtLWZ6dEhqRG5qakZGeGVfWmxudkU1d2lKekZqV0R4QjRiUmV1aVpXTW1B?oc=5",
+      "pubDate": "Wed, 23 Sep 2026 07:43:16 GMT",
+      "ts": 1790149396000
+    },
+    {
+      "feed": "platforms",
+      "feedLabel": "AI Hardware Platforms",
+      "title": "Best Desktops for Local AI in 2026: Lab-Tested Leaderboard - StorageReview.com",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE42RWtmb3IyeHRhVC1IdlhCQ29qSmw1Vm93LXBuRC1rNDAzbG92Nk11VW5vaTE1SE9XT21oMWZQRUx0aVl2UXZmTGtIMDZJUnRfTDJXRFBnd1hRNWZORVNsSTZn0gFnQVVfeXFMTUFoXzlSd3RSUGdKdnczSXNfUFR3Snl5U0ExdUVnTlhNVV9PQTNDSS1HdHNOMXNFNTFTWnM1b2VuMjlwRkthU0Nxd3RxX21iNGRDRy1ELWZReVlBRzFnS1laMmU4M1pJbw?oc=5",
+      "pubDate": "Wed, 23 Sep 2026 07:00:00 GMT",
+      "ts": 1790146800000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "CAIRN - A New Tool to Track AI Malware That Operates Without Human Control - CyberSecurityNews",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4wdHIydHNCWWZxYVpTZjc4VUlqdzhNdU9XUl8yWkk4dW1ZUXNybEtDMDJ4ZHItbXJXM0ZGQmZzRlRjaHo4RWd5OFVlTWx1bk9ZM0JOR0VjSnlmbS1LRGFiekc1SEhZM3F2aExXeU1fUG1ITW_SAXhBVV95cUxNMzNXR01PODBIQUJoMGZsNlpEQWozOXItaEE5M1BIaG1uaDdHd09jX3VWMEVteV9jeFZpWDZaOF9tbE0yekhKTV9DTE1hQ1JRazlYLXBHQ1JBUzJ5dmhjNXpZcDZodDhxdlBpRXdsNFNRRml1akxEZEY?oc=5",
+      "pubDate": "Tue, 22 Sep 2026 15:27:12 GMT",
+      "ts": 1790090832000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "7 Open-Source Alternatives to ChatGPT You Can Run Locally - KDnuggets",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVXdNQmMtaFZrc2xtR2RoRWtFeEk4RzRWNDhzNHFNZWZYQUNabDdRR0hsWnNfaXNFUVRKMC1lbk5aWEE4UDdxOUhaQkg0V01tcExhbkhYS3RFc3ktdGhGNV84RVBRenhra3AzNVRVVmJxQVBacXVEeV9NRlZ3N0ZidFJGQ1VyWGpURjBn?oc=5",
+      "pubDate": "Tue, 22 Sep 2026 12:08:40 GMT",
+      "ts": 1790078920000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "Mac mini M6 for Local AI: 16GB vs 24GB vs 32GB Tested - zeera wireless",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOODlZdjJHVFBCcnNZal82eXE2SDVoLWxjcW5tQXR3ZU9uZXc2cGN1T3lFamtyRHI1dVVRcnJDNHRyTXhNVFNQbUVjUzJHQ3pfYzFuRUtCdDhWQ3MtR3lwSU9GMW1PSy1XMTY5TmwzX0NFOThNazcwQ0VudTRfcmdmZXRWelE?oc=5",
+      "pubDate": "Tue, 22 Sep 2026 04:20:47 GMT",
+      "ts": 1790050847000
+    },
+    {
       "feed": "tech",
-      "feedLabel": "Tech & Hardware",
+      "feedLabel": "GPU & PC Hardware",
       "title": "Best Gaming PC Deals 2026 — deals from Amazon, Best Buy, Newegg, Dell, Lenovo, and others - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQLW03bHZtT3VvMno5T2FaUnhqdkZNSmZDQlowUUI2U2RXVnh5V0hhQk9FVTJoTERzZUlkSHBVZ0N4bVZhZVRYaXQzRkpmRW10Vzczb0YtckV6MU1WYXBHUUN2ZnduTjN3UnlweVBtT08xT0VRT1BqTFV2U19scWJxVVEyWWVpUQ?oc=5",
       "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
@@ -11,7 +59,7 @@
     },
     {
       "feed": "trade",
-      "feedLabel": "China-Saudi Trade & Economy",
+      "feedLabel": "China-Saudi Trade",
       "title": "Saudi-China economic ties deepen as trade exchange tops $100bn - アラブニュース",
       "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcW5QU0l5SzVZR2dtWkdteFB4a1U3WUNlRFZiMVBERlZCU2tscGNHTFhBd2NySTdaeGZoRjB6eHY3T1I2UVNHR09CbndvZG1CM0JjdDBvTU1pMGRDQUFSd0ZuZEc0MjVMSzVIbHlqREcyQld0T3JVdkwwMXR4VnM5TmNoQXE1a3BrWGRvWWFxaklKUk5mb05QZDJsRnNxSS16VE5NNEFpWXM?oc=5",
       "pubDate": "Wed, 16 Sep 2026 07:00:00 GMT",
@@ -27,7 +75,7 @@
     },
     {
       "feed": "tech",
-      "feedLabel": "Tech & Hardware",
+      "feedLabel": "GPU & PC Hardware",
       "title": "Best gaming GPU deals 2026 — deals on Nvidia, AMD, and Intel graphics cards - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOd21TM0VUZVF2ek8yNWxRbDRnek9PU3c3eG0ycnRqaFJvUFNpTHFMa3hPZnhITjhKd0NwZzgwc1M3Nk8yZnFYN0VNNmZvZC1PNV9pVzN6RmlSY3lEaE1vcmRRQ3cta19udklHR3laaU9aTmdYRk1ISHJETVRCM1RYR2tMR01oeF9nMk5F?oc=5",
       "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
@@ -35,23 +83,23 @@
     },
     {
       "feed": "tech",
-      "feedLabel": "Tech & Hardware",
-      "title": "AMD's Radeon RX 9070 GRE graphics card returns to its lowest-ever price of $499 — rare deal places this current-generation 12GB GPU below its MSRP launch price - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNOXdHZzhlb0pLZnlMTXZERzhlbmNBR1FxMjI2TlNKVUR6RGxCTExucVl3U19KM3NzNC1MWWFPZW5SZUY3d1Y0cFRKY05vNy04dkdXRmhDZTlTUmZkcldUN3lWZTNZMDhxemNSVmhEZ1o2ci1PM1RqYUM1SUdXWHZzOGFnclo3VWgyNDdwMFpBRUJhZVVHZU9mYnYtekowR1BoU0NyVnpyWGtDTmZDbDhvM21MUExTN3BsUmlKWWowMGV4VkdFXzJ3emdiNEVCZmZBSkJmSk5CRTZ2NUpQa2NXV1RLUVp2QkVLZkpJVzFSbjhnOFVrTFB1djFGdThtVmx1RkRMb1l4VEdEUmtJR1BGZU15b0JzTmlZQXBsSm5tY2Y1Z3pUaVdvbXJqSHZuMEU?oc=5",
-      "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
-      "ts": 1789455600000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "Tech & Hardware",
+      "feedLabel": "GPU & PC Hardware",
       "title": "GPU price tracking 2026 — Lowest price on every graphics card from Nvidia, AMD, and Intel today - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBhTEV0WktCaVlybTNSQk83V2RiQ05UUG4ySzNuWVRHSE5hYTBTMUVMaUFUTXJ3dDkxWUVFYXJZeWQ1bTZVS0ZDS1NXTF9MTzM0andZT0xfcElyTFpob3laRDV6QkJvU3RILXR6WG9hMUswQUd2dlpjUmJycHJ1QXM?oc=5",
       "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
       "ts": 1789369200000
     },
     {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
+      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - howtogeek.com",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1NUdYLXZWTFcxcVRsenRPSlVoRDFEbHk0cUw4Z0FiSUlSNWdDVWtrY2NFZFFWY0o1RkJTRFZSU0xLZVNFbVVEMVk4enF2ckJ4NmFMM2hMNG1HVEFLTlYzNGVxZXNOdXZIdzJTaFNSTnlUUQ?oc=5",
+      "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
+      "ts": 1789196400000
+    },
+    {
       "feed": "trade",
-      "feedLabel": "China-Saudi Trade & Economy",
+      "feedLabel": "China-Saudi Trade",
       "title": "Saudi Arabia Concludes Guest of Honor Participation at China Investment, Trade Fair - وكالة الأنباء السعودية",
       "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJQTRNWFdsLXVib1dzZWo5WGhzWUUxTEhSTExJMEdURHd3U2lXU2czYU40UUI3VUM1NFhGa2ZPR29aeTJaWXYwanpn?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
@@ -59,32 +107,56 @@
     },
     {
       "feed": "tech",
-      "feedLabel": "Tech & Hardware",
-      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - How-To Geek",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1NUdYLXZWTFcxcVRsenRPSlVoRDFEbHk0cUw4Z0FiSUlSNWdDVWtrY2NFZFFWY0o1RkJTRFZSU0xLZVNFbVVEMVk4enF2ckJ4NmFMM2hMNG1HVEFLTlYzNGVxZXNOdXZIdzJTaFNSTnlUUQ?oc=5",
-      "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
-      "ts": 1789196400000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "Tech & Hardware",
+      "feedLabel": "GPU & PC Hardware",
       "title": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYm9td29NWG9COFRMZEJickpxang3THpuQ3ZtWW82ZzE0bldKQ2phbnJxNmU5UEJoeUpUc2hBWmo1WVB3Ny1uNTdOUFNfdzEyNXh0WFAtNVZ2QVk5VnVrZHM4c1Fyc0VKaWVrVmtnSWdJVHlJMDBBOU9QT1FIT0RuS0doamFXX291dXlQYnlxU1dHLUVpdHBzU3JqMEZ0eFVmY1ZkRnlDZEtLZVRwVWVnOU83b24yRWU2Wm5UMWdya1V6Rms2bmJWMDF1ZE9TWG1UY3RJSVJFbHk3aE53MzNQZlFFbnUtV3hHSVgwNXpyU0ttNlhnTXpfZHNPU0xfTWFKeVdBYVpFakczdUJLTkItc3o0bFEyenZsYzZhRng2QnNPVDIxM2JB?oc=5",
       "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
       "ts": 1789110000000
     },
     {
+      "feed": "platforms",
+      "feedLabel": "AI Hardware Platforms",
+      "title": "Best Mini PC for Local AI in 2026: Same Chip, Different Box - Memeburn",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5FWGdwbC1aNkhOR2djd2pzUmZBbEhMTWpwU2ZqU0xVWkVWUzIxYWllRkdrRVpJQTQxeklBa2tyMnY5dU5Lb1RkSFVHWTFzNldyNktvYVY0M2RMeWMyYzJZMEV4RUROQQ?oc=5",
+      "pubDate": "Fri, 11 Sep 2026 03:04:23 GMT",
+      "ts": 1789095863000
+    },
+    {
+      "feed": "platforms",
+      "feedLabel": "AI Hardware Platforms",
+      "title": "Mac Studio M5 Ultra vs Nvidia DGX Spark: Compared for Local AI - Geeky Gadgets",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE16STFnT1NsclNTUHdPc2llY0NEU0xITEROZm9NVVFsRGFxNlA0Nl9ueFM2MG01Qk9MTnVEZ3B5NUJiZ1ViWFZhUUpXX0NJX2JseW1PYTZNNWJRR0hyc2FqUm03R0NjTWs?oc=5",
+      "pubDate": "Thu, 10 Sep 2026 07:00:00 GMT",
+      "ts": 1789023600000
+    },
+    {
+      "feed": "platforms",
+      "feedLabel": "AI Hardware Platforms",
+      "title": "Benchmarking Qwen 3.8 27B on RTX 5090 and beyond - Tom's Hardware",
+      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNb2Nma0xjR2FTSGtFcEFjemljVE9IdWwybVhQUmVSaS1mU3YxYzhjTGNUQWxHNTlyRDlmdFFNQVE1MFl2RWZvNklhVGVaYklpMXZWbm9EUTYwdU9jd0phLUpKX2lEZkRHdktULUpINkNLenl0Mk5CQXZDOVc1Q1FhNHRnWkNjVE55QzlLd2Rad3g2cnVlVTRhWHhEVEZSSWpreEJSajFtREZiSU9GSExVOEhBY2c3VU1qbm8yTE9SaTM4MDJ0cnN6Z0lNN3pacHItbEYwd0NvUDU1MjQ4NURBQWd2NlU0bjNnckRZLXA5cGppNlNlb0dKMWxrbjZWWFZRdzJIYllfdFJzZUg3NkJBZ3NJem5HcTZEMkRFQmVuTzhILTFT?oc=5",
+      "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
+      "ts": 1788850800000
+    },
+    {
       "feed": "trade",
-      "feedLabel": "China-Saudi Trade & Economy",
+      "feedLabel": "China-Saudi Trade",
       "title": "Saudi Arabia, at the 2026 China International Fair for Investment and Trade, emphasizes strengthening economic integration between the two countries - صحيفة مال",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1JbFhuZmJzVEMxSVB3UHlGT1dwVVlFOE1mQ0ZELXg5Q05XQVVCODlabE15RGlfbkdrazBNTmlwWWtsc01nMzdFU2loY2ptX013QWZ4SzhUSzlZODRxU29YX3JXOEVpcG0xRWRN?oc=5",
       "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
       "ts": 1788850800000
     },
     {
+      "feed": "platforms",
+      "feedLabel": "AI Hardware Platforms",
+      "title": "Mac Studio Beats DGX Spark in local AI Tests with 1.2 TB/s Bandwidth - Geeky Gadgets",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE85MjdlcnRxdVVIZ3lYTkVVbWNQdGdqWTVrTFZWdmF2Q2RONFNIQTN4ZG5LMFVOcnlwMHhKTU05S0dXSVh4S0lKN0d1OHlVejlUTmlVREJOUlNmZnhzQjVlYWxlQ0w?oc=5",
+      "pubDate": "Mon, 07 Sep 2026 07:00:00 GMT",
+      "ts": 1788764400000
+    },
+    {
       "feed": "trade",
-      "feedLabel": "China-Saudi Trade & Economy",
-      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - Xinhua",
+      "feedLabel": "China-Saudi Trade",
+      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - english.news.cn",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBYcjE5cFlNWE5xMGNFb3c1YVJwUmZMT3NuMnM5WkxKZU45VU9CcC1XSEl0dVZlamNidlFEbGZsMzU2ODZRUUNTMmNvMGpuc2lLSkVOeFZXYTc0WEpyMFk4aUk4ZC1mMy12Z2NEci1tZkUxRklTYlV5MWk5WmE?oc=5",
       "pubDate": "Tue, 25 Aug 2026 07:00:00 GMT",
       "ts": 1787641200000
@@ -139,24 +211,32 @@
     },
     {
       "feed": "trade",
-      "feedLabel": "China-Saudi Trade & Economy",
-      "title": "China–GCC Relations in an Emerging Multipolar Order - Middle East Council on Global Affairs",
+      "feedLabel": "China-Saudi Trade",
+      "title": "China–GCC Relations in an Emerging Multipolar Order - mecouncil.org",
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQ1lrcU9JaXRXUHFGM2QwYUhNbUFJZWd5SXBfMS1tVFdUV09sU1YzeU00SkZNblY3aDhTZFhwM2xsX1QyWTVRWlYtdGR5TTNFU1ExZnpoNmpOd18wVl9mcENOVVJKZ3lSSDZVWk81MGVreEEwbUJWZTZjWXc4a3pmaXIxMGs1SDBhOENsWDJxNA?oc=5",
       "pubDate": "Wed, 22 Jul 2026 15:25:52 GMT",
       "ts": 1784733952000
     },
     {
-      "feed": "travel",
-      "feedLabel": "Flights & Travel",
-      "title": "Routes & Networks Latest: Rolling Daily Updates (W/C July 20, 2026) - Aviation Week",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPblM3YjNCakd3RjNwOG9JQVozSmJGaFFGTmJlcllPWlV3UHZBTGlURFd1SGNnVV9fZXk2Qm5aeklRVDVzc0NrbWU5X1dObFZsNjcyaUhzeDJBMzdRMnh2SWFtaDhxWmcyQUZubU5rYVV2UW9obHN5eTF6NWxseVR3VmczYlNRV3BmSmpmWE1Wa1NHOG5YdjNyV2VPcEVuWnRMTG42V3pXLXB3dV9RdExLZ21ncDZmc0lY?oc=5",
-      "pubDate": "Mon, 20 Jul 2026 07:00:00 GMT",
-      "ts": 1784530800000
+      "feed": "openmodels",
+      "feedLabel": "Open Model Releases",
+      "title": "Best Local LLMs You Can Run on a Single 24GB GPU in 2026: Qwen, Gemma, Mistral, DeepSeek Compared - MarkTechPost",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNM1lxZUVLcUVnWHJGQW1IcWxKQ0hTMl85TS1hTUdqMTF1cEdnanNOcmNtcHJCLXFfMXo5Wk5nTFlicUZwWWU4S1ViNVc0TEVoUERqZFZPUGk5S1ROaGQyOVdaRHhhNFc1Q2ZWQ3E2MFVrTW5FZjhsNjg0UVhfVDJpdmw4WFAxSlM0Y1UwSTRGRGlzN054Y0J6VkV0ejB6RkNXbFlvMjkxZUpjQnMxZ2l0endjcnZ1bWloVk9wOWs0MkZjd2xCbjQxQndRQ2ExRW_SAdQBQVVfeXFMUDR4MllIMl9MSUZQOTdBOWFUVmUwMkdZUDNKYkRfaEhpNmdsOV9LRm9abFpRZ2ZxaEMzaVFEZ2swSjJHc1Q0Tl9VTGF3QVBrY21BMFNjT3Zkc1lpU19NdVZBaWZIQmNyQy1wSkhYTGdpQjRnQUhZcUg1ckxUM0lhczZXSFZNMXlHX0l0SVh5S3lVMkwzRUVmY1d1MFJHajc2Nk11REktLUFEdkpmRGV2RGVQcFZ2MGZibjZhVzFJaVBSWTRsQjFHTV9KbWVBcXVjWk9EOFk?oc=5",
+      "pubDate": "Sun, 19 Jul 2026 07:00:00 GMT",
+      "ts": 1784444400000
+    },
+    {
+      "feed": "openmodels",
+      "feedLabel": "Open Model Releases",
+      "title": "Best AI Model for Coding: DeepSeek Costs 20x Less [2026] - tech-insider.org",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9reEVDUmpRSnRrWGI5ek1WM3FVcF85cFFHdmFINkhzR3BuMmV4d2dKNmVISE4teUo1d3VDelRQTEp3MmJ2VUVSMzNXSDlhTThWSEcza3ZtTW9WenZmV3IzSGI2ekcxZw?oc=5",
+      "pubDate": "Sat, 18 Jul 2026 07:00:00 GMT",
+      "ts": 1784358000000
     },
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "Charting the renminbi's path to global currency - The World Economic Forum",
+      "title": "Charting the renminbi's path to global currency - weforum.org",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbnA5dUxaRzl2eTY2V1RoYzZiZ2ZIRU15TC10ZzZTVDItclZQMDFKY1dIZXNPc25jN2JrZm9ZWjBuTWduTy1oQlpYcEc3ajQ4YW1ieEtBSl9WUFI1TUJoZ0MwWmlKQTVFUEtZUjh5empENGk5UzVrZzNONC1GeVd4YnJXQmh1V094NHllejFwV2o3VnZ5Yi1GUWNDOFBVeE5NUllOQUNONWtkQUs0bXFHOW92OA?oc=5",
       "pubDate": "Mon, 13 Jul 2026 07:00:00 GMT",
       "ts": 1783926000000
@@ -170,20 +250,28 @@
       "ts": 1783580400000
     },
     {
-      "feed": "fx",
-      "feedLabel": "Currency & Markets",
-      "title": "Can The Chinese Yuan Replace The US Dollar? UniCredit Says Not Yet - Exchange Rates UK",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdHdMUUZROTRnMG1lM2pSNi03NHEtWGI4Wng3LW80bUZnT2J4NmxjN1lRNVgxQ2ZaOFlKTUFsMjM4SlhqTnYyNndac1FjXzRDbld5SEJ6ZHR6ams4cmlGaTl6cTdRa1F3ZE9abFlMa1R4ZVRuWENNNGlhQS1YcHhFLUdjSjlTRGxkZHh5QTEyS2dTY2VoMFdfQS1OQWJSa3JCbktnZFpZYjJqVFQ4WUdvanBVQ2piTTRtd0hZYVBjei13SVk?oc=5",
-      "pubDate": "Wed, 01 Jul 2026 07:00:00 GMT",
-      "ts": 1782889200000
+      "feed": "openmodels",
+      "feedLabel": "Open Model Releases",
+      "title": "Chinese AI models 2026: DeepSeek, Qwen, GLM and the rest of the top ones - SecNews.gr",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQV3phR25raGZCQ29FZmFiUjREeUxxbjdEZ2d6UEJWaGFwZVd5X09aYy1OTkgxUEw0cloyZzFrUWlqcXlIekpKc1M5Wi05eXJRUXF0WnUxN0gwRGdIejJzRjEwQUlMNkV3aHNlWnRoMjd6UGRTaHUyU2ZMRnNFV2pBWFZR?oc=5",
+      "pubDate": "Wed, 08 Jul 2026 07:00:00 GMT",
+      "ts": 1783494000000
     },
     {
-      "feed": "trade",
-      "feedLabel": "China-Saudi Trade & Economy",
-      "title": "Saudi Arabia, China Hold Strategic Talks on Trade, Vision 2030, and Regional Security - The Media Line",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMDd4SExZNmZtVVdZUnUtMkx0eUptYmo4Um5ldHd0REd6NmQ1Q2FuREhrSlFlSTZfWlpIc1Aya0hIQnJZMy0zMjF4YkJxZERVcFJBSW1vZ0ZjRWlPRXpYR19JUEROSVoybHl5ZjVCcXFwY0lwWVpHRjVhMlJhSHpPWkhqVzBRVVAyTkFEd1JSMWlrM1ppbE9NSUhTQWc2cnI4V3JvSENiRGtKQmpxN0swb24xbFRPQTM5d0E?oc=5",
-      "pubDate": "Tue, 30 Jun 2026 07:00:00 GMT",
-      "ts": 1782802800000
+      "feed": "openmodels",
+      "feedLabel": "Open Model Releases",
+      "title": "Llama 4 vs Qwen 3.5 vs Mistral: Best Open LLM [2026] - tech-insider.org",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1taWNsWFpVeXJGNWgxT3ZkRGs5Uk1MY1BCaW9nWE1KWFlqSG9DUS1yWEtTNjh3bEdpdWJQM3JSU003T2JVMkF2Vm9BS1ctbnVfbzBWdnhWWXVCV0xrald6RWtRaV9RZmtx?oc=5",
+      "pubDate": "Mon, 06 Jul 2026 07:00:00 GMT",
+      "ts": 1783321200000
+    },
+    {
+      "feed": "openmodels",
+      "feedLabel": "Open Model Releases",
+      "title": "10 Free AI Tools Beyond ChatGPT, Claude and Gemini (2026) - Pasquale Pillitteri",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBiN3FqTlhJNVY5SkowTVI0ei1MVXVXTGMyYWlyMGZzbUpCNXBYWVVzWDVrdllyMm9VUHNyMTA3eGhfUGFkb0ZpeUJueUJaVnhDelpoVUxTU3ZsTDdXRHVCbTBzSTlYQVRjb19TS21HQUViajhIdk1uZFdEYw?oc=5",
+      "pubDate": "Mon, 06 Jul 2026 07:00:00 GMT",
+      "ts": 1783321200000
     }
   ]
 }

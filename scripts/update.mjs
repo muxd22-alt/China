@@ -292,6 +292,7 @@ async function main() {
         const prompt = buildPrompt({
           plan, dateKey, call, signal, budgets, crossedInfo, readiness,
           checklist, decisions: decDoc.entries, tracked, news,
+          route: cfg.route, platforms: cfg.platforms,
           briefWords: cfg.llm?.briefWords ?? 110,
         });
         const out = await askOpenRouter(cfg, prompt, llmKey);
