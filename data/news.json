@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T14:40:27.478Z",
+  "generatedAt": "2026-09-27T15:54:56.581Z",
   "items": [
     {
       "feed": "localai",
@@ -8,14 +8,6 @@
       "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdVZHTzhuSkQ5TjlVZ0ZhY2xka1U1djA4a1FUdEE2eUNReUtaQjhBQi1lNjRpZUEtWWw5S2pVTHN3NUE5enhEbzJYZWpINTUxMEFnZGJUU1NBRUxoM2E3cHppYncydnAyYXVRUnhITW5qZ2FwN0Jvb1RzeHk1VUMzRkRUdi03alJHM09QVjZTV21CVTg?oc=5",
       "pubDate": "Fri, 25 Sep 2026 14:42:08 GMT",
       "ts": 1790347328000
-    },
-    {
-      "feed": "localai",
-      "feedLabel": "Local AI & LLMs",
-      "title": "Cisco CAIRN detects AI malware without opening the binary - Techzine Global",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVHRnUThiTFRnbVd0S0R3REt1V2hGMzRzcGVhRVVUU1M3d0ZWS3N2QnEzRjlaQVdfaU1CTm5zaFk3VUp2bzVsd0FxcTZjX0dMOTdNLTJTX05ZYmVScjRaXzlQdU44c0lRSU9MWTNnRlJMOUZDNjRuMXhDSzYtLWZ6dEhqRG5qakZGeGVfWmxudkU1d2lKekZqV0R4QjRiUmV1aVpXTW1B?oc=5",
-      "pubDate": "Wed, 23 Sep 2026 07:43:16 GMT",
-      "ts": 1790149396000
     },
     {
       "feed": "platforms",
@@ -48,6 +40,14 @@
       "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOODlZdjJHVFBCcnNZal82eXE2SDVoLWxjcW5tQXR3ZU9uZXc2cGN1T3lFamtyRHI1dVVRcnJDNHRyTXhNVFNQbUVjUzJHQ3pfYzFuRUtCdDhWQ3MtR3lwSU9GMW1PSy1XMTY5TmwzX0NFOThNazcwQ0VudTRfcmdmZXRWelE?oc=5",
       "pubDate": "Tue, 22 Sep 2026 04:20:47 GMT",
       "ts": 1790050847000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "Best Open-Source Agent Harnesses for Local LLMs in 2026 - MarkTechPost",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWHJZZjJYcmQ3dm5EaGFjc3lnUzM5QUR6MVV2dkJQRFoxV1ZOREdsU090YmR0dnlubGhVYTNnX2Z0elJRTUVJclhNRlFieVJQVExkSlVDXy1VSGEwWHhhQV8zdlFkNWFQSWZGSGN2WDZ6Qk9uS21WSldNQmJ1QzVnM1FHamJrcmdMSzRhRDdJYmlfYzU3VDByUUVjREjSAaIBQVVfeXFMUGxndGJ3ZGtYSzd0bHdEVWJUdThsRF8zbnFYck5UQll5dkg4LUFUbHMzQ05tVUNvWVpObi1uU05faXRDbmI3cWhGTHBiQThJcVAzQ2puS0ZXU2k4WkhtQWVMczdWajVIUGFrcEFUTlJNSFQyRk5GZE1jSU5MU0xhVVVoeVhqOEFFcGpQa0xDb2c5aHBGM0JOMTZhei1Pb3QwM2VR?oc=5",
+      "pubDate": "Fri, 18 Sep 2026 09:44:55 GMT",
+      "ts": 1789724695000
     },
     {
       "feed": "tech",
@@ -84,6 +84,14 @@
     {
       "feed": "tech",
       "feedLabel": "GPU & PC Hardware",
+      "title": "AMD's Radeon RX 9070 GRE graphics card returns to its lowest-ever price of $499 — rare deal places this current-generation 12GB GPU below its MSRP launch price - Tom's Hardware",
+      "link": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNOXdHZzhlb0pLZnlMTXZERzhlbmNBR1FxMjI2TlNKVUR6RGxCTExucVl3U19KM3NzNC1MWWFPZW5SZUY3d1Y0cFRKY05vNy04dkdXRmhDZTlTUmZkcldUN3lWZTNZMDhxemNSVmhEZ1o2ci1PM1RqYUM1SUdXWHZzOGFnclo3VWgyNDdwMFpBRUJhZVVHZU9mYnYtekowR1BoU0NyVnpyWGtDTmZDbDhvM21MUExTN3BsUmlKWWowMGV4VkdFXzJ3emdiNEVCZmZBSkJmSk5CRTZ2NUpQa2NXV1RLUVp2QkVLZkpJVzFSbjhnOFVrTFB1djFGdThtVmx1RkRMb1l4VEdEUmtJR1BGZU15b0JzTmlZQXBsSm5tY2Y1Z3pUaVdvbXJqSHZuMEU?oc=5",
+      "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
+      "ts": 1789455600000
+    },
+    {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
       "title": "GPU price tracking 2026 — Lowest price on every graphics card from Nvidia, AMD, and Intel today - Tom's Hardware",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBhTEV0WktCaVlybTNSQk83V2RiQ05UUG4ySzNuWVRHSE5hYTBTMUVMaUFUTXJ3dDkxWUVFYXJZeWQ1bTZVS0ZDS1NXTF9MTzM0andZT0xfcElyTFpob3laRDV6QkJvU3RILXR6WG9hMUswQUd2dlpjUmJycHJ1QXM?oc=5",
       "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
@@ -92,7 +100,7 @@
     {
       "feed": "tech",
       "feedLabel": "GPU & PC Hardware",
-      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - howtogeek.com",
+      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - How-To Geek",
       "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1NUdYLXZWTFcxcVRsenRPSlVoRDFEbHk0cUw4Z0FiSUlSNWdDVWtrY2NFZFFWY0o1RkJTRFZSU0xLZVNFbVVEMVk4enF2ckJ4NmFMM2hMNG1HVEFLTlYzNGVxZXNOdXZIdzJTaFNSTnlUUQ?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
       "ts": 1789196400000
@@ -104,14 +112,6 @@
       "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJQTRNWFdsLXVib1dzZWo5WGhzWUUxTEhSTExJMEdURHd3U2lXU2czYU40UUI3VUM1NFhGa2ZPR29aeTJaWXYwanpn?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
       "ts": 1789196400000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "GPU & PC Hardware",
-      "title": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYm9td29NWG9COFRMZEJickpxang3THpuQ3ZtWW82ZzE0bldKQ2phbnJxNmU5UEJoeUpUc2hBWmo1WVB3Ny1uNTdOUFNfdzEyNXh0WFAtNVZ2QVk5VnVrZHM4c1Fyc0VKaWVrVmtnSWdJVHlJMDBBOU9QT1FIT0RuS0doamFXX291dXlQYnlxU1dHLUVpdHBzU3JqMEZ0eFVmY1ZkRnlDZEtLZVRwVWVnOU83b24yRWU2Wm5UMWdya1V6Rms2bmJWMDF1ZE9TWG1UY3RJSVJFbHk3aE53MzNQZlFFbnUtV3hHSVgwNXpyU0ttNlhnTXpfZHNPU0xfTWFKeVdBYVpFakczdUJLTkItc3o0bFEyenZsYzZhRng2QnNPVDIxM2JB?oc=5",
-      "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
-      "ts": 1789110000000
     },
     {
       "feed": "platforms",
@@ -156,7 +156,7 @@
     {
       "feed": "trade",
       "feedLabel": "China-Saudi Trade",
-      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - english.news.cn",
+      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - Xinhua",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBYcjE5cFlNWE5xMGNFb3c1YVJwUmZMT3NuMnM5WkxKZU45VU9CcC1XSEl0dVZlamNidlFEbGZsMzU2ODZRUUNTMmNvMGpuc2lLSkVOeFZXYTc0WEpyMFk4aUk4ZC1mMy12Z2NEci1tZkUxRklTYlV5MWk5WmE?oc=5",
       "pubDate": "Tue, 25 Aug 2026 07:00:00 GMT",
       "ts": 1787641200000
@@ -196,7 +196,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - carnegieendowment.org",
+      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - Carnegie Endowment for International Peace",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQlBkZGZGcEc1ZXlxdTFZakl6NndJTTRyd19mVXNKbGwyR1VXWVlyTkI1UGhzd3FZcFVLWk1kLWtlRlV1X1E2cGlGaENmMzFGMXQyVnBFWWptNHdXNmlTUXZxV1JkSDRMWmZhTU0tb2hseGlBUmVnZHI1V2tJMWtraHNNbmR6MkJ0ZHAzczMwaEg4YXEyaTJxekt4dm5YSXlM?oc=5",
       "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
       "ts": 1785222000000
@@ -212,7 +212,7 @@
     {
       "feed": "trade",
       "feedLabel": "China-Saudi Trade",
-      "title": "China–GCC Relations in an Emerging Multipolar Order - mecouncil.org",
+      "title": "China–GCC Relations in an Emerging Multipolar Order - Middle East Council on Global Affairs",
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQ1lrcU9JaXRXUHFGM2QwYUhNbUFJZWd5SXBfMS1tVFdUV09sU1YzeU00SkZNblY3aDhTZFhwM2xsX1QyWTVRWlYtdGR5TTNFU1ExZnpoNmpOd18wVl9mcENOVVJKZ3lSSDZVWk81MGVreEEwbUJWZTZjWXc4a3pmaXIxMGs1SDBhOENsWDJxNA?oc=5",
       "pubDate": "Wed, 22 Jul 2026 15:25:52 GMT",
       "ts": 1784733952000
@@ -236,7 +236,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "Charting the renminbi's path to global currency - weforum.org",
+      "title": "Charting the renminbi's path to global currency - The World Economic Forum",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbnA5dUxaRzl2eTY2V1RoYzZiZ2ZIRU15TC10ZzZTVDItclZQMDFKY1dIZXNPc25jN2JrZm9ZWjBuTWduTy1oQlpYcEc3ajQ4YW1ieEtBSl9WUFI1TUJoZ0MwWmlKQTVFUEtZUjh5empENGk5UzVrZzNONC1GeVd4YnJXQmh1V094NHllejFwV2o3VnZ5Yi1GUWNDOFBVeE5NUllOQUNONWtkQUs0bXFHOW92OA?oc=5",
       "pubDate": "Mon, 13 Jul 2026 07:00:00 GMT",
       "ts": 1783926000000
@@ -244,7 +244,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - Barron's",
+      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - barrons.com",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNEFORUJKRVhhNGUtUC1pUFVkTkhyS0pzMEE0dzFnSWJGcjZ5OHMzcW94SzJQS3ZTTUMwVWVveG43SjFqNm5pc2ZJSWV0MWtUMWdxRHpzTWE5bG5mQTA4WHRIcGt1TnVFMlVpQjE2eGRsdEZPS3BUNzQ3RzRGdTZWZ251NV95NV9pZ2lPU2NmUmxHanQzbWJVVGVPS2lrUW5DODBsdlppRDI0TzBJcS05Y1RadVM1TUk?oc=5",
       "pubDate": "Thu, 09 Jul 2026 07:00:00 GMT",
       "ts": 1783580400000
@@ -252,7 +252,7 @@
     {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "Chinese AI models 2026: DeepSeek, Qwen, GLM and the rest of the top ones - SecNews.gr",
+      "title": "Chinese AI models 2026: DeepSeek, Qwen, GLM and the rest of the top ones - secnews.gr",
       "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQV3phR25raGZCQ29FZmFiUjREeUxxbjdEZ2d6UEJWaGFwZVd5X09aYy1OTkgxUEw0cloyZzFrUWlqcXlIekpKc1M5Wi05eXJRUXF0WnUxN0gwRGdIejJzRjEwQUlMNkV3aHNlWnRoMjd6UGRTaHUyU2ZMRnNFV2pBWFZR?oc=5",
       "pubDate": "Wed, 08 Jul 2026 07:00:00 GMT",
       "ts": 1783494000000
