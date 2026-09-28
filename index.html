@@ -22,173 +22,275 @@
 
 <nav class="jumpnav" aria-label="Sections">
   <a href="#sec-call">Today</a>
-  <a href="#fxSection">Money</a>
-  <a href="#sec-route">Route</a>
+  <a href="#sec-money">Money</a>
+  <a href="#sec-stack">Stack</a>
   <a href="#sec-buy">Buy</a>
   <a href="#sec-trip">Trip</a>
   <a href="#sec-news">News</a>
 </nav>
 
 <main>
-  <section class="panel call-panel" id="sec-call" aria-label="Today's call">
-    <div class="panel-head">
-      <h2>Today's Call</h2>
-      <span class="hint" id="callStamp"></span>
-    </div>
-    <div class="call-layout">
-      <div class="verdict-side">
-        <div class="verdict-badge" id="verdictBadge">—</div>
-        <span class="badge" id="confBadge"></span>
-        <div class="recent-strip" id="recentStrip"></div>
+
+  <!-- ============ 01 · TODAY ============ -->
+  <section class="panel hero" id="sec-call" aria-label="Today's call">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <div class="panel-head">
+          <span class="kicker"><i>01</i> Today's Call</span>
+          <span class="hint" id="callStamp"></span>
+        </div>
+        <div class="call-layout">
+          <div class="verdict-side">
+            <div class="verdict-badge" id="verdictBadge">—</div>
+            <span class="badge" id="confBadge"></span>
+            <div class="recent-strip" id="recentStrip"></div>
+          </div>
+          <div class="reason-side">
+            <p class="reason" id="callReason"></p>
+            <p class="changed" id="changedLine"></p>
+          </div>
+        </div>
+        <div class="brief-box" id="briefBox" hidden>
+          <div class="brief-head">
+            <span class="brief-title">Daily Brief</span>
+            <span class="pill" id="briefModel"></span>
+          </div>
+          <p class="brief-text" id="briefText"></p>
+          <ul class="brief-moves" id="briefMoves"></ul>
+          <p class="brief-watch" id="briefWatch"></p>
+        </div>
       </div>
-      <div class="reason-side">
-        <p class="reason" id="callReason"></p>
-        <p class="changed" id="changedLine"></p>
+      <aside class="hero-side" aria-label="Crossed thresholds">
+        <div class="side-head">
+          <span class="side-title">Crossed Thresholds</span>
+          <span class="hint" id="crossedMeta"></span>
+        </div>
+        <div class="grid crossed-grid" id="crossedGrid"></div>
+      </aside>
+    </div>
+    <div class="signals">
+      <div class="block-head">
+        <h3>Smart Calls</h3>
+        <span class="pill" id="tipPill">tip of the day</span>
+      </div>
+      <div class="calls" id="calls"></div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · MONEY ============ -->
+  <section class="panel" id="sec-money" aria-label="Money">
+    <div class="panel-head">
+      <span class="kicker"><i>02</i> Money</span>
+      <span class="hint">live dual-source FX · budgets vs landed cost · price history</span>
+    </div>
+
+    <div class="grid fx-grid" id="fxSection" aria-label="Exchange rates"></div>
+
+    <div class="block">
+      <div class="block-head">
+        <h3>Budget vs Landed Cost</h3>
+        <div class="tier-switch" id="tierSwitch" role="tablist"></div>
+      </div>
+      <div class="grid budget-grid" id="budgetGrid"></div>
+      <p class="hint" id="budgetHint"></p>
+    </div>
+
+    <details class="fold">
+      <summary>Price history &amp; tracked edits</summary>
+      <div class="block">
+        <div class="block-head"><div class="tier-switch" id="histRange" role="tablist"></div></div>
+        <div class="grid hist-grid" id="histGrid"></div>
+        <div class="edits" id="priceEdits"></div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 03 · STACK ============ -->
+  <section class="panel stack" id="sec-stack" aria-label="The stack">
+    <div class="panel-head">
+      <span class="kicker"><i>03</i> The Stack · central home lab</span>
+      <span class="hint">one rack replaces every mini-PC · full package in <code>homelab.md</code></span>
+    </div>
+
+    <div class="rack">
+      <div class="rack-bar net">
+        <span class="node-tag">backbone</span>
+        <b>10GbE SFP+ switch · TP-Link TL-ST1008F ×8</b>
+        <span class="mono">inference RPC (KV/tensor) + PXE multicast + NAS · 1.1 GB/s — not optional</span>
+      </div>
+      <div class="rack-grid">
+        <div class="node n-core">
+          <span class="node-tag">core · NAS + virtualization</span>
+          <b>Ryzen 9 7900X · X670E · 128GB DDR5</b>
+          <ul class="mono">
+            <li>Proxmox: game VM (RTX 3090 passthrough) → Moonlight</li>
+            <li>Jellyfin · AdGuard · cameras · dashboard · PXE/DHCP</li>
+            <li>2×2TB NVMe (VM/models + games)</li>
+            <li>8TB×2 mirror media · 8TB×2 mirror backups = 16TB usable</li>
+            <li>+ bare-metal 3060 box for kernel anti-cheat games</li>
+          </ul>
+        </div>
+        <div class="node n-a">
+          <span class="node-tag">node A · planner</span>
+          <b>2× AMD BC-250 · ~32GB GDDR6</b>
+          <ul class="mono">
+            <li>14B–32B Q4 orchestrator ("helper planner") always on</li>
+            <li>llama.cpp Vulkan · modded BIOS + SMU governor</li>
+            <li>ConnectX-3 10GbE · carrier: used AM4 host</li>
+          </ul>
+        </div>
+        <div class="node n-b">
+          <span class="node-tag">node B · workers</span>
+          <b>3× AMD BC-250 · ~48GB GDDR6</b>
+          <ul class="mono">
+            <li>4–6 parallel 7B/8B agentic tool-callers</li>
+            <li>llama.cpp RPC over the 10GbE link to Node A</li>
+            <li>ConnectX-3 10GbE · carrier: used AM4 host</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rack-grid small">
+        <div class="node n-edge">
+          <span class="node-tag">edge</span>
+          <b>Mi Box ×2 + KB/mouse</b>
+          <span>Moonlight/Jellyfin decode at the TV — no mini-PCs anywhere</span>
+        </div>
+        <div class="node n-power">
+          <span class="node-tag">power</span>
+          <b>1+1 redundant 1600–2000W</b>
+          <span>5×220W BC-250 spikes on 12V breakout · new 1200W ATX for core · 1500VA UPS on core+net</span>
+        </div>
+        <div class="node n-cool">
+          <span class="node-tag">cooling · rack</span>
+          <b>Delta 4000rpm ×4</b>
+          <span>aimed at heatsinks AND the GDDR6 · open 12U–18U cabinet (BC-250 = 305mm non-standard)</span>
+        </div>
       </div>
     </div>
-    <div class="brief-box" id="briefBox" hidden>
-      <div class="brief-head">
-        <span class="brief-title">Daily Brief</span>
-        <span class="pill" id="briefModel"></span>
+
+    <div class="answers">
+      <div class="ans"><b>10GbE switch — needed?</b><p>Yes, for <b>inference</b> first: RPC KV/tensor traffic between Node A↔B strangles at 110 MB/s on 1 GbE. Also carries PXE multicast and the NAS fabric. NICs are ¥110.</p></div>
+      <div class="ans"><b>Copy one OS to 100GB NVMe ×5?</b><p>Golden image → <b>Clonezilla SE PXE multicast</b>: install once (CachyOS + RADV + BC-250 governor), serve from the core host, flash all node drives in ~3 min/batch. Re-config = re-clone, never re-install.</p></div>
+      <div class="ans"><b>2TB + NAS storage?</b><p>2×2TB NVMe (VM/models + a dedicated game library) + two 8TB mirror pairs: media/Jellyfin/cameras and games/backups — 16TB usable, ZFS-fault-tolerant.</p></div>
+      <div class="ans"><b>Edge devices?</b><p>TV endpoints only (Mi Box ×2) + one KB/mouse pair to the endpoint — everything else stays racked.</p></div>
+      <div class="ans"><b>Why 2 + 3 boards?</b><p>Node A holds one 14B–32B orchestrator resident (~32GB); Node B runs several 7B/8B agents in parallel (~48GB) without VRAM swapping.</p></div>
+      <div class="ans"><b>Redundancy?</b><p>Hot-swap 1+1 PSU · boards are ¥750 commodities + golden re-clone · ZFS mirrors · new ATX PSU (never used) · UPS for core+network.</p></div>
+    </div>
+
+    <div class="docs-index">
+      <span class="di-title">Where everything lives</span>
+      <code>PLAN.md</code> budgets &amp; phases · <code>homelab.md</code> the full package (sourcing, power/cooling, PXE, references) ·
+      <code>pc.md</code> architecture · <code>furnteatures.md</code> bedroom/home · <code>data/products.json</code> buy list ·
+      <code>data/config.json</code> fares, routes, tips
+    </div>
+
+    <div class="block">
+      <div class="block-head">
+        <h3>Server Route · 15K alt track</h3>
+        <span class="hint" id="routeMeta"></span>
+        <button class="fold-btn" id="routeMore" type="button">show all platforms</button>
       </div>
-      <p class="brief-text" id="briefText"></p>
-      <ul class="brief-moves" id="briefMoves"></ul>
-      <p class="brief-watch" id="briefWatch"></p>
+      <div class="chips" id="routeChips" role="tablist"></div>
+      <div class="route-verdict" id="routeVerdict"></div>
+      <div class="grid route-grid focus" id="routeGrid"></div>
     </div>
-  </section>
 
-  <section class="panel" aria-label="Crossed thresholds">
-    <div class="panel-head">
-      <h2>Crossed Thresholds</h2>
-      <span class="hint" id="crossedMeta"></span>
-    </div>
-    <div class="grid crossed-grid" id="crossedGrid"></div>
-  </section>
-
-  <section class="grid fx-grid" id="fxSection" aria-label="Exchange rates"></section>
-
-  <section class="panel" aria-label="Smart calls">
-    <div class="panel-head">
-      <h2>Smart Calls</h2>
-      <span class="pill" id="tipPill">tip of the day</span>
-    </div>
-    <div class="calls" id="calls"></div>
-  </section>
-
-  <section class="panel" aria-label="Price history">
-    <div class="panel-head">
-      <h2>Price History</h2>
-      <div class="tier-switch" id="histRange" role="tablist"></div>
-    </div>
-    <div class="grid hist-grid" id="histGrid"></div>
-    <div class="edits" id="priceEdits"></div>
-  </section>
-
-  <section class="panel" aria-label="Budgets">
-    <div class="panel-head">
-      <h2>Budget vs Landed Cost</h2>
-      <div class="tier-switch" id="tierSwitch" role="tablist"></div>
-    </div>
-    <div class="grid budget-grid" id="budgetGrid"></div>
-    <p class="hint" id="budgetHint"></p>
-  </section>
-
-  <section class="panel" id="sec-route" aria-label="Server route decision">
-    <div class="panel-head">
-      <h2>Server Route · 15K cap</h2>
-      <span class="hint" id="routeMeta"></span>
-    </div>
-    <div class="chips" id="routeChips" role="tablist"></div>
-    <div class="route-verdict" id="routeVerdict"></div>
-    <div class="grid route-grid" id="routeGrid"></div>
-  </section>
-
-  <section class="panel" aria-label="Local model fit">
-    <div class="panel-head">
-      <h2>What Runs Where — local model fit</h2>
-      <span class="hint" id="fitMeta"></span>
-    </div>
-    <div class="table-wrap">
-      <table class="fit-table" id="fitTable"></table>
-    </div>
-    <p class="hint fit-legend" id="fitLegend"></p>
-  </section>
-
-  <section class="panel" aria-label="Landed cost calculator">
-    <div class="panel-head"><h2>Landed-Cost Calculator</h2></div>
-    <div class="calc" id="calc">
-      <div class="calc-row">
-        <label>Item price (CNY)
-          <input type="number" id="calcCny" value="1000" min="0" step="10">
-        </label>
-        <label>Your local price for the same item (SAR, optional)
-          <input type="number" id="calcLocal" placeholder="e.g. 900" min="0" step="10">
-        </label>
+    <details class="fold">
+      <summary>What runs where — local model fit matrix</summary>
+      <div class="block">
+        <p class="hint" id="fitMeta"></p>
+        <div class="table-wrap">
+          <table class="fit-table" id="fitTable"></table>
+        </div>
+        <p class="hint fit-legend" id="fitLegend"></p>
       </div>
-      <div class="calc-out" id="calcOut"></div>
-    </div>
+    </details>
   </section>
 
+  <!-- ============ 04 · BUY ============ -->
   <section class="panel" id="sec-buy" aria-label="Buy list">
     <div class="panel-head">
-      <h2>Buy List</h2>
+      <span class="kicker"><i>04</i> Buy List</span>
       <span class="hint" id="listStats"></span>
     </div>
     <div class="filters" id="filters"></div>
-    <div class="table-wrap">
-      <table id="listTable">
-        <thead>
-          <tr>
-            <th data-sort="name">Item</th>
-            <th data-sort="bundle">Bundle</th>
-            <th data-sort="priority" class="num">Pri</th>
-            <th data-sort="phase" class="num">Phase</th>
-            <th data-sort="qty" class="num">Qty</th>
-            <th data-sort="cny" class="num">CNY</th>
-            <th data-sort="target" class="num">Target</th>
-            <th data-sort="sarLine" class="num">Landed (SAR)</th>
-          </tr>
-        </thead>
-        <tbody id="listBody"></tbody>
-      </table>
+    <div class="buy-layout">
+      <div class="table-wrap">
+        <table id="listTable">
+          <thead>
+            <tr>
+              <th data-sort="name">Item</th>
+              <th data-sort="bundle">Bundle</th>
+              <th data-sort="priority" class="num">Pri</th>
+              <th data-sort="phase" class="num">Phase</th>
+              <th data-sort="qty" class="num">Qty</th>
+              <th data-sort="cny" class="num">CNY</th>
+              <th data-sort="target" class="num">Target</th>
+              <th data-sort="sarLine" class="num">Landed (SAR)</th>
+            </tr>
+          </thead>
+          <tbody id="listBody"></tbody>
+        </table>
+      </div>
+      <aside class="calc-panel" id="calc" aria-label="Landed-cost calculator">
+        <div class="block-head"><h3>Landed-Cost Calculator</h3></div>
+        <div class="calc">
+          <div class="calc-row">
+            <label>Item price (CNY)
+              <input type="number" id="calcCny" value="1000" min="0" step="10">
+            </label>
+            <label>Your local price (SAR, optional)
+              <input type="number" id="calcLocal" placeholder="e.g. 900" min="0" step="10">
+            </label>
+          </div>
+          <div class="calc-out" id="calcOut"></div>
+        </div>
+      </aside>
     </div>
   </section>
 
+  <!-- ============ 05 · TRIP ============ -->
+  <section class="panel" id="sec-trip" aria-label="Trip">
+    <div class="panel-head">
+      <span class="kicker"><i>05</i> Trip</span>
+      <span class="hint">FX stability + target coverage + fare movement — distinct from in-China buy phases</span>
+    </div>
+    <div class="trip-grid">
+      <div class="block">
+        <div class="block-head"><h3>Trip Readiness</h3></div>
+        <div id="readinessBox"></div>
+      </div>
+      <div class="block">
+        <div class="block-head">
+          <h3>Pre-Trip Checklist</h3>
+          <div class="check-actions">
+            <span class="hint" id="checkMeta"></span>
+            <button id="copyChecklist" type="button">Copy checklist.json</button>
+          </div>
+        </div>
+        <div id="checkListBox"></div>
+        <p class="hint" id="checkHint"></p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-head">
+        <h3>Flights &amp; Stays <span class="est-tag">estimates</span></h3>
+        <span class="hint">fare bands are educated guesses — verify via the links</span>
+      </div>
+      <div class="grid travel-grid" id="travelGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · NEWS ============ -->
   <section class="panel" id="sec-news" aria-label="News">
     <div class="panel-head">
-      <h2>Daily Reading</h2>
+      <span class="kicker"><i>06</i> Daily Reading</span>
       <span class="hint" id="newsMeta"></span>
     </div>
     <div class="grid news-grid" id="newsGrid"></div>
+    <button class="fold-btn" id="newsMore" type="button" hidden>show more</button>
   </section>
 
-  <section class="panel" id="sec-trip" aria-label="Trip readiness">
-    <div class="panel-head">
-      <h2>Trip Readiness</h2>
-      <span class="hint">FX stability + target coverage + fare movement — distinct from in-China buy phases</span>
-    </div>
-    <div id="readinessBox"></div>
-  </section>
-
-  <section class="panel" aria-label="Pre-trip checklist">
-    <div class="panel-head">
-      <h2>Pre-Trip Checklist</h2>
-      <div class="check-actions">
-        <span class="hint" id="checkMeta"></span>
-        <button id="copyChecklist" type="button">Copy checklist.json</button>
-      </div>
-    </div>
-    <div id="checkListBox"></div>
-    <p class="hint" id="checkHint"></p>
-  </section>
-
-  <section class="panel" aria-label="Travel">
-    <div class="panel-head">
-      <h2>Flights &amp; Stays <span class="est-tag">estimates</span></h2>
-      <span class="hint">fare bands are educated guesses — verify via the links</span>
-    </div>
-    <div class="grid travel-grid" id="travelGrid"></div>
-  </section>
 </main>
 
 <footer class="foot" id="foot"></footer>

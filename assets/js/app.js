@@ -185,11 +185,13 @@
   }
 
   /* ---------- server route (15K cap decision) ---------- */
-  let routePick = null;
+  let routePick = null, routeExpanded = false;
   function renderRoute() {
     const route = cfg.route, platforms = cfg.platforms || [];
+    const moreBtn = $("routeMore");
     if (!route || !platforms.length) {
       $("routeGrid").innerHTML = `<p class="hint">Route data missing from data/config.json.</p>`;
+      if (moreBtn) moreBtn.hidden = true;
       return;
     }
     if (!routePick) routePick = (route.priorities[0] || {}).id;
@@ -243,6 +245,12 @@
         <div class="rc-best"><b>Best for:</b> ${esc(p.bestFor)}</div>
       </div>`;
     }).join("");
+    const grid = $("routeGrid");
+    grid.classList.toggle("focus", !routeExpanded);
+    if (moreBtn) {
+      moreBtn.hidden = platforms.length <= 1;
+      moreBtn.textContent = routeExpanded ? "show picked only" : `show all ${platforms.length} platforms`;
+    }
   }
 
   /* ---------- model fit matrix ---------- */
@@ -389,6 +397,16 @@
         <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>
         <span class="when">${timeAgo(n.ts)}</span>
       </div>`).join("") || `<p class="hint">No headlines in the latest snapshot.</p>`;
+    $("newsGrid").classList.remove("show-all");
+    const btn = $("newsMore"), n = D.news.items.length;
+    if (!btn) return;
+    if (n <= 9) { btn.hidden = true; return; }
+    btn.hidden = false;
+    btn.textContent = `show all ${n} headlines`;
+    btn.onclick = () => {
+      const all = $("newsGrid").classList.toggle("show-all");
+      btn.textContent = all ? "show fewer" : `show all ${n} headlines`;
+    };
   }
 
   function renderTravel() {
@@ -674,6 +692,7 @@
   renderBudgets();
   renderCalls();
   renderRoute();
+  if ($("routeMore")) $("routeMore").addEventListener("click", () => { routeExpanded = !routeExpanded; renderRoute(); });
   renderFit();
   wireNav();
   renderFilters();

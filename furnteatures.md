@@ -8,9 +8,12 @@
 | Item | CNY | SAR (≈) | Notes |
 |---|---|---|---|
 | Bed frame + premium ergonomic mattress + 2 nightstands | 3,200 | 1,784 | Foshan **Lecong** market — top-3 China-vs-local category |
+| Bedroom bedding set (duvet, sheets, pillows) | 700 | 391 | Buy with the bed at Lecong — classic half-price category |
 | Dimmable ambient lighting (bedroom + living), x4 | 600 | 334 | Half the local price after tax |
 | Made-to-measure curtains (main bedroom + living) | 500 | 279 | Bedroom decor bundle with the lighting |
-| **Bedroom + decor total** | **4,300** | **2,397** | Matches the procurement plan (3,200 + 1,100 decor) |
+| Bedroom rug (1.6x2.3m wool blend) | 450 | 251 | Completes the floor plan |
+| Full-length LED mirror (bedroom) | 350 | 195 | Keeps the room practical without a wardrobe |
+| **Bedroom bundle total** | **5,800** | **3,237** | Full bedroom minus the wardrobe (3,200 bed + 2,600 linens/decor) |
 
 **Wardrobe / large clothes cabinet: intentionally EXCLUDED** — maximizes floor space and keeps
 budget headroom. No wardrobe line exists in `data/products.json`; do not add one.

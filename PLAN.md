@@ -16,8 +16,9 @@ Tax model: 15% on goods value (edit `data/config.json` if the real rate differs)
 ## 2. Architecture (locked decisions)
 
 - **Core host (NAS / virtualization)** — Ryzen 9 7900X + X670E + 128GB DDR5 + RTX 3090.
-  Proxmox: Game VM (GPU passthrough) + Sunshine → Moonlight to every TV; LXCs for Jellyfin, AdGuard, cameras;
-  ZFS mirror HDDs; PXE host for the fleet. Second physical box: used OEM tower + RTX 3060, bare-metal Windows,
+  Proxmox: Game VM (GPU passthrough) + Sunshine → Moonlight to every TV;   LXCs for Jellyfin, AdGuard, cameras;
+  storage: 2x 2TB NVMe (VM/models + game library) + two ZFS mirror pairs (8TB x4 = 16TB usable);
+  PXE host for the fleet. Second physical box: used OEM tower + RTX 3060, bare-metal Windows,
   for kernel anti-cheat games (Valorant / Fortnite / PUBG refuse VMs) — non-negotiable if those games matter.
 - **BC-250 cluster (LLM compute) — 5x AMD BC-250 16GB GDDR6 boards from Xianyu (~650–850 CNY each)**
   (ex-mining cut-down PS5 APU: 6C Zen2 + 24 RDNA2 CU, 16GB shared @ 448 GB/s, 220W, Linux/RADV only):
