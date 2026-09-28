@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:54:56.581Z",
+  "generatedAt": "2026-09-28T11:22:29.822Z",
   "items": [
     {
       "feed": "localai",
@@ -12,7 +12,7 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "Best Desktops for Local AI in 2026: Lab-Tested Leaderboard - StorageReview.com",
+      "title": "Best Desktops for Local AI in 2026: Lab-Tested Leaderboard - storagereview.com",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE42RWtmb3IyeHRhVC1IdlhCQ29qSmw1Vm93LXBuRC1rNDAzbG92Nk11VW5vaTE1SE9XT21oMWZQRUx0aVl2UXZmTGtIMDZJUnRfTDJXRFBnd1hRNWZORVNsSTZn0gFnQVVfeXFMTUFoXzlSd3RSUGdKdnczSXNfUFR3Snl5U0ExdUVnTlhNVV9PQTNDSS1HdHNOMXNFNTFTWnM1b2VuMjlwRkthU0Nxd3RxX21iNGRDRy1ELWZReVlBRzFnS1laMmU4M1pJbw?oc=5",
       "pubDate": "Wed, 23 Sep 2026 07:00:00 GMT",
       "ts": 1790146800000
@@ -46,8 +46,8 @@
       "feedLabel": "Local AI & LLMs",
       "title": "Best Open-Source Agent Harnesses for Local LLMs in 2026 - MarkTechPost",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWHJZZjJYcmQ3dm5EaGFjc3lnUzM5QUR6MVV2dkJQRFoxV1ZOREdsU090YmR0dnlubGhVYTNnX2Z0elJRTUVJclhNRlFieVJQVExkSlVDXy1VSGEwWHhhQV8zdlFkNWFQSWZGSGN2WDZ6Qk9uS21WSldNQmJ1QzVnM1FHamJrcmdMSzRhRDdJYmlfYzU3VDByUUVjREjSAaIBQVVfeXFMUGxndGJ3ZGtYSzd0bHdEVWJUdThsRF8zbnFYck5UQll5dkg4LUFUbHMzQ05tVUNvWVpObi1uU05faXRDbmI3cWhGTHBiQThJcVAzQ2puS0ZXU2k4WkhtQWVMczdWajVIUGFrcEFUTlJNSFQyRk5GZE1jSU5MU0xhVVVoeVhqOEFFcGpQa0xDb2c5aHBGM0JOMTZhei1Pb3QwM2VR?oc=5",
-      "pubDate": "Fri, 18 Sep 2026 09:44:55 GMT",
-      "ts": 1789724695000
+      "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
+      "ts": 1789714800000
     },
     {
       "feed": "tech",
@@ -148,10 +148,10 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "Mac Studio Beats DGX Spark in local AI Tests with 1.2 TB/s Bandwidth - Geeky Gadgets",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE85MjdlcnRxdVVIZ3lYTkVVbWNQdGdqWTVrTFZWdmF2Q2RONFNIQTN4ZG5LMFVOcnlwMHhKTU05S0dXSVh4S0lKN0d1OHlVejlUTmlVREJOUlNmZnhzQjVlYWxlQ0w?oc=5",
-      "pubDate": "Mon, 07 Sep 2026 07:00:00 GMT",
-      "ts": 1788764400000
+      "title": "Ryzen AI Max PRO 400: 192GB Memory Runs 300B LLMs [2026] - tech-insider.org",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPT25tNE15aHRrclIweVhBME45ZzBrSFoxcndBVEJQM0xNU3AxLU5oc01IODBlRENCemNmQXFjUUZOX0V3SGo5bV9tNzJUelBuczJxU2ZGT2VVaVp6SXNhcXU4bWRHcDRGNFgzWkFaTGdhUGRxby1ma1J1bm1lZzBYR013?oc=5",
+      "pubDate": "Sun, 06 Sep 2026 07:00:00 GMT",
+      "ts": 1788678000000
     },
     {
       "feed": "trade",
@@ -244,7 +244,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - barrons.com",
+      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - Barron's",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNEFORUJKRVhhNGUtUC1pUFVkTkhyS0pzMEE0dzFnSWJGcjZ5OHMzcW94SzJQS3ZTTUMwVWVveG43SjFqNm5pc2ZJSWV0MWtUMWdxRHpzTWE5bG5mQTA4WHRIcGt1TnVFMlVpQjE2eGRsdEZPS3BUNzQ3RzRGdTZWZ251NV95NV9pZ2lPU2NmUmxHanQzbWJVVGVPS2lrUW5DODBsdlppRDI0TzBJcS05Y1RadVM1TUk?oc=5",
       "pubDate": "Thu, 09 Jul 2026 07:00:00 GMT",
       "ts": 1783580400000
@@ -252,7 +252,7 @@
     {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "Chinese AI models 2026: DeepSeek, Qwen, GLM and the rest of the top ones - secnews.gr",
+      "title": "Chinese AI models 2026: DeepSeek, Qwen, GLM and the rest of the top ones - SecNews.gr",
       "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQV3phR25raGZCQ29FZmFiUjREeUxxbjdEZ2d6UEJWaGFwZVd5X09aYy1OTkgxUEw0cloyZzFrUWlqcXlIekpKc1M5Wi05eXJRUXF0WnUxN0gwRGdIejJzRjEwQUlMNkV3aHNlWnRoMjd6UGRTaHUyU2ZMRnNFV2pBWFZR?oc=5",
       "pubDate": "Wed, 08 Jul 2026 07:00:00 GMT",
       "ts": 1783494000000

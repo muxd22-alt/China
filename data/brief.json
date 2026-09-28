@@ -1,15 +1,15 @@
 {
-  "date": "2026-09-27",
-  "generatedAt": "2026-09-27T14:20:20.307Z",
+  "date": "2026-09-28",
+  "generatedAt": "2026-09-28T11:22:29.822Z",
   "model": "typesafe/jev-router",
   "usedFallback": false,
-  "ms": 15510,
+  "ms": 4591,
   "errors": [],
-  "brief": "Today remains WATCH, unchanged from the first recorded decision. FX is neutral: 1 SAR = 1.794409 CNY, 0.03% above the nine-point average with a -0.35% drift, so there is no conversion edge. Core landed cost is 28,415 SAR, leaving 16,585 SAR before the 5,000 SAR reserve. The server core is 3,546.61 SAR over its 12,000 SAR line, while no targets are crossed; the closest is the 360mm AIO at 4.7% above target. Trip readiness is 85/100, blocked only by a second tracked fare check. Preserve reserve and keep the 50,000 SAR cap.",
+  "brief": "Rule engine flips from yesterday's WATCH to BOOK FLIGHT (ESTIMATE): trip readiness hit 85/100 READY — FX trend stability 100, P0/P1 target coverage 23/23, fare movement 50 with fares flat since 2026-09-27. FX is neutral at 1.791864 CNY/SAR, -0.07% vs the 9-point average; core landed 28,445 SAR leaves 16,555 SAR headroom plus the 5,000 reserve. Zero of 29 targets crossed — closest is the 360mm AIO at +4.7%. Checklist is still 0/12, so the call is ready but you aren't: verify live fares, update config bands, then book.",
   "keyMoves": [
-    "Run and record a second live fare check",
-    "Rebalance the server overage within the 50,000 SAR cap",
-    "Shortlist and verify Phase 1 SKUs"
+    "Run live fare search, update config route bands, then book flights",
+    "Sort China visa and confirm the freight forwarder contact",
+    "Shortlist exact Phase 1 SKUs and plan per-room Ethernet runs"
   ],
-  "watch": "Monitor whether FX breaks the neutral range or a tracked target is crossed tomorrow."
+  "watch": "Whether flight fares stay flat or move — a band change is what confirms or breaks the BOOK FLIGHT call."
 }

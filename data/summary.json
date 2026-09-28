@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-09-27T15:54:56.581Z",
+  "generatedAt": "2026-09-28T11:22:29.822Z",
   "budgets": {
     "server": {
       "tiers": {
         "P0": {
-          "goods": 5283.08,
-          "tax": 792.46,
+          "goods": 5290.58,
+          "tax": 793.59,
           "shipping": 2167.29,
-          "landed": 8242.83,
+          "landed": 8251.46,
           "budget": 12000,
-          "remaining": 3757.17,
-          "pct": 68.69,
+          "remaining": 3748.54,
+          "pct": 68.76,
           "status": "ok"
         },
         "P1": {
-          "goods": 9964.28,
-          "tax": 1494.64,
+          "goods": 9978.44,
+          "tax": 1496.77,
           "shipping": 4087.68,
-          "landed": 15546.61,
+          "landed": 15562.88,
           "budget": 12000,
-          "remaining": -3546.61,
-          "pct": 129.56,
+          "remaining": -3562.88,
+          "pct": 129.69,
           "status": "over"
         },
         "P2": {
-          "goods": 10354.38,
-          "tax": 1553.16,
+          "goods": 10369.09,
+          "tax": 1555.36,
           "shipping": 4247.71,
-          "landed": 16155.26,
+          "landed": 16172.17,
           "budget": 12000,
-          "remaining": -4155.26,
-          "pct": 134.63,
+          "remaining": -4172.17,
+          "pct": 134.77,
           "status": "over"
         },
         "P3": {
-          "goods": 10354.38,
-          "tax": 1553.16,
+          "goods": 10369.09,
+          "tax": 1555.36,
           "shipping": 4247.71,
-          "landed": 16155.26,
+          "landed": 16172.17,
           "budget": 12000,
-          "remaining": -4155.26,
-          "pct": 134.63,
+          "remaining": -4172.17,
+          "pct": 134.77,
           "status": "over"
         }
       }
@@ -48,43 +48,43 @@
     "home": {
       "tiers": {
         "P0": {
-          "goods": 4123.92,
-          "tax": 618.59,
+          "goods": 4129.78,
+          "tax": 619.47,
           "shipping": 1691.77,
-          "landed": 6434.28,
+          "landed": 6441.01,
           "budget": 38000,
-          "remaining": 31565.72,
-          "pct": 16.93,
+          "remaining": 31558.99,
+          "pct": 16.95,
           "status": "ok"
         },
         "P1": {
-          "goods": 8247.84,
-          "tax": 1237.18,
+          "goods": 8259.56,
+          "tax": 1238.93,
           "shipping": 3383.54,
-          "landed": 12868.56,
+          "landed": 12882.03,
           "budget": 38000,
-          "remaining": 25131.44,
-          "pct": 33.86,
+          "remaining": 25117.97,
+          "pct": 33.9,
           "status": "ok"
         },
         "P2": {
-          "goods": 10086.89,
-          "tax": 1513.03,
+          "goods": 10101.21,
+          "tax": 1515.18,
           "shipping": 4137.98,
-          "landed": 15737.9,
+          "landed": 15754.37,
           "budget": 38000,
-          "remaining": 22262.1,
-          "pct": 41.42,
+          "remaining": 22245.63,
+          "pct": 41.46,
           "status": "ok"
         },
         "P3": {
-          "goods": 10365.53,
-          "tax": 1554.83,
+          "goods": 10380.25,
+          "tax": 1557.04,
           "shipping": 4252.29,
-          "landed": 16172.65,
+          "landed": 16189.58,
           "budget": 38000,
-          "remaining": 21827.35,
-          "pct": 42.56,
+          "remaining": 21810.42,
+          "pct": 42.6,
           "status": "ok"
         }
       }
@@ -93,17 +93,17 @@
       "totalBudget": 50000,
       "contingencyReserve": 5000,
       "deployable": 45000,
-      "coreLanded": 29443.94,
+      "coreLanded": 29473.7,
       "coreWithinDeployable": true,
       "shippingSAR": 8500,
       "taxRate": 0.15,
-      "sarPerCny": 0.557287
+      "sarPerCny": 0.558078
     }
   },
   "tip": {
-    "index": 4,
+    "index": 5,
     "total": 14,
-    "text": "Budget the full 15% import tax on goods value. Keep every receipt - customs math must be honest to stay painless."
+    "text": "Xianyu for parts (negotiate 10-15% down). Huaqiangbei / SEG for GPUs. Never pay before a live GPU-Z VRAM check."
   },
   "travel": {
     "routes": [
@@ -178,22 +178,22 @@
   "warnings": [],
   "newsCount": 34,
   "call": {
-    "verdict": "WATCH",
-    "confidence": "VERIFIED",
-    "driver": "no statistical edge today",
-    "reasoning": "1 SAR = 1.7944 CNY - 0.03% above its 9-point average (signal NEUTRAL, -0.35% drift); dual-source FX verified. Core plan lands at 28,415 SAR vs 45,000 deployable - 16,585 SAR headroom, 5,000 SAR reserve held back. 29 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (BUILDING) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; awaiting a second tracked fare check. Call: WATCH - driven by no statistical edge today.",
+    "verdict": "BOOK FLIGHT",
+    "confidence": "ESTIMATE",
+    "driver": "trip readiness reached READY",
+    "reasoning": "1 SAR = 1.7919 CNY - 0.07% below its 9-point average (signal NEUTRAL, -0.50% drift); dual-source FX verified. Core plan lands at 28,445 SAR vs 45,000 deployable - 16,555 SAR headroom, 5,000 SAR reserve held back. 29 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-27. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
     "inputs": {
-      "sarCny": 1.794409,
-      "pctVsAvg": 0.03,
+      "sarCny": 1.791864,
+      "pctVsAvg": -0.07,
       "signal": "NEUTRAL",
-      "landed": 28415,
-      "headroom": 16585,
+      "landed": 28445,
+      "headroom": 16555,
       "crossed": 0,
       "readiness": 85,
       "goodsCny": 37180
     }
   },
-  "diff": "First recorded call - baseline saved as WATCH.",
+  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg +0.03% → -0.07% · landed +30 SAR · confidence VERIFIED → ESTIMATE.",
   "crossed": {
     "crossed": [],
     "withTargets": 29,
@@ -217,14 +217,14 @@
   },
   "readiness": {
     "score": 85,
-    "band": "BUILDING",
+    "band": "READY",
     "booked": false,
     "components": [
       {
         "key": "fx",
         "label": "FX trend stability",
         "score": 100,
-        "value": "-0.35% drift over 8 pts"
+        "value": "-0.50% drift over 8 pts"
       },
       {
         "key": "targets",
@@ -236,14 +236,15 @@
         "key": "fare",
         "label": "Flight-fare movement",
         "score": 50,
-        "value": "awaiting a second tracked fare check"
+        "value": "fares flat since 2026-09-27"
       }
     ],
     "fare": {
       "score": 50,
-      "deltaPct": null,
-      "note": "awaiting a second tracked fare check",
-      "low": 2200
+      "deltaPct": 0,
+      "note": "fares flat since 2026-09-27",
+      "low": 2200,
+      "refDate": "2026-09-27"
     }
   },
   "checklist": {
@@ -334,6 +335,22 @@
         "signal": "NEUTRAL",
         "landed": 28415,
         "headroom": 16585,
+        "crossed": 0,
+        "readiness": 85,
+        "goodsCny": 37180
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "verdict": "BOOK FLIGHT",
+      "confidence": "ESTIMATE",
+      "driver": "trip readiness reached READY",
+      "inputs": {
+        "sarCny": 1.791864,
+        "pctVsAvg": -0.07,
+        "signal": "NEUTRAL",
+        "landed": 28445,
+        "headroom": 16555,
         "crossed": 0,
         "readiness": 85,
         "goodsCny": 37180
