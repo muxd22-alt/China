@@ -29,8 +29,10 @@ function fareMovement(tracked, dateKey) {
   const pts = tracked.filter((p) => p.fare);
   if (pts.length < 2) return { score: 50, deltaPct: null, note: "awaiting a second tracked fare check", low: pts.length ? pts[pts.length - 1].fare.low : null };
   const cur = pts[pts.length - 1];
+  const same = pts.filter((p) => p.fare.id === cur.fare.id);
+  if (same.length < 2) return { score: 50, deltaPct: null, note: `fare baseline restarted for ${cur.fare.id} - awaiting a second tracked check`, low: cur.fare.low };
   const cutoff = new Date(Date.parse(dateKey + "T00:00:00Z") - 7 * 86400000).toISOString().slice(0, 10);
-  const ref = [...pts].filter((p) => p.date <= cutoff).pop() || pts[0];
+  const ref = [...same].filter((p) => p.date <= cutoff).pop() || same[0];
   if (ref.date === cur.date) return { score: 50, deltaPct: null, note: "fare baseline only - needs a week of tracking", low: cur.fare.low };
   const deltaPct = ((cur.fare.low - ref.fare.low) / ref.fare.low) * 100;
   const score = clamp(50 - deltaPct * 10, 0, 100);
@@ -170,7 +172,7 @@ export function buildPrompt({ plan, dateKey, call, signal, budgets, crossedInfo,
   L.push("");
   L.push(`## Verified inputs (dual-source FX unless noted)`);
   L.push(`FX: 1 SAR = ${call.inputs.sarCny} CNY, ${call.inputs.pctVsAvg}% vs ${signal.series?.length || "?"}-pt avg, signal=${signal.key}, trend=${(signal.trendPct || 0).toFixed(2)}%`);
-  L.push(`Budgets: server core ${budgets.server.tiers.P1.landed}/12000, home core ${budgets.home.tiers.P1.landed}/38000, landed total ${call.inputs.landed}, headroom ${call.inputs.headroom}, reserve ${budgets.overview.contingencyReserve}`);
+  L.push(`Budgets: server core ${budgets.server.tiers.P1.landed}/${budgets.server.tiers.P1.budget}, home core ${budgets.home.tiers.P1.landed}/${budgets.home.tiers.P1.budget}, landed total ${call.inputs.landed}, headroom ${call.inputs.headroom}, reserve ${budgets.overview.contingencyReserve}`);
   L.push(`Crossed: ${crossedInfo.crossed.length} (of ${crossedInfo.withTargets} targets); closest: ${crossedInfo.closest ? `${crossedInfo.closest.item.name} +${crossedInfo.closest.abovePct}%` : "n/a"}`);
   L.push(`Trip readiness: ${readiness.score}/100 ${readiness.band} | ${readiness.components.map((c) => `${c.label}=${c.value}`).join(" | ")} | flights booked: ${readiness.booked}`);
   L.push("");

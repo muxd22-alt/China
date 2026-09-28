@@ -1,3 +1,89 @@
+# Homelab Architecture — BC-250 Cluster (current, Sep 2026)
+
+> Replaces the earlier single-box 3090 plan below (see archive). Numbers live in `data/config.json` /
+> `data/products.json`; the dashboard renders them. Budget frame: 50K SAR total, **45K deployable**
+> (10% reserve held back), server line rebalanced to 23K.
+
+## Topology
+
+```
+                         ┌──────────────────────────────────────────┐
+                         │   10GbE SFP+ Switch (TP-Link TL-ST1008F) │
+                         └───────┬──────────────────────────┬───────┘
+                                 │                          │
+        ┌────────────────────────┴────────┐        ┌────────┴────────────────────────┐
+        │  Planner Node (2x BC-250)       │        │  Worker Node (3x BC-250)        │
+        │  • 32GB GDDR6 VRAM              │        │  • 48GB GDDR6 VRAM              │
+        │  • Runs: 14B–32B Orchestrator   │        │  • Runs: Parallel 7B/8B Tools   │
+        └─────────────────────────────────┘        └─────────────────────────────────┘
+                                 │                          │
+                         ┌───────┴──────────────────────────┴───────┐
+                         │   Core NAS / Virtualization Host         │
+                         │   • Ryzen AM5 / Used EPYC Board          │
+                         │   • 2TB NVMe (VMs) + ZFS Mirror HDDs     │
+                         │   • Jellyfin, Game VMs, PXE Host         │
+                         └──────────────────────────────────────────┘
+```
+
+## Node split (5x AMD BC-250)
+
+- **What a BC-250 is:** ex-crypto-mining board with a cut-down PS5 APU — 6C Zen2 (8C unlockable) +
+  24 RDNA2 CU ("Cyan Skillfish"), **16GB GDDR6 shared CPU/GPU @ 448 GB/s**, 220W, PCIe 8-pin,
+  M.2 + GbE + DP on-board. Linux only (RADV/Vulkan, no Windows driver). Community: modded BIOS
+  (VRAM split) + SMU governor; llama.cpp-Vulkan fork runs ~60 tok/s for 8B per board.
+  Sourcing: Xianyu ~¥650–850/card.
+- **Node A — 2x BC-250 / ~32GB VRAM:** central **Planner & Reasoning** node. Runs the 14B–32B
+  quantized orchestrator (e.g. Qwen3-32B Q4) via llama.cpp Vulkan.
+- **Node B — 3x BC-250 / ~48GB VRAM:** **Execution & Agentic Worker** node. Multiple concurrent
+  7B/8B tool-calling agents without VRAM swapping.
+- Each node sits on a cheap used carrier host (board + CPU + 32GB, Xianyu) in an open frame / 4U
+  enclosure inside a 12U–18U cabinet.
+
+## Network & storage backbone
+
+- **10GbE (mandatory):** 1GbE (~110 MB/s) chokes llama.cpp RPC KV-cache / tensor transfers between
+  Node A and Node B. 3x Mellanox ConnectX-3 SFP+ (¥100–150 each on Xianyu) + DACs + TP-Link
+  TL-ST1008F 8-port 10G switch (¥750) → ~1.1 GB/s inter-node + NAS throughput.
+- **Storage:** core host = 2TB NVMe (model weights/VMs) + ZFS mirrored 8TB enterprise HDDs
+  (Jellyfin + camera archives).
+- **Endpoints:** mini-PCs dropped as primary endpoints — Xiaomi Mi Box x2 stream Moonlight/Jellyfin
+  straight to the TVs.
+
+## Mass OS deployment (100GB image cloning)
+
+- **Method:** PXE multicast via **Clonezilla SE** hosted on the NAS (core host is the PXE server).
+- **Golden image:** one target NVMe with CachyOS/Ubuntu + Mesa RADV + `amdgpu.sg_display=0` +
+  the BC-250 governor script baked in.
+- **Execution:** boot all 5 node drives over PXE, multicast the 100GB image simultaneously over
+  10GbE — under ~3 minutes per batch.
+
+## Power & rack
+
+- **Chassis:** 4U rackmount or open mining frame in a 12U/18U cabinet (BC-250 boards are
+  non-standard 305mm — off-the-shelf cases don't fit).
+- **Power:** 1600–2000W redundant (1+1) enterprise server PSU + 12V breakout board (¥600, used,
+  load-tested) to absorb 5x 220W spikes; core host keeps its own new ATX PSU.
+- **Cooling:** Delta-class 4000+ RPM 120mm fans aimed at the passive heatsinks **and the GDDR6**.
+
+## Procurement snapshot
+
+| Category | Item | Source | Est. (CNY / SAR) |
+|---|---|---|---|
+| Compute | 5x AMD BC-250 16GB | Xianyu | ~¥650–850/card (≈2,100 total) |
+| Networking | 3x ConnectX-3 10GbE + DACs | Xianyu / Taobao | ~¥350 (≈200) |
+| Switching | TP-Link TL-ST1008F 8-port 10G | Taobao / JD | ~¥750 (≈420) |
+| Power | 1600–2000W redundant PSU + breakout | Xianyu / Huaqiangbei | ~¥600 (≈335) |
+| Bedroom | Bed + mattress + nightstands | Foshan Lecong | ~¥3,200 (≈1,780) |
+| Decor | Dimmable lighting + made-to-measure curtains | Taobao / Foshan | ~¥1,100 (≈615) |
+| Flight | Direct RUH ↔ SZX (CZ5007 nonstop) | China Southern | ~¥4,200 (≈2,350) |
+
+*Wardrobe excluded from the bedroom list (floor space + budget). Saudia has no RUH–SZX passenger
+nonstop (SV992 is cargo) — CZ is the only nonstop carrier, 3×/week.*
+
+---
+
+## Archive: original consultation log (pre-Sep 2026 — single-box 3090 plan)
+
 Claude finished the response
 
 

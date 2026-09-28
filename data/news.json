@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T11:22:29.822Z",
+  "generatedAt": "2026-09-28T12:20:53.509Z",
   "items": [
     {
       "feed": "localai",
@@ -12,7 +12,7 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "Best Desktops for Local AI in 2026: Lab-Tested Leaderboard - storagereview.com",
+      "title": "Best Desktops for Local AI in 2026: Lab-Tested Leaderboard - StorageReview.com",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE42RWtmb3IyeHRhVC1IdlhCQ29qSmw1Vm93LXBuRC1rNDAzbG92Nk11VW5vaTE1SE9XT21oMWZQRUx0aVl2UXZmTGtIMDZJUnRfTDJXRFBnd1hRNWZORVNsSTZn0gFnQVVfeXFMTUFoXzlSd3RSUGdKdnczSXNfUFR3Snl5U0ExdUVnTlhNVV9PQTNDSS1HdHNOMXNFNTFTWnM1b2VuMjlwRkthU0Nxd3RxX21iNGRDRy1ELWZReVlBRzFnS1laMmU4M1pJbw?oc=5",
       "pubDate": "Wed, 23 Sep 2026 07:00:00 GMT",
       "ts": 1790146800000
@@ -194,6 +194,14 @@
       "ts": 1786604400000
     },
     {
+      "feed": "trade",
+      "feedLabel": "China-Saudi Trade",
+      "title": "Can China restrain Iran? Gulf states test Beijing's influence - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdklTZHJ1YU1Db09vbVRyR0Z2SHFydjMxZVJLUHZHMDlubnljR21Nd0tIbnBxVk1OYkFmNWE3VldxQ21aSmtaMlNTV1Z5VVZCR1pMSzNIdUpHUnhQdGdZZmk4UnBFSXVQa1FBemhaRnlKSW1QRDdKR3J0Z1E1WnpJcEhNYjlfeDBMN2tSX2p5ZjdwRnZqZnNjdUs0UGk1V3REemI0TGtyUllFc0U?oc=5",
+      "pubDate": "Thu, 30 Jul 2026 07:00:00 GMT",
+      "ts": 1785394800000
+    },
+    {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
       "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - Carnegie Endowment for International Peace",
@@ -208,14 +216,6 @@
       "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNV0E3aG9ZS2JFMFBvdW84UGpoZXlZenZtU1JlZDN2al9vUDFkMllrNU04UGNWOGJxRnpVU29BUDY1ZjVfb09iVDAzWlBPR0JzcE5lanhaS0tMU0Jhcmp3MnpuelQwLVBGZGVmcGdoZFhTVGxWZzk0Vnd6c1R2THlZb1dmVkJQQmc2UldVdTMwWEpLN1ctUjhBTUlnSlZtdElsUVhsTEVZZElVYTBWY0ZfelNMNTJLRm1FdjhQdkN0dXZfOURvWDh1b1FpSEVrZw?oc=5",
       "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
       "ts": 1785222000000
-    },
-    {
-      "feed": "trade",
-      "feedLabel": "China-Saudi Trade",
-      "title": "China–GCC Relations in an Emerging Multipolar Order - Middle East Council on Global Affairs",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQ1lrcU9JaXRXUHFGM2QwYUhNbUFJZWd5SXBfMS1tVFdUV09sU1YzeU00SkZNblY3aDhTZFhwM2xsX1QyWTVRWlYtdGR5TTNFU1ExZnpoNmpOd18wVl9mcENOVVJKZ3lSSDZVWk81MGVreEEwbUJWZTZjWXc4a3pmaXIxMGs1SDBhOENsWDJxNA?oc=5",
-      "pubDate": "Wed, 22 Jul 2026 15:25:52 GMT",
-      "ts": 1784733952000
     },
     {
       "feed": "openmodels",

@@ -6,8 +6,8 @@
   },
   "budgets": {
     "total": 50000,
-    "serverTech": 12000,
-    "homeFurnishing": 38000,
+    "serverTech": 23000,
+    "homeFurnishing": 27000,
     "contingencyPct": 0.1
   },
   "logistics": {
@@ -46,24 +46,24 @@
   "travel": {
     "routes": [
       {
+        "id": "ruh-szx",
+        "from": "Riyadh (RUH)",
+        "to": "Shenzhen (SZX)",
+        "via": "0 stops - nonstop",
+        "sarLow": 2000,
+        "sarHigh": 4000,
+        "note": "LOCKED PRIMARY: China Southern CZ5007 nonstop ~8h, 3x/week (verify days). Saudia has no passenger nonstop (SV992 is cargo-only) - SV itineraries connect via CAN. Direct fares feed the BOOK FLIGHT call",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shenzhen%20nonstop&curr=SAR"
+      },
+      {
         "id": "jed-szx",
         "from": "Jeddah (JED)",
         "to": "Shenzhen (SZX)",
         "via": "1 stop",
         "sarLow": 2200,
         "sarHigh": 3800,
-        "note": "Best for Huaqiangbei / SEG electronics run",
+        "note": "Fallback gateway (1 stop) for the Huaqiangbei / SEG electronics run",
         "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Shenzhen&curr=SAR"
-      },
-      {
-        "id": "ruh-szx",
-        "from": "Riyadh (RUH)",
-        "to": "Shenzhen (SZX)",
-        "via": "1 stop",
-        "sarLow": 2400,
-        "sarHigh": 4000,
-        "note": "Compare both gateways before booking",
-        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shenzhen&curr=SAR"
       },
       {
         "id": "jed-bjs",
@@ -72,7 +72,7 @@
         "via": "1 stop",
         "sarLow": 1800,
         "sarHigh": 3200,
-        "note": "Often cheaper than SZX - useful if route is flexible",
+        "note": "Fallback - often cheaper than SZX if the route is flexible",
         "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Beijing&curr=SAR"
       },
       {
@@ -82,7 +82,7 @@
         "via": "1 stop",
         "sarLow": 2300,
         "sarHigh": 3600,
-        "note": "Furniture clusters: Foshan is a train ride away",
+        "note": "Fallback - furniture clusters: Foshan is a train ride away from the SZX arrival anyway",
         "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shanghai&curr=SAR"
       }
     ],
@@ -243,7 +243,9 @@
   ],
   "tips": [
     "Order of arms: case / motherboard / CPU / PSU first - they age slowest. RAM next. GPUs and HDDs LAST - both are the most volatile line items in this build.",
-    "PSU and UPS: buy new only. Everything else in the server can be used - but run a VRAM + 10-minute fan load test before you pay.",
+    "PSU and UPS for the core host: buy new only. The one exception is the redundant mining/server PSU for the BC-250 nodes (used, with breakout board) - bring a load tester and burn it in before the cards go on it.",
+    "BC-250 setup: flash the community BIOS (VRAM split), run the SMU governor for clocks and idle power, and put fans directly on the GDDR6 - it runs extremely hot. Boards are Linux-only (RADV/Vulkan); Windows has no driver.",
+    "The 10GbE SFP+ backbone exists for one reason: KV-cache / tensor traffic between the BC-250 planner and worker nodes. Never run llama.cpp RPC over 1GbE - 110 MB/s will strangle it.",
     "When CNY sits below the 8-week average, convert and place the big-ticket orders the same week. The dashboard flags this automatically.",
     "Shipping is a fixed ~8,500 SAR - heavier carts lower cost per kilo. Consolidate furniture AND tech into ONE shipment.",
     "Budget the full 15% import tax on goods value. Keep every receipt - customs math must be honest to stay painless.",

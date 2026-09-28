@@ -6,34 +6,53 @@ Single source of truth for the trip + purchases. The dashboard (`index.html`) re
 
 | Line | Budget (SAR) | Scope |
 |---|---|---|
-| Server & tech | 12,000 | Proxmox host, anti-cheat box, endpoints, networking, cameras |
-| Home furnishing | 38,000 | Sofas, kitchen, bath, bedroom, lighting, decor, light electronics |
-| **Total** | **50,000** | Includes 8,500 freight + 15% tax + 10% reserve (5,000) held back |
+| Server & tech | 23,000 | Proxmox core host, 5x BC-250 planner/worker nodes, anti-cheat box, 10GbE backbone, endpoints, cameras |
+| Home furnishing | 27,000 | Sofas, kitchen, bath, bedroom (no wardrobe), lighting, decor, light electronics |
+| **Total** | **50,000** | Includes 8,500 freight + 15% tax + 10% reserve (5,000) held back → **45,000 deployable ceiling** |
 
 Freight model: one consolidated sea shipment, ~8,500 SAR fixed → heavier carts cost less per kilo.
 Tax model: 15% on goods value (edit `data/config.json` if the real rate differs).
 
 ## 2. Architecture (locked decisions)
 
-- **One Proxmox host** — Ryzen 9 7900X + X670E + 128GB DDR5 + RTX 3090 24GB.
-  Game VM (GPU passthrough) + Sunshine → Moonlight to every room; LXCs for Jellyfin, AdGuard, cameras.
-- **Second physical box** — used OEM tower + RTX 3060, bare-metal Windows, for kernel anti-cheat games
-  (Valorant / Fortnite / PUBG refuse VMs). This is non-negotiable if those games matter.
-- **Endpoints per room** — mini-PC or Mi Box running Moonlight locally; KB/mouse pair to the endpoint, never to the server.
-- **AI on the same 3090** — vLLM/SGLang with PagedAttention + KV-cache offload to the 128GB RAM,
-  scheduled around gaming (single GPU = one full-quality session at a time).
-- Network: Ethernet per room (run cables **before** furniture lands), 2.5GbE switch.
+- **Core host (NAS / virtualization)** — Ryzen 9 7900X + X670E + 128GB DDR5 + RTX 3090.
+  Proxmox: Game VM (GPU passthrough) + Sunshine → Moonlight to every TV; LXCs for Jellyfin, AdGuard, cameras;
+  ZFS mirror HDDs; PXE host for the fleet. Second physical box: used OEM tower + RTX 3060, bare-metal Windows,
+  for kernel anti-cheat games (Valorant / Fortnite / PUBG refuse VMs) — non-negotiable if those games matter.
+- **BC-250 cluster (LLM compute) — 5x AMD BC-250 16GB GDDR6 boards from Xianyu (~650–850 CNY each)**
+  (ex-mining cut-down PS5 APU: 6C Zen2 + 24 RDNA2 CU, 16GB shared @ 448 GB/s, 220W, Linux/RADV only):
+  - **Node A — 2x BC-250 (~32GB VRAM):** Planner / Orchestrator. Runs the 14B–32B quantized orchestrator
+    (e.g. Qwen-32B Q4) via llama.cpp Vulkan.
+  - **Node B — 3x BC-250 (~48GB VRAM):** Execution / Agentic worker. Runs parallel 7B/8B tool-calling
+    agents without VRAM swapping.
+  - Each node is a cheap used carrier host (board + CPU + 32GB) + ConnectX-3 NIC, mounted in an open
+    frame / 4U rack in a 12U–18U cabinet.
+- **10GbE SFP+ backbone (mandatory)** — 3x Mellanox ConnectX-3 (~100–150 CNY each) + TP-Link TL-ST1008F
+  8-port switch (~750 CNY). ~1.1 GB/s between Node A / Node B / core: llama.cpp RPC KV-cache and tensor
+  transfer are the whole reason this exists — 1GbE (~110 MB/s) would strangle it.
+- **Power & cooling** — 1600–2000W redundant (1+1) enterprise PSU + 12V breakout board feeds the 5x 220W
+  BC-250 spikes; Delta-class 4000+ RPM fans aimed at the passive heatsinks **and the GDDR6** (runs extremely hot).
+- **Endpoints per room** — TV boxes (Mi Box x2), not mini-PCs: Moonlight/Jellyfin decode at the TV,
+  KB/mouse pair to the endpoint, never to the server.
+- **AI split** — LLMs live on the BC-250 nodes (planner + workers); the 3090 keeps the Game VM and
+  doubles as the CUDA box for 70B-class jobs when nobody is gaming.
+- **Mass OS deployment (PXE multicast)** — Clonezilla SE on the NAS pushes one golden 100GB NVMe image
+  (CachyOS/Ubuntu + Mesa RADV + `amdgpu.sg_display=0` + BC-250 SMU governor script) to all 5 node drives
+  over 10GbE in under ~3 minutes per batch.
+- Network: Ethernet per room (run cables **before** furniture lands) on top of the 10GbE core.
 
 ## 3. Buy order (phases — encoded in `data/products.json`)
 
 | Phase | What | Why this order |
 |---|---|---|
-| 1 — commit early | case, mobo, CPU, PSU, UPS, AIO, network, sofa/kitchen/bed | These age slowest; order day one |
-| 2 — mid | RAM, NVMe, endpoints, peripherals, cameras, decor | Medium volatility |
+| 1 — commit early | case, mobo, CPU, PSU, UPS, AIO, node carrier hosts, redundant PSU + breakout, 10GbE NICs/switch, rack + cabinet, network, sofa/kitchen/bed | These age slowest; order day one |
+| 2 — mid | RAM, NVMe, BC-250 boards (+ fans), Mi Boxes, peripherals, cameras, decor, lighting/curtains | Used boards: validate one carrier first, then the rest |
 | 3 — last | GPUs (3090, 3060), HDDs, OEM box, gadgets | Most volatile prices — verify locally before paying |
 
-**Rules:** PSU + UPS = new only. Everything else used is fair game — but GPU-Z VRAM + 10-min fan test before cash.
-Xianyu for parts (negotiate 10–15%), Huaqiangbei/SEG for GPUs, Foshan/1688 for furniture.
+**Rules:** ATX PSU + UPS = new only (the redundant mining PSU for the BC-250 nodes is the one used exception — load-test it).
+Everything else used is fair game — but GPU-Z VRAM + 10-min fan test before cash, and a live boot test on every BC-250.
+Sourcing: **Shenzhen / Huaqiangbei** for BC-250s, GPUs and 10GbE gear; **Foshan / Lecong** for the bedroom and furniture;
+**Xianyu** for used enterprise hardware (negotiate 10–15%).
 
 ## 4. Decision engine (how the dashboard thinks)
 
@@ -51,12 +70,16 @@ Xianyu for parts (negotiate 10–15%), Huaqiangbei/SEG for GPUs, Foshan/1688 for
 1. **Now → trip:** shortlist exact SKUs, verify prices in the dashboard daily, run the cables plan for rooms.
 2. **On arrival in China:** Phase 1 orders immediately (sea freight is 3–6 weeks), Phase 2 within week one.
 3. **Before flying back:** Phase 3 — GPUs/HDDs only after live testing; compare against local Saudi prices first.
-4. **After arrival:** Proxmox install, Moonlight endpoints per room, cameras local-only, cancel what the stack replaces.
+4. **After arrival:** Proxmox install, PXE-multicast the golden image to the BC-250 node drives (Clonezilla SE over 10GbE),
+   Moonlight endpoints per room, cameras local-only, cancel what the stack replaces.
 5. **Ongoing:** dashboard refreshes daily at 08:00 Riyadh — act on FAVERABLE/WAIT signals as they appear.
 
 ## 6. Trip logistics (estimates — verify live)
 
-- Routes: JED/RUH → Shenzhen (Huaqiangbei run) or Beijing; fares are banded in the dashboard with deep links.
+- **Route locked:** direct **RUH ↔ SZX nonstop** (China Southern CZ5007, ~8h, 3×/week; Saudia's RUH–SZX
+  nonstop is cargo-only). JED and PVG bands remain as fallbacks — all banded in the dashboard with deep links.
+- Sourcing map: **Shenzhen (Huaqiangbei/SEG)** → BC-250s, GPUs, 10GbE gear · **Foshan (Lecong)** → bedroom + furniture ·
+  **Xianyu** → used enterprise hardware, carrier hosts, ConnectX-3.
 - Stays: Shenzhen/Foshan ¥120–450/night — converted live in the Travel section.
 
 ## 7. How to keep it fresh

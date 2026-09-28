@@ -1,47 +1,47 @@
 {
-  "generatedAt": "2026-09-28T11:22:29.822Z",
+  "generatedAt": "2026-09-28T12:20:53.509Z",
   "budgets": {
     "server": {
       "tiers": {
         "P0": {
-          "goods": 5290.58,
-          "tax": 793.59,
-          "shipping": 2167.29,
-          "landed": 8251.46,
-          "budget": 12000,
-          "remaining": 3748.54,
-          "pct": 68.76,
+          "goods": 5625.43,
+          "tax": 843.81,
+          "shipping": 1946.17,
+          "landed": 8415.41,
+          "budget": 23000,
+          "remaining": 14584.59,
+          "pct": 36.59,
           "status": "ok"
         },
         "P1": {
-          "goods": 9978.44,
-          "tax": 1496.77,
-          "shipping": 4087.68,
-          "landed": 15562.88,
-          "budget": 12000,
-          "remaining": -3562.88,
-          "pct": 129.69,
-          "status": "over"
+          "goods": 13887.77,
+          "tax": 2083.17,
+          "shipping": 4804.6,
+          "landed": 20775.54,
+          "budget": 23000,
+          "remaining": 2224.46,
+          "pct": 90.33,
+          "status": "ok"
         },
         "P2": {
-          "goods": 10369.09,
-          "tax": 1555.36,
-          "shipping": 4247.71,
-          "landed": 16172.17,
-          "budget": 12000,
-          "remaining": -4172.17,
-          "pct": 134.77,
-          "status": "over"
+          "goods": 14468.17,
+          "tax": 2170.23,
+          "shipping": 5005.39,
+          "landed": 21643.79,
+          "budget": 23000,
+          "remaining": 1356.21,
+          "pct": 94.1,
+          "status": "ok"
         },
         "P3": {
-          "goods": 10369.09,
-          "tax": 1555.36,
-          "shipping": 4247.71,
-          "landed": 16172.17,
-          "budget": 12000,
-          "remaining": -4172.17,
-          "pct": 134.77,
-          "status": "over"
+          "goods": 14468.17,
+          "tax": 2170.23,
+          "shipping": 5005.39,
+          "landed": 21643.79,
+          "budget": 23000,
+          "remaining": 1356.21,
+          "pct": 94.1,
+          "status": "ok"
         }
       }
     },
@@ -50,41 +50,41 @@
         "P0": {
           "goods": 4129.78,
           "tax": 619.47,
-          "shipping": 1691.77,
-          "landed": 6441.01,
-          "budget": 38000,
-          "remaining": 31558.99,
-          "pct": 16.95,
+          "shipping": 1428.73,
+          "landed": 6177.98,
+          "budget": 27000,
+          "remaining": 20822.02,
+          "pct": 22.88,
           "status": "ok"
         },
         "P1": {
-          "goods": 8259.56,
-          "tax": 1238.93,
-          "shipping": 3383.54,
-          "landed": 12882.03,
-          "budget": 38000,
-          "remaining": 25117.97,
-          "pct": 33.9,
+          "goods": 8203.75,
+          "tax": 1230.56,
+          "shipping": 2838.16,
+          "landed": 12272.47,
+          "budget": 27000,
+          "remaining": 14727.53,
+          "pct": 45.45,
           "status": "ok"
         },
         "P2": {
-          "goods": 10101.21,
-          "tax": 1515.18,
-          "shipping": 4137.98,
-          "landed": 15754.37,
-          "budget": 38000,
-          "remaining": 22245.63,
-          "pct": 41.46,
+          "goods": 9822.17,
+          "tax": 1473.33,
+          "shipping": 3398.07,
+          "landed": 14693.57,
+          "budget": 27000,
+          "remaining": 12306.43,
+          "pct": 54.42,
           "status": "ok"
         },
         "P3": {
-          "goods": 10380.25,
-          "tax": 1557.04,
-          "shipping": 4252.29,
-          "landed": 16189.58,
-          "budget": 38000,
-          "remaining": 21810.42,
-          "pct": 42.6,
+          "goods": 10101.21,
+          "tax": 1515.18,
+          "shipping": 3494.61,
+          "landed": 15111,
+          "budget": 27000,
+          "remaining": 11889,
+          "pct": 55.97,
           "status": "ok"
         }
       }
@@ -93,7 +93,7 @@
       "totalBudget": 50000,
       "contingencyReserve": 5000,
       "deployable": 45000,
-      "coreLanded": 29473.7,
+      "coreLanded": 33905.25,
       "coreWithinDeployable": true,
       "shippingSAR": 8500,
       "taxRate": 0.15,
@@ -101,12 +101,22 @@
     }
   },
   "tip": {
-    "index": 5,
-    "total": 14,
-    "text": "Xianyu for parts (negotiate 10-15% down). Huaqiangbei / SEG for GPUs. Never pay before a live GPU-Z VRAM check."
+    "index": 15,
+    "total": 16,
+    "text": "Compare the same SKU on 1688 vs Xianyu: factory-refurbished units often run 30-40% under retail with warranty still traceable."
   },
   "travel": {
     "routes": [
+      {
+        "id": "ruh-szx",
+        "from": "Riyadh (RUH)",
+        "to": "Shenzhen (SZX)",
+        "via": "0 stops - nonstop",
+        "sarLow": 2000,
+        "sarHigh": 4000,
+        "note": "LOCKED PRIMARY: China Southern CZ5007 nonstop ~8h, 3x/week (verify days). Saudia has no passenger nonstop (SV992 is cargo-only) - SV itineraries connect via CAN. Direct fares feed the BOOK FLIGHT call",
+        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shenzhen%20nonstop&curr=SAR"
+      },
       {
         "id": "jed-szx",
         "from": "Jeddah (JED)",
@@ -114,18 +124,8 @@
         "via": "1 stop",
         "sarLow": 2200,
         "sarHigh": 3800,
-        "note": "Best for Huaqiangbei / SEG electronics run",
+        "note": "Fallback gateway (1 stop) for the Huaqiangbei / SEG electronics run",
         "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Shenzhen&curr=SAR"
-      },
-      {
-        "id": "ruh-szx",
-        "from": "Riyadh (RUH)",
-        "to": "Shenzhen (SZX)",
-        "via": "1 stop",
-        "sarLow": 2400,
-        "sarHigh": 4000,
-        "note": "Compare both gateways before booking",
-        "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shenzhen&curr=SAR"
       },
       {
         "id": "jed-bjs",
@@ -134,7 +134,7 @@
         "via": "1 stop",
         "sarLow": 1800,
         "sarHigh": 3200,
-        "note": "Often cheaper than SZX - useful if route is flexible",
+        "note": "Fallback - often cheaper than SZX if the route is flexible",
         "link": "https://www.google.com/travel/flights?q=Flights%20from%20Jeddah%20to%20Beijing&curr=SAR"
       },
       {
@@ -144,7 +144,7 @@
         "via": "1 stop",
         "sarLow": 2300,
         "sarHigh": 3600,
-        "note": "Furniture clusters: Foshan is a train ride away",
+        "note": "Fallback - furniture clusters: Foshan is a train ride away from the SZX arrival anyway",
         "link": "https://www.google.com/travel/flights?q=Flights%20from%20Riyadh%20to%20Shanghai&curr=SAR"
       }
     ],
@@ -175,29 +175,31 @@
     "taxOn": "goods",
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
-  "warnings": [],
+  "warnings": [
+    "LLM brief skipped - OPENROUTER_API_KEY not set (local run or GitHub secret missing)"
+  ],
   "newsCount": 34,
   "call": {
-    "verdict": "BOOK FLIGHT",
-    "confidence": "ESTIMATE",
-    "driver": "trip readiness reached READY",
-    "reasoning": "1 SAR = 1.7919 CNY - 0.07% below its 9-point average (signal NEUTRAL, -0.50% drift); dual-source FX verified. Core plan lands at 28,445 SAR vs 45,000 deployable - 16,555 SAR headroom, 5,000 SAR reserve held back. 29 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-27. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
+    "verdict": "WATCH",
+    "confidence": "VERIFIED",
+    "driver": "no statistical edge today",
+    "reasoning": "1 SAR = 1.7919 CNY - 0.07% below its 9-point average (signal NEUTRAL, -0.50% drift); dual-source FX verified. Core plan lands at 33,048 SAR vs 45,000 deployable - 11,952 SAR headroom, 5,000 SAR reserve held back. 35 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (BUILDING) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fare baseline restarted for ruh-szx - awaiting a second tracked check. Call: WATCH - driven by no statistical edge today.",
     "inputs": {
       "sarCny": 1.791864,
       "pctVsAvg": -0.07,
       "signal": "NEUTRAL",
-      "landed": 28445,
-      "headroom": 16555,
+      "landed": 33048,
+      "headroom": 11952,
       "crossed": 0,
       "readiness": 85,
-      "goodsCny": 37180
+      "goodsCny": 44025
     }
   },
-  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg +0.03% → -0.07% · landed +30 SAR · confidence VERIFIED → ESTIMATE.",
+  "diff": "Since yesterday: call held at WATCH · CNY vs avg +0.03% → -0.07% · landed +4633 SAR.",
   "crossed": {
     "crossed": [],
-    "withTargets": 29,
-    "total": 29,
+    "withTargets": 35,
+    "total": 35,
     "closest": {
       "item": {
         "id": "srv-aio",
@@ -217,7 +219,7 @@
   },
   "readiness": {
     "score": 85,
-    "band": "READY",
+    "band": "BUILDING",
     "booked": false,
     "components": [
       {
@@ -230,21 +232,20 @@
         "key": "targets",
         "label": "P0/P1 target coverage",
         "score": 100,
-        "value": "23 of 23 items have targets"
+        "value": "29 of 29 items have targets"
       },
       {
         "key": "fare",
         "label": "Flight-fare movement",
         "score": 50,
-        "value": "fares flat since 2026-09-27"
+        "value": "fare baseline restarted for ruh-szx - awaiting a second tracked check"
       }
     ],
     "fare": {
       "score": 50,
-      "deltaPct": 0,
-      "note": "fares flat since 2026-09-27",
-      "low": 2200,
-      "refDate": "2026-09-27"
+      "deltaPct": null,
+      "note": "fare baseline restarted for ruh-szx - awaiting a second tracked check",
+      "low": 2000
     }
   },
   "checklist": {
@@ -342,18 +343,18 @@
     },
     {
       "date": "2026-09-28",
-      "verdict": "BOOK FLIGHT",
-      "confidence": "ESTIMATE",
-      "driver": "trip readiness reached READY",
+      "verdict": "WATCH",
+      "confidence": "VERIFIED",
+      "driver": "no statistical edge today",
       "inputs": {
         "sarCny": 1.791864,
         "pctVsAvg": -0.07,
         "signal": "NEUTRAL",
-        "landed": 28445,
-        "headroom": 16555,
+        "landed": 33048,
+        "headroom": 11952,
         "crossed": 0,
         "readiness": 85,
-        "goodsCny": 37180
+        "goodsCny": 44025
       }
     }
   ]
