@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f7">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
 <title>China Buy-Plan Dashboard</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -125,7 +127,7 @@
           <ul class="mono">
             <li>Proxmox: game VM (RTX 3090 passthrough) → Moonlight</li>
             <li>Jellyfin · AdGuard · cameras · dashboard · PXE/DHCP</li>
-            <li>2×2TB NVMe (VM/models + games)</li>
+            <li>3×2TB NVMe (VM/models · games · KV scratch)</li>
             <li>8TB×2 mirror media · 8TB×2 mirror backups = 16TB usable</li>
             <li>+ bare-metal 3060 box for kernel anti-cheat games</li>
           </ul>
@@ -157,13 +159,13 @@
         </div>
         <div class="node n-power">
           <span class="node-tag">power</span>
-          <b>1+1 redundant 1600–2000W</b>
-          <span>5×220W BC-250 spikes on 12V breakout · new 1200W ATX for core · 1500VA UPS on core+net</span>
+          <b>1+1 redundant 2000W + 2000W</b>
+          <span>Mild-undervolt profile ≈1kW 24/7 · 8c+40CU worst ~1.75kW · new 1200W ATX (core) · 1500VA UPS (core+net)</span>
         </div>
         <div class="node n-cool">
           <span class="node-tag">cooling · rack</span>
-          <b>Delta 4000rpm ×4</b>
-          <span>aimed at heatsinks AND the GDDR6 · open 12U–18U cabinet (BC-250 = 305mm non-standard)</span>
+          <b>Delta PWM ×10 · CoolerControl</b>
+          <span>2 per board (heatsink + GDDR6) + exhaust spares · 3D-printed shrouds seal the pressure · 12U–18U cabinet (BC-250 = 305mm)</span>
         </div>
       </div>
     </div>
@@ -171,7 +173,7 @@
     <div class="answers">
       <div class="ans"><b>10GbE switch — needed?</b><p>Yes, for <b>inference</b> first: RPC KV/tensor traffic between Node A↔B strangles at 110 MB/s on 1 GbE. Also carries PXE multicast and the NAS fabric. NICs are ¥110.</p></div>
       <div class="ans"><b>Copy one OS to 100GB NVMe ×5?</b><p>Golden image → <b>Clonezilla SE PXE multicast</b>: install once (CachyOS + RADV + BC-250 governor), serve from the core host, flash all node drives in ~3 min/batch. Re-config = re-clone, never re-install.</p></div>
-      <div class="ans"><b>2TB + NAS storage?</b><p>2×2TB NVMe (VM/models + a dedicated game library) + two 8TB mirror pairs: media/Jellyfin/cameras and games/backups — 16TB usable, ZFS-fault-tolerant.</p></div>
+      <div class="ans"><b>2TB + NAS storage?</b><p>3×2TB NVMe (VM/models + a dedicated game library + KV/agent scratch) + two 8TB mirror pairs: media/Jellyfin/cameras and games/backups — 16TB usable, ZFS-fault-tolerant.</p></div>
       <div class="ans"><b>Edge devices?</b><p>TV endpoints only (Mi Box ×2) + one KB/mouse pair to the endpoint — everything else stays racked.</p></div>
       <div class="ans"><b>Why 2 + 3 boards?</b><p>Node A holds one 14B–32B orchestrator resident (~32GB); Node B runs several 7B/8B agents in parallel (~48GB) without VRAM swapping.</p></div>
       <div class="ans"><b>Redundancy?</b><p>Hot-swap 1+1 PSU · boards are ¥750 commodities + golden re-clone · ZFS mirrors · new ATX PSU (never used) · UPS for core+network.</p></div>
