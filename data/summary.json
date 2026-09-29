@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-09-29T14:17:39.864Z",
+  "generatedAt": "2026-09-29T15:11:55.232Z",
   "budgets": {
     "server": {
       "tiers": {
         "P0": {
-          "goods": 5707.36,
-          "tax": 856.1,
-          "shipping": 1733.03,
-          "landed": 8296.5,
-          "budget": 24800,
-          "remaining": 16503.5,
-          "pct": 33.45,
+          "goods": 1891.3,
+          "tax": 283.69,
+          "shipping": 608.55,
+          "landed": 2783.54,
+          "budget": 23000,
+          "remaining": 20216.46,
+          "pct": 12.1,
           "status": "ok"
         },
         "P1": {
-          "goods": 14926.74,
-          "tax": 2239.01,
-          "shipping": 4532.49,
-          "landed": 21698.24,
-          "budget": 24800,
-          "remaining": 3101.76,
-          "pct": 87.49,
+          "goods": 11676.94,
+          "tax": 1751.54,
+          "shipping": 3757.23,
+          "landed": 17185.72,
+          "budget": 23000,
+          "remaining": 5814.28,
+          "pct": 74.72,
           "status": "ok"
         },
         "P2": {
-          "goods": 16131.81,
-          "tax": 2419.77,
-          "shipping": 4898.41,
-          "landed": 23449.99,
-          "budget": 24800,
-          "remaining": 1350.01,
-          "pct": 94.56,
+          "goods": 12965.7,
+          "tax": 1944.86,
+          "shipping": 4171.91,
+          "landed": 19082.47,
+          "budget": 23000,
+          "remaining": 3917.53,
+          "pct": 82.97,
           "status": "ok"
         },
         "P3": {
-          "goods": 16633.93,
-          "tax": 2495.09,
-          "shipping": 5050.87,
-          "landed": 24179.89,
-          "budget": 24800,
-          "remaining": 620.11,
-          "pct": 97.5,
+          "goods": 15057.85,
+          "tax": 2258.68,
+          "shipping": 4845.09,
+          "landed": 22161.61,
+          "budget": 23000,
+          "remaining": 838.39,
+          "pct": 96.35,
           "status": "ok"
         }
       }
@@ -50,41 +50,41 @@
         "P0": {
           "goods": 4128.49,
           "tax": 619.27,
-          "shipping": 1253.61,
-          "landed": 6001.38,
-          "budget": 25200,
-          "remaining": 19198.62,
-          "pct": 23.82,
+          "shipping": 1328.41,
+          "landed": 6076.17,
+          "budget": 27000,
+          "remaining": 20923.83,
+          "pct": 22.5,
           "status": "ok"
         },
         "P1": {
           "goods": 8591.73,
           "tax": 1288.76,
-          "shipping": 2608.87,
-          "landed": 12489.36,
-          "budget": 25200,
-          "remaining": 12710.64,
-          "pct": 49.56,
+          "shipping": 2764.52,
+          "landed": 12645.01,
+          "budget": 27000,
+          "remaining": 14354.99,
+          "pct": 46.83,
           "status": "ok"
         },
         "P2": {
           "goods": 11079.99,
           "tax": 1662,
-          "shipping": 3364.42,
-          "landed": 16106.41,
-          "budget": 25200,
-          "remaining": 9093.59,
-          "pct": 63.91,
+          "shipping": 3565.15,
+          "landed": 16307.14,
+          "budget": 27000,
+          "remaining": 10692.86,
+          "pct": 60.4,
           "status": "ok"
         },
         "P3": {
           "goods": 11358.94,
           "tax": 1703.84,
-          "shipping": 3449.13,
-          "landed": 16511.91,
-          "budget": 25200,
-          "remaining": 8688.09,
-          "pct": 65.52,
+          "shipping": 3654.91,
+          "landed": 16717.69,
+          "budget": 27000,
+          "remaining": 10282.31,
+          "pct": 61.92,
           "status": "ok"
         }
       }
@@ -93,7 +93,7 @@
       "totalBudget": 50000,
       "contingencyReserve": 5000,
       "deployable": 45000,
-      "coreLanded": 35546.24,
+      "coreLanded": 31808.97,
       "coreWithinDeployable": true,
       "shippingSAR": 8500,
       "taxRate": 0.15,
@@ -175,46 +175,44 @@
     "taxOn": "goods",
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
-  "warnings": [
-    "LLM primary failed - brief served by nvidia/nemotron-3-super-120b-a12b:free: typesafe/jev-router unparseable | nvidia/nemotron-3-ultra-550b-a55b:free unparseable | google/gemma-4-31b-it:free HTTP 429"
-  ],
+  "warnings": [],
   "newsCount": 34,
   "call": {
     "verdict": "BOOK FLIGHT",
     "confidence": "ESTIMATE",
     "driver": "trip readiness reached READY",
-    "reasoning": "1 SAR = 1.7924 CNY - 0.05% below its 9-point average (signal NEUTRAL, -0.53% drift); dual-source FX verified. Core plan lands at 34,188 SAR vs 45,000 deployable - 10,812 SAR headroom, 5,000 SAR reserve held back. 42 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
+    "reasoning": "1 SAR = 1.7924 CNY - 0.05% below its 9-point average (signal NEUTRAL, -0.53% drift); dual-source FX verified. Core plan lands at 29,831 SAR vs 45,000 deployable - 15,169 SAR headroom, 5,000 SAR reserve held back. 43 targets set, none crossed - closest is 2TB PCIe 4.0 NVMe (x2: VMs/models + game library) at +5.1% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
     "inputs": {
       "sarCny": 1.792421,
       "pctVsAvg": -0.05,
       "signal": "NEUTRAL",
-      "landed": 34188,
-      "headroom": 10812,
+      "landed": 29831,
+      "headroom": 15169,
       "crossed": 0,
       "readiness": 85,
-      "goodsCny": 50175
+      "goodsCny": 47350
     }
   },
-  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg steady at -0.05% · landed -169 SAR · confidence VERIFIED → ESTIMATE.",
+  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg steady at -0.05% · landed -4526 SAR · confidence VERIFIED → ESTIMATE.",
   "crossed": {
     "crossed": [],
-    "withTargets": 42,
-    "total": 42,
+    "withTargets": 43,
+    "total": 43,
     "closest": {
       "item": {
-        "id": "srv-aio",
+        "id": "srv-nvme",
         "bundle": "server",
-        "category": "Cooling",
-        "name": "360mm AIO liquid cooler",
-        "qty": 1,
-        "cny": 450,
+        "category": "Storage",
+        "name": "2TB PCIe 4.0 NVMe (x2: VMs/models + game library)",
+        "qty": 2,
+        "cny": 620,
         "confidence": "estimate",
         "priority": "P1",
-        "phase": 1,
-        "why": "Sustained AI + gaming loads on a 7900X",
-        "target_cny": 430
+        "phase": 2,
+        "why": "Drive 1: VM images + model weights. Drive 2: Steam/game library - keep games off the ZFS pools",
+        "target_cny": 590
       },
-      "abovePct": 4.7
+      "abovePct": 5.1
     }
   },
   "readiness": {
@@ -232,7 +230,7 @@
         "key": "targets",
         "label": "P0/P1 target coverage",
         "score": 100,
-        "value": "30 of 30 items have targets"
+        "value": "29 of 29 items have targets"
       },
       {
         "key": "fare",
@@ -367,11 +365,11 @@
         "sarCny": 1.792421,
         "pctVsAvg": -0.05,
         "signal": "NEUTRAL",
-        "landed": 34188,
-        "headroom": 10812,
+        "landed": 29831,
+        "headroom": 15169,
         "crossed": 0,
         "readiness": 85,
-        "goodsCny": 50175
+        "goodsCny": 47350
       }
     }
   ]
