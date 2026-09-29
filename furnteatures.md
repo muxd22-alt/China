@@ -1,7 +1,7 @@
 # Home Sourcing — Current Buy List (Sep 2026)
 
 > Source of truth for prices/items: `data/products.json` (rendered by the dashboard). Budget frame:
-> 50K SAR total · 27K home line · 45K deployable · freight ~8,500 SAR + 15% tax + 10% reserve.
+> 50K SAR total · **25.2K home line** · 45K deployable · freight ~8,500 SAR + 15% tax + 10% reserve.
 
 ## Bedroom (main) — itemization
 
@@ -22,7 +22,14 @@ budget headroom. No wardrobe line exists in `data/products.json`; do not add one
 
 Living room: 2x 3-seater sofa (¥5,200), service/coffee tables (¥1,100), art (¥1,500), curtains in
 decor above. Kitchen accessories bundle (¥2,200) — still cancel-anything modular. Bathroom sets
-x2 (¥900). Light electronics: robot vacuum (¥1,800), smart-home kit (¥600), gadget bundle (¥500).
+x2 (¥900). Light electronics: robot vacuum (¥1,800), smart-home kit (¥600), gadget bundle (¥500),
+2× wireless controllers (`home-ctrl`, ¥380 — one per sofa for the Moonlight/BC-250 console paths).
+
+**Deals strategy (no compromises):** furniture is the category where 1688 beats Taobao hardest —
+find the **Foshan Lecong factory store** on 1688, bundle bed + tables + decor into ONE order and
+ask for the export-carton discount on top (20–30% under retail, single-item pricing is where the
+margin hides). Same-sku 1688-vs-Xianyu check still applies to every electronic line — factory
+refurb often runs 30–40% under retail with traceable warranty (dashboard tip, daily).
 
 ---
 

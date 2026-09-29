@@ -381,6 +381,25 @@
     }).join("");
   }
 
+  async function loadJudgeBadge() {
+    if (location.protocol === "file:") return; // local preview has no server; badge is a Pages feature
+    try {
+      const res = await fetch("data/judgements.json", { cache: "no-store" });
+      if (!res.ok) return;
+      const j = await res.json();
+      const judged = (j.items || []).filter((x) => x && x.id);
+      if (!judged.length) return;
+      const review = judged.filter((x) => x.flag === "review").length;
+      const unsure = judged.filter((x) => x.flag === "unsure").length;
+      const el = $("judgeBadge");
+      el.textContent = `judge: ${judged.length} listing${judged.length > 1 ? "s" : ""}` +
+        (review ? ` · ${review} review` : "") + (unsure ? ` · ${unsure} unsure` : "");
+      el.style.color = review ? "var(--bad)" : unsure ? "var(--warn)" : "var(--ok)";
+      el.title = (j.note || "Advisory only - verify in person before paying.");
+      el.hidden = false;
+    } catch { /* no judgements yet - badge stays hidden */ }
+  }
+
   document.querySelectorAll("#listTable th[data-sort]").forEach((th) =>
     th.addEventListener("click", () => {
       const k = th.dataset.sort;
@@ -704,6 +723,7 @@
   renderTravel();
   renderFoot();
   renderCalc();
+  loadJudgeBadge();
   $("calcCny").addEventListener("input", renderCalc);
   $("calcLocal").addEventListener("input", renderCalc);
 })();

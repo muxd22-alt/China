@@ -15,7 +15,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+      timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +29,27 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: node scripts/update.mjs
+
+      - name: Cache Laya weights (~1.7 GB, downloaded once)
+        if: hashFiles('data/inbox.json') != ''
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/receptron-laya
+            ~/.npm
+          key: laya-onnx-v1
+
+      - name: Judge inbox listings with Laya (advisory, never blocks the refresh)
+        if: hashFiles('data/inbox.json') != ''
+        continue-on-error: true
+        run: |
+          npm install --no-save --no-audit --no-fund @receptron/laya
+          node scripts/judge.mjs
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'nvidia/nemotron-3-super-120b-a12b:free' }}
+          MAX_LLM_CALLS: "20"
+          # LAYA_SUBFOLDER: multilingual   # uncomment only when the ONNX repo publishes that folder
 
       - name: Commit refreshed data
         run: |

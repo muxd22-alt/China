@@ -59,11 +59,21 @@
 
 ## Power & rack
 
-- **Chassis:** 4U rackmount or open mining frame in a 12U/18U cabinet (BC-250 boards are
-  non-standard 305mm — off-the-shelf cases don't fit).
-- **Power:** 1600–2000W redundant (1+1) enterprise server PSU + 12V breakout board (¥600, used,
-  load-tested) to absorb 5x 220W spikes; core host keeps its own new ATX PSU.
-- **Cooling:** Delta-class 4000+ RPM 120mm fans aimed at the passive heatsinks **and the GDDR6**.
+- **Chassis:** 12U–18U cabinet (600mm deep) + 2× 4U open-frame shelves (`srv-rack`, ¥600) —
+  BC-250 boards are non-standard 305mm, off-the-shelf cases don't fit.
+- **Power:** 2000W+2000W redundant (1+1) enterprise server PSU + 12V breakout (¥750, used,
+  load-tested) sized for the 8c+40CU worst case (~1.75kW); the toolkit **Mild (undervolt) profile
+  holds 24/7 at ~1kW** — that's the node default. Core host keeps its own new ATX PSU.
+- **Cooling:** 10× Delta-class 4000+ RPM 120mm PWM (2 per board: heatsink **and** GDDR6 + cabinet
+  exhaust spares), curves driven by **CoolerControl**; **3D-printed PETG shrouds/closers**
+  (`srv-shroud` + `srv-printer`) seal fan pressure into the heatsink channels instead of the room.
+- **Golden images ×2:** `golden-infer.img` (CachyOS nodes, SMU governor, llama.cpp) is default;
+  `golden-console.img` (SteamOS Beta + bc250-steamos-real-toolkit) PXE-boots one Node B carrier for
+  couch gaming — FSR4/Sunshine session, then re-clone back. Node A planner never moves.
+- **Inference tiers:** DeepSeek-V4.1-Flash (763B ≈ 380GB @4-bit = 4.7× the cluster) is **API-only
+  tier 0**, spend-capped; tiers 1–3 stay local (Node A planner / Node B workers / 3090 batch).
+  KV-cache future-proofing: llama.cpp KV-quant + prefix reuse now, offload later onto the dedicated
+  2TB **KV-scratch NVMe** (`srv-kv-nvme`). Full analysis: `homelab.md` §9–§12.
 
 ## Procurement snapshot
 

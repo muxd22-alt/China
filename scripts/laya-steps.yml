@@ -1,0 +1,21 @@
+# Paste these steps into your existing daily workflow, AFTER the step that runs
+# `node scripts/update.mjs` and BEFORE the step that commits `data/`.
+# (I could not read your current workflow file, so this is a snippet, not a full workflow.)
+
+      - name: Cache Laya weights (about 1.7 GB, downloaded once)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/receptron-laya
+          key: laya-onnx-v1
+
+      - name: Judge inbox listings with Laya (advisory)
+        if: hashFiles('data/inbox.json') != ''
+        run: |
+          npm install --no-save @receptron/laya
+          node scripts/judge.mjs
+        env:
+          # Optional: only used for items Laya is unsure about
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+          MAX_LLM_CALLS: "20"
+          # LAYA_SUBFOLDER: multilingual   # uncomment for Chinese listing text

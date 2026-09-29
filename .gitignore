@@ -1,0 +1,6 @@
+# Vendored third-party (never commit)
+bc250-steamos-real-toolkit-main/
+
+# Laya judge local installs (CI uses npm --no-save + cache)
+node_modules/
+package-lock.json

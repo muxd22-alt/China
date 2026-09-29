@@ -6,8 +6,8 @@
   },
   "budgets": {
     "total": 50000,
-    "serverTech": 23000,
-    "homeFurnishing": 27000,
+    "serverTech": 24800,
+    "homeFurnishing": 25200,
     "contingencyPct": 0.1
   },
   "logistics": {
@@ -32,7 +32,13 @@
       "nvidia/nemotron-3-super-120b-a12b:free"
     ],
     "onceDaily": true,
-    "briefWords": 110
+    "briefWords": 110,
+    "deepseek": {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "tier": "frontier-api",
+      "role": "long-context agentic escalation only (1M ctx, 890B/token KV) - never the daily brief",
+      "note": "763B params needs 380GB+ even at 4-bit = 4.7x the whole BC-250 cluster; API-only. Cap spend ~SAR 150/month from headroom and revisit after the first invoice."
+    }
   },
   "newsQueries": [
     { "id": "localai", "label": "Local AI & LLMs", "q": "local LLM Ollama llama.cpp news", "max": 5 },
@@ -257,6 +263,8 @@
     "Sea freight runs 3-6 weeks. Order Phase 1 (case/mobo/CPU/PSU) the day you land; verify GPU prices locally before committing Phase 3.",
     "Sofas are the heaviest, bulkiest line item - measure every doorway, elevator and stair turn before ordering. A sofa that will not fit is scrap.",
     "Bedroom and lighting gear is where China beats local retail hardest right now - same quality tier, roughly half the price after tax.",
-    "Compare the same SKU on 1688 vs Xianyu: factory-refurbished units often run 30-40% under retail with warranty still traceable."
+    "Compare the same SKU on 1688 vs Xianyu: factory-refurbished units often run 30-40% under retail with warranty still traceable.",
+    "Run the BC-250 nodes on the bc250-steamos-real-toolkit Mild (undervolt) profile - CPU 3.5GHz / GPU 1600MHz, toolkit-tested stable with 8c+40CU on a 460W server PSU. Extreme presets belong to the console-mode image, not the 24/7 inference nodes.",
+    "Furniture on 1688 beats Taobao by 20-30%: find the Foshan Lecong factory store, bundle bed + tables + decor into ONE order, and ask for the export-carton discount on top - single-item retail is where the margin hides."
   ]
 }
