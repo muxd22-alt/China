@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-09-29T11:00:15.378Z",
+  "generatedAt": "2026-09-29T13:57:21.284Z",
   "budgets": {
     "server": {
       "tiers": {
         "P0": {
-          "goods": 5623.68,
-          "tax": 843.55,
-          "shipping": 1822.78,
-          "landed": 8290.02,
-          "budget": 23000,
-          "remaining": 14709.98,
-          "pct": 36.04,
+          "goods": 5707.36,
+          "tax": 856.1,
+          "shipping": 1733.03,
+          "landed": 8296.5,
+          "budget": 24800,
+          "remaining": 16503.5,
+          "pct": 33.45,
           "status": "ok"
         },
         "P1": {
-          "goods": 14709.16,
-          "tax": 2206.37,
-          "shipping": 4767.63,
-          "landed": 21683.16,
-          "budget": 23000,
-          "remaining": 1316.84,
-          "pct": 94.27,
+          "goods": 14926.74,
+          "tax": 2239.01,
+          "shipping": 4532.49,
+          "landed": 21698.24,
+          "budget": 24800,
+          "remaining": 3101.76,
+          "pct": 87.49,
           "status": "ok"
         },
         "P2": {
-          "goods": 15289.38,
-          "tax": 2293.41,
-          "shipping": 4955.7,
-          "landed": 22538.48,
-          "budget": 23000,
-          "remaining": 461.52,
-          "pct": 97.99,
+          "goods": 16131.81,
+          "tax": 2419.77,
+          "shipping": 4898.41,
+          "landed": 23449.99,
+          "budget": 24800,
+          "remaining": 1350.01,
+          "pct": 94.56,
           "status": "ok"
         },
         "P3": {
-          "goods": 15289.38,
-          "tax": 2293.41,
-          "shipping": 4955.7,
-          "landed": 22538.48,
-          "budget": 23000,
-          "remaining": 461.52,
-          "pct": 97.99,
+          "goods": 16633.93,
+          "tax": 2495.09,
+          "shipping": 5050.87,
+          "landed": 24179.89,
+          "budget": 24800,
+          "remaining": 620.11,
+          "pct": 97.5,
           "status": "ok"
         }
       }
@@ -50,41 +50,41 @@
         "P0": {
           "goods": 4128.49,
           "tax": 619.27,
-          "shipping": 1338.16,
-          "landed": 6085.92,
-          "budget": 27000,
-          "remaining": 20914.08,
-          "pct": 22.54,
+          "shipping": 1253.61,
+          "landed": 6001.38,
+          "budget": 25200,
+          "remaining": 19198.62,
+          "pct": 23.82,
           "status": "ok"
         },
         "P1": {
           "goods": 8591.73,
           "tax": 1288.76,
-          "shipping": 2784.81,
-          "landed": 12665.3,
-          "budget": 27000,
-          "remaining": 14334.7,
-          "pct": 46.91,
+          "shipping": 2608.87,
+          "landed": 12489.36,
+          "budget": 25200,
+          "remaining": 12710.64,
+          "pct": 49.56,
           "status": "ok"
         },
         "P2": {
-          "goods": 10655.98,
-          "tax": 1598.4,
-          "shipping": 3453.89,
-          "landed": 15708.26,
-          "budget": 27000,
-          "remaining": 11291.74,
-          "pct": 58.18,
+          "goods": 11079.99,
+          "tax": 1662,
+          "shipping": 3364.42,
+          "landed": 16106.41,
+          "budget": 25200,
+          "remaining": 9093.59,
+          "pct": 63.91,
           "status": "ok"
         },
         "P3": {
-          "goods": 10934.93,
-          "tax": 1640.24,
-          "shipping": 3544.3,
-          "landed": 16119.47,
-          "budget": 27000,
-          "remaining": 10880.53,
-          "pct": 59.7,
+          "goods": 11358.94,
+          "tax": 1703.84,
+          "shipping": 3449.13,
+          "landed": 16511.91,
+          "budget": 25200,
+          "remaining": 8688.09,
+          "pct": 65.52,
           "status": "ok"
         }
       }
@@ -93,7 +93,7 @@
       "totalBudget": 50000,
       "contingencyReserve": 5000,
       "deployable": 45000,
-      "coreLanded": 35296.02,
+      "coreLanded": 35546.24,
       "coreWithinDeployable": true,
       "shippingSAR": 8500,
       "taxRate": 0.15,
@@ -101,9 +101,9 @@
     }
   },
   "tip": {
-    "index": 0,
-    "total": 16,
-    "text": "Order of arms: case / motherboard / CPU / PSU first - they age slowest. RAM next. GPUs and HDDs LAST - both are the most volatile line items in this build."
+    "index": 2,
+    "total": 18,
+    "text": "BC-250 setup: flash the community BIOS (VRAM split), run the SMU governor for clocks and idle power, and put fans directly on the GDDR6 - it runs extremely hot. Boards are Linux-only (RADV/Vulkan); Windows has no driver."
   },
   "travel": {
     "routes": [
@@ -176,31 +176,30 @@
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
   "warnings": [
-    "LLM brief failed: typesafe/jev-router unparseable | nvidia/nemotron-3-ultra-550b-a55b:free unparseable | google/gemma-4-31b-it:free HTTP 429 | nvidia/nemotron-3-super-120b-a12b:free unparseable",
-    "stale brief from 2026-09-28 kept"
+    "LLM brief skipped - OPENROUTER_API_KEY not set (local run or GitHub secret missing)"
   ],
   "newsCount": 34,
   "call": {
     "verdict": "BOOK FLIGHT",
     "confidence": "ESTIMATE",
     "driver": "trip readiness reached READY",
-    "reasoning": "1 SAR = 1.7924 CNY - 0.05% below its 9-point average (signal NEUTRAL, -0.53% drift); dual-source FX verified. Core plan lands at 34,348 SAR vs 45,000 deployable - 10,652 SAR headroom, 5,000 SAR reserve held back. 38 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
+    "reasoning": "1 SAR = 1.7924 CNY - 0.05% below its 9-point average (signal NEUTRAL, -0.53% drift); dual-source FX verified. Core plan lands at 34,188 SAR vs 45,000 deployable - 10,812 SAR headroom, 5,000 SAR reserve held back. 42 targets set, none crossed - closest is 360mm AIO liquid cooler at +4.7% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
     "inputs": {
       "sarCny": 1.792421,
       "pctVsAvg": -0.05,
       "signal": "NEUTRAL",
-      "landed": 34348,
-      "headroom": 10652,
+      "landed": 34188,
+      "headroom": 10812,
       "crossed": 0,
       "readiness": 85,
-      "goodsCny": 47005
+      "goodsCny": 50175
     }
   },
-  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg steady at -0.05% · landed -9 SAR · confidence VERIFIED → ESTIMATE.",
+  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg steady at -0.05% · landed -169 SAR · confidence VERIFIED → ESTIMATE.",
   "crossed": {
     "crossed": [],
-    "withTargets": 38,
-    "total": 38,
+    "withTargets": 42,
+    "total": 42,
     "closest": {
       "item": {
         "id": "srv-aio",
@@ -368,11 +367,11 @@
         "sarCny": 1.792421,
         "pctVsAvg": -0.05,
         "signal": "NEUTRAL",
-        "landed": 34348,
-        "headroom": 10652,
+        "landed": 34188,
+        "headroom": 10812,
         "crossed": 0,
         "readiness": 85,
-        "goodsCny": 47005
+        "goodsCny": 50175
       }
     }
   ]
