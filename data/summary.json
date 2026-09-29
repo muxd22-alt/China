@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T13:57:21.284Z",
+  "generatedAt": "2026-09-29T14:17:39.864Z",
   "budgets": {
     "server": {
       "tiers": {
@@ -176,7 +176,7 @@
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
   "warnings": [
-    "LLM brief skipped - OPENROUTER_API_KEY not set (local run or GitHub secret missing)"
+    "LLM primary failed - brief served by nvidia/nemotron-3-super-120b-a12b:free: typesafe/jev-router unparseable | nvidia/nemotron-3-ultra-550b-a55b:free unparseable | google/gemma-4-31b-it:free HTTP 429"
   ],
   "newsCount": 34,
   "call": {

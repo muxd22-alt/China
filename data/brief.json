@@ -1,15 +1,17 @@
 {
-  "date": "2026-09-28",
-  "generatedAt": "2026-09-28T11:22:29.822Z",
-  "model": "typesafe/jev-router",
-  "usedFallback": false,
-  "ms": 4591,
-  "errors": [],
-  "brief": "Rule engine flips from yesterday's WATCH to BOOK FLIGHT (ESTIMATE): trip readiness hit 85/100 READY — FX trend stability 100, P0/P1 target coverage 23/23, fare movement 50 with fares flat since 2026-09-27. FX is neutral at 1.791864 CNY/SAR, -0.07% vs the 9-point average; core landed 28,445 SAR leaves 16,555 SAR headroom plus the 5,000 reserve. Zero of 29 targets crossed — closest is the 360mm AIO at +4.7%. Checklist is still 0/12, so the call is ready but you aren't: verify live fares, update config bands, then book.",
-  "keyMoves": [
-    "Run live fare search, update config route bands, then book flights",
-    "Sort China visa and confirm the freight forwarder contact",
-    "Shortlist exact Phase 1 SKUs and plan per-room Ethernet runs"
+  "date": "2026-09-29",
+  "generatedAt": "2026-09-29T14:17:39.864Z",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "usedFallback": true,
+  "ms": 6213,
+  "errors": [
+    "typesafe/jev-router unparseable",
+    "nvidia/nemotron-3-ultra-550b-a55b:free unparseable",
+    "google/gemma-4-31b-it:free HTTP 429"
   ],
-  "watch": "Whether flight fares stay flat or move — a band change is what confirms or breaks the BOOK FLIGHT call."
+  "brief": "Trip readiness reached READY (85/100) triggering a BOOK FLIGHT call; core landed cost is 34,188 SAR vs 45,000 SAR deployable ceiling, leaving 10,812 SAR headroom with 5,000 SAR reserve held. No targets crossed; FX remains neutral at 1 SAR = 1.7924 CNY. Yesterday and the day before were WATCH decisions, today's shift to BOOK FLIGHT marks the change.",
+  "keyMoves": [
+    "Book flight now"
+  ],
+  "watch": "Monitor flight fare movement for any upward change."
 }
