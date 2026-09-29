@@ -123,31 +123,32 @@
       <div class="rack-grid">
         <div class="node n-core">
           <span class="node-tag">core · NAS + virtualization</span>
-          <b>Ryzen 9 7900X · X670E · 128GB DDR5</b>
+          <b>Ryzen 5 5700G · B550 · 128GB DDR4</b>
           <ul class="mono">
-            <li>Proxmox: game VM (RTX 3090 passthrough) → Moonlight</li>
-            <li>Jellyfin · AdGuard · cameras · dashboard · PXE/DHCP</li>
+            <li>Plumbing only: Proxmox · ZFS · PXE/DHCP · HA</li>
+            <li>Jellyfin (iGPU VAAPI) · AdGuard · cameras · dashboard</li>
             <li>3×2TB NVMe (VM/models · games · KV scratch)</li>
             <li>8TB×2 mirror media · 8TB×2 mirror backups = 16TB usable</li>
             <li>+ bare-metal 3060 box for kernel anti-cheat games</li>
+            <li>+ optional RTX 3090 at P3 for a full-quality Game VM</li>
           </ul>
         </div>
         <div class="node n-a">
           <span class="node-tag">node A · planner</span>
-          <b>2× AMD BC-250 · ~32GB GDDR6</b>
+          <b>2× AMD BC-250 · ~28GB usable</b>
           <ul class="mono">
             <li>14B–32B Q4 orchestrator ("helper planner") always on</li>
-            <li>llama.cpp Vulkan · modded BIOS + SMU governor</li>
-            <li>ConnectX-3 10GbE · carrier: used AM4 host</li>
+            <li>llama.cpp Vulkan · UMA split + SMU governor baked in</li>
+            <li>ConnectX-3 10GbE · per-board IO carrier</li>
           </ul>
         </div>
         <div class="node n-b">
-          <span class="node-tag">node B · workers</span>
-          <b>3× AMD BC-250 · ~48GB GDDR6</b>
+          <span class="node-tag">node B · workers + flex</span>
+          <b>4× AMD BC-250 · ~54GB usable</b>
           <ul class="mono">
-            <li>4–6 parallel 7B/8B agentic tool-callers</li>
+            <li>3 boards: 4–6 parallel 7B/8B agentic tool-callers</li>
+            <li>flex board: 4th worker or Sunshine game session</li>
             <li>llama.cpp RPC over the 10GbE link to Node A</li>
-            <li>ConnectX-3 10GbE · carrier: used AM4 host</li>
           </ul>
         </div>
       </div>
@@ -160,22 +161,22 @@
         <div class="node n-power">
           <span class="node-tag">power</span>
           <b>1+1 redundant 2000W + 2000W</b>
-          <span>Mild-undervolt profile ≈1kW 24/7 · 8c+40CU worst ~1.75kW · new 1200W ATX (core) · 1500VA UPS (core+net)</span>
+          <span>6 boards on Mild ≈1.1kW 24/7 · worst case ~2.1kW (stagger) · new 850W ATX (core) · 1500VA UPS (core+net)</span>
         </div>
         <div class="node n-cool">
           <span class="node-tag">cooling · rack</span>
-          <b>Delta PWM ×10 · CoolerControl</b>
-          <span>2 per board (heatsink + GDDR6) + exhaust spares · 3D-printed shrouds seal the pressure · 12U–18U cabinet (BC-250 = 305mm)</span>
+          <b>Delta PWM ×14 · CoolerControl</b>
+          <span>2 per board ×6 (heatsink + GDDR6) + 2 exhaust · 3D-printed shrouds seal the pressure · 12U–18U cabinet (BC-250 = 305mm)</span>
         </div>
       </div>
     </div>
 
     <div class="answers">
       <div class="ans"><b>10GbE switch — needed?</b><p>Yes, for <b>inference</b> first: RPC KV/tensor traffic between Node A↔B strangles at 110 MB/s on 1 GbE. Also carries PXE multicast and the NAS fabric. NICs are ¥110.</p></div>
-      <div class="ans"><b>Copy one OS to 100GB NVMe ×5?</b><p>Golden image → <b>Clonezilla SE PXE multicast</b>: install once (CachyOS + RADV + BC-250 governor), serve from the core host, flash all node drives in ~3 min/batch. Re-config = re-clone, never re-install.</p></div>
+      <div class="ans"><b>Copy one OS to 100GB NVMe ×6?</b><p>Golden image → <b>Clonezilla SE PXE multicast</b>: install once (CachyOS + RADV + BC-250 governor), serve from the core host, flash all node drives in ~3 min/batch. Re-config = re-clone, never re-install.</p></div>
       <div class="ans"><b>2TB + NAS storage?</b><p>3×2TB NVMe (VM/models + a dedicated game library + KV/agent scratch) + two 8TB mirror pairs: media/Jellyfin/cameras and games/backups — 16TB usable, ZFS-fault-tolerant.</p></div>
-      <div class="ans"><b>Edge devices?</b><p>TV endpoints only (Mi Box ×2) + one KB/mouse pair to the endpoint — everything else stays racked.</p></div>
-      <div class="ans"><b>Why 2 + 3 boards?</b><p>Node A holds one 14B–32B orchestrator resident (~32GB); Node B runs several 7B/8B agents in parallel (~48GB) without VRAM swapping.</p></div>
+      <div class="ans"><b>Replace the high-end core PC?</b><p>Yes — the 7900X+X670E+DDR5+3090 tower (¥10.6K) is cancelled. Heavy lifting moves to the boards (~81GB model pool, gaming + Sunshine encode); ¥3,430 of cheap AM4 does storage/VMs/PXE. The 3090 waits at optional P3.</p></div>
+      <div class="ans"><b>Why 2 + 4 boards?</b><p>Node A keeps one 14B–32B orchestrator resident (~28GB); Node B runs 3 workers (~41GB) plus a <b>flex board</b> that flips to game duty — inference never drops below 2+3 while someone plays.</p></div>
       <div class="ans"><b>Redundancy?</b><p>Hot-swap 1+1 PSU · boards are ¥750 commodities + golden re-clone · ZFS mirrors · new ATX PSU (never used) · UPS for core+network.</p></div>
     </div>
 

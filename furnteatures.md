@@ -1,7 +1,7 @@
 # Home Sourcing — Current Buy List (Sep 2026)
 
 > Source of truth for prices/items: `data/products.json` (rendered by the dashboard). Budget frame:
-> 50K SAR total · **25.2K home line** · 45K deployable · freight ~8,500 SAR + 15% tax + 10% reserve.
+> 50K SAR total · **27K home line** · 45K deployable · freight ~8,500 SAR + 15% tax + 10% reserve.
 
 ## Bedroom (main) — itemization
 

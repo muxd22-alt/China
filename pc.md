@@ -12,40 +12,42 @@
                          └───────┬──────────────────────────┬───────┘
                                  │                          │
         ┌────────────────────────┴────────┐        ┌────────┴────────────────────────┐
-        │  Planner Node (2x BC-250)       │        │  Worker Node (3x BC-250)        │
-        │  • 32GB GDDR6 VRAM              │        │  • 48GB GDDR6 VRAM              │
-        │  • Runs: 14B–32B Orchestrator   │        │  • Runs: Parallel 7B/8B Tools   │
+        │  Planner Node (2x BC-250)       │        │  Workers+flex (4x BC-250)        │
+        │  • ~28GB usable model pool      │        │  • ~54GB usable (3 work+1 flex)  │
+        │  • Runs: 14B–32B Orchestrator   │        │  • Runs: 7B/8B agents / game     │
         └─────────────────────────────────┘        └─────────────────────────────────┘
                                  │                          │
                          ┌───────┴──────────────────────────┴───────┐
                          │   Core NAS / Virtualization Host         │
-                         │   • Ryzen AM5 / Used EPYC Board          │
-                         │   • 2TB NVMe (VMs) + ZFS Mirror HDDs     │
-                         │   • Jellyfin, Game VMs, PXE Host         │
+                         │   • Cheap AM4: Ryzen 5 5700G + B550      │
+                         │   • 128GB DDR4 · iGPU VAAPI transcode    │
+                         │  • Jellyfin, PXE Host, ZFS, 3090 optional│
                          └──────────────────────────────────────────┘
 ```
 
-## Node split (5x AMD BC-250)
+## Node split (6x AMD BC-250 — BC-250-first)
 
 - **What a BC-250 is:** ex-crypto-mining board with a cut-down PS5 APU — 6C Zen2 (8C unlockable) +
-  24 RDNA2 CU ("Cyan Skillfish"), **16GB GDDR6 shared CPU/GPU @ 448 GB/s**, 220W, PCIe 8-pin,
-  M.2 + GbE + DP on-board. Linux only (RADV/Vulkan, no Windows driver). Community: modded BIOS
-  (VRAM split) + SMU governor; llama.cpp-Vulkan fork runs ~60 tok/s for 8B per board.
+  24 RDNA2 CU stock, **40 CU unlocked by the toolkit patch (+1.54x llama.cpp pp512 verified)**,
+  **16GB GDDR6 shared CPU/GPU @ 448 GB/s** (one unified pool per board — ~13.5GB usable for models
+  after the OS), 220W, PCIe 8-pin, M.2 + GbE + DP on-board. Linux only (RADV/Vulkan, no Windows
+  driver). Community: UMA split + SMU governor; llama.cpp-Vulkan fork runs ~60 tok/s for 8B per board.
   Sourcing: Xianyu ~¥650–850/card.
-- **Node A — 2x BC-250 / ~32GB VRAM:** central **Planner & Reasoning** node. Runs the 14B–32B
-  quantized orchestrator (e.g. Qwen3-32B Q4) via llama.cpp Vulkan.
-- **Node B — 3x BC-250 / ~48GB VRAM:** **Execution & Agentic Worker** node. Multiple concurrent
-  7B/8B tool-calling agents without VRAM swapping.
-- Each node sits on a cheap used carrier host (board + CPU + 32GB, Xianyu) in an open frame / 4U
-  enclosure inside a 12U–18U cabinet.
+- **Node A — 2x BC-250 / ~28GB usable:** central **Planner & Reasoning** node. Runs the 14B–32B
+  quantized orchestrator (e.g. Qwen3-32B Q4) via llama.cpp Vulkan — never leaves inference duty.
+- **Node B — 4x BC-250 / ~54GB usable:** 3 boards run **parallel 7B/8B tool-calling agents** without
+  swapping; the 4th is the **flex board** — flips to a Sunshine game session via systemd target
+  (inference never drops below 2+3 while the family plays).
+- Each board sits on its own **IO carrier** (PCIe riser + boot NVMe + 12V feed — the board IS the
+  computer; no CPU/RAM host exists) on open-frame / 4U shelves inside a 12U–18U cabinet.
 
 ## Network & storage backbone
 
 - **10GbE (mandatory):** 1GbE (~110 MB/s) chokes llama.cpp RPC KV-cache / tensor transfers between
-  Node A and Node B. 3x Mellanox ConnectX-3 SFP+ (¥100–150 each on Xianyu) + DACs + TP-Link
-  TL-ST1008F 8-port 10G switch (¥750) → ~1.1 GB/s inter-node + NAS throughput.
-- **Storage:** core host = 2TB NVMe (model weights/VMs) + ZFS mirrored 8TB enterprise HDDs
-  (Jellyfin + camera archives).
+  Node A and Node B. 6x Mellanox ConnectX-3 SFP+ (¥100–150 each on Xianyu, one per board) + DACs +
+  TP-Link TL-ST1008F 8-port 10G switch (¥750) → ~1.1 GB/s inter-node + NAS throughput.
+- **Storage:** core host = 3x2TB NVMe (models/VMs · games · KV scratch) + ZFS mirrored 8TB enterprise
+  HDDs (Jellyfin + camera archives). SATA/HBA expansion lives on the cheap host, never the boards.
 - **Endpoints:** mini-PCs dropped as primary endpoints — Xiaomi Mi Box x2 stream Moonlight/Jellyfin
   straight to the TVs.
 
@@ -54,7 +56,7 @@
 - **Method:** PXE multicast via **Clonezilla SE** hosted on the NAS (core host is the PXE server).
 - **Golden image:** one target NVMe with CachyOS/Ubuntu + Mesa RADV + `amdgpu.sg_display=0` +
   the BC-250 governor script baked in.
-- **Execution:** boot all 5 node drives over PXE, multicast the 100GB image simultaneously over
+- **Execution:** boot all 6 node drives over PXE, multicast the 100GB image simultaneously over
   10GbE — under ~3 minutes per batch.
 
 ## Power & rack
@@ -62,27 +64,31 @@
 - **Chassis:** 12U–18U cabinet (600mm deep) + 2× 4U open-frame shelves (`srv-rack`, ¥600) —
   BC-250 boards are non-standard 305mm, off-the-shelf cases don't fit.
 - **Power:** 2000W+2000W redundant (1+1) enterprise server PSU + 12V breakout (¥750, used,
-  load-tested) sized for the 8c+40CU worst case (~1.75kW); the toolkit **Mild (undervolt) profile
-  holds 24/7 at ~1kW** — that's the node default. Core host keeps its own new ATX PSU.
-- **Cooling:** 10× Delta-class 4000+ RPM 120mm PWM (2 per board: heatsink **and** GDDR6 + cabinet
-  exhaust spares), curves driven by **CoolerControl**; **3D-printed PETG shrouds/closers**
+  load-tested): 6 boards on the toolkit **Mild (undervolt) profile hold 24/7 at ~1.1kW**; the
+  8c+40CU worst case (~2.1kW for six) touches one leg — stagger it. Core host keeps its own new
+  **850W** ATX PSU (5700G + optional 3090 peak ~450W).
+- **Cooling:** 14× Delta-class 4000+ RPM 120mm PWM (2 per board × 6: heatsink **and** GDDR6, plus
+  2 cabinet exhaust), curves driven by **CoolerControl**; **3D-printed PETG shrouds/closers**
   (`srv-shroud` + `srv-printer`) seal fan pressure into the heatsink channels instead of the room.
 - **Golden images ×2:** `golden-infer.img` (CachyOS nodes, SMU governor, llama.cpp) is default;
-  `golden-console.img` (SteamOS Beta + bc250-steamos-real-toolkit) PXE-boots one Node B carrier for
-  couch gaming — FSR4/Sunshine session, then re-clone back. Node A planner never moves.
-- **Inference tiers:** DeepSeek-V4.1-Flash (763B ≈ 380GB @4-bit = 4.7× the cluster) is **API-only
-  tier 0**, spend-capped; tiers 1–3 stay local (Node A planner / Node B workers / 3090 batch).
+  `golden-console.img` (SteamOS Beta + bc250-steamos-real-toolkit) PXE-boots Node B's **flex board**
+  for couch gaming — FSR4/Sunshine session, then re-clone back. Workers keep 3; Node A never moves.
+- **Inference tiers:** DeepSeek-V4.1-Flash (763B ≈ 380GB @4-bit = 4.7× the ~81GB pool) is **API-only
+  tier 0**, spend-capped; tiers 1–3 stay local (Node A planner / Node B workers / 70B-class batch
+  across 4+ boards — or the optional 3090 if bought).
   KV-cache future-proofing: llama.cpp KV-quant + prefix reuse now, offload later onto the dedicated
-  2TB **KV-scratch NVMe** (`srv-kv-nvme`). Full analysis: `homelab.md` §9–§12.
+  2TB **KV-scratch NVMe** (`srv-kv-nvme`). Full analysis: `homelab.md` §9–§13.
 
 ## Procurement snapshot
 
 | Category | Item | Source | Est. (CNY / SAR) |
 |---|---|---|---|
-| Compute | 5x AMD BC-250 16GB | Xianyu | ~¥650–850/card (≈2,100 total) |
-| Networking | 3x ConnectX-3 10GbE + DACs | Xianyu / Taobao | ~¥350 (≈200) |
+| Compute | 6x AMD BC-250 16GB | Xianyu | ~¥650–850/card (≈4,500 total) |
+| Core | Ryzen 5 5700G + B550 + 128GB DDR4 + case/PSU/cooler | Xianyu | ~¥2,750 (≈1,535) |
+| Carriers | 6x IO carriers (riser + boot NVMe + 12V) | Xianyu / Taobao | ~¥2,100 (≈1,172) |
+| Networking | 6x ConnectX-3 10GbE + DACs | Xianyu / Taobao | ~¥690 (≈385) |
 | Switching | TP-Link TL-ST1008F 8-port 10G | Taobao / JD | ~¥750 (≈420) |
-| Power | 1600–2000W redundant PSU + breakout | Xianyu / Huaqiangbei | ~¥600 (≈335) |
+| Power | 2000W+2000W redundant PSU + breakout | Xianyu / Huaqiangbei | ~¥750 (≈420) |
 | Bedroom | Bed + mattress + nightstands | Foshan Lecong | ~¥3,200 (≈1,780) |
 | Decor | Dimmable lighting + made-to-measure curtains | Taobao / Foshan | ~¥1,100 (≈615) |
 | Flight | Direct RUH ↔ SZX (CZ5007 nonstop) | China Southern | ~¥4,200 (≈2,350) |

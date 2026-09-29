@@ -10,8 +10,8 @@ Shenzhen/Foshan sourcing trip — tracked by a self-refreshing static dashboard 
 | | |
 |---|---|
 | Total budget | **50,000 SAR** — goods + freight 8,500 + 15% import tax + 10% reserve (5,000) |
-| Server & tech | **24,800 SAR** — Proxmox core + 5× BC-250 inference nodes, 10GbE rack, airflow/3D-print kit, KV-scratch NVMe |
-| Home furnishing | **25,200 SAR** — living room, kitchen, bath, bedroom (no wardrobe), lighting, controllers |
+| Server & tech | **23,000 SAR** — cheap AM4 Proxmox core + 6× BC-250 (2 planner / 3 workers / 1 flex), 10GbE rack, airflow/3D-print kit, KV-scratch NVMe |
+| Home furnishing | **27,000 SAR** — living room, kitchen, bath, bedroom (no wardrobe), lighting, controllers |
 | Deployable ceiling | **45,000 SAR** (the 5,000 reserve is never committed) |
 | Landed-cost rule | `SAR = CNY × rate × 1.15 + freight share` — ship only if landed < ~90% of the local price |
 | Trip | Direct **RUH ↔ SZX** (China Southern **CZ5007**, 3×/week) → Shenzhen (Huaqiangbei/SEG) for tech, Foshan (Lecong) for furniture |
@@ -23,7 +23,7 @@ Shenzhen/Foshan sourcing trip — tracked by a self-refreshing static dashboard 
 | 01 | **Today's Call** | Rule-engine verdict — `BUY NOW / HOLD / WATCH / BOOK FLIGHT` — with numeric reasoning, confidence tag, and the diff since yesterday |
 | 02 | **Money** | FX signal (±2% vs an 8-week average, dual-source), budget bars per commitment tier (P0–P3), crossed targets, price-history charts, the daily LLM brief |
 | 03 | **The Stack** | The rack diagram (6 nodes), answer cards (10GbE, redundancy, power…), Proxmox service map, docs index, model-fit matrix |
-| 04 | **Buy List** | All 42 line items — filters, sort, search, per-line landed calculator, listing-judge badge |
+| 04 | **Buy List** | All 43 line items — filters, sort, search, per-line landed calculator, listing-judge badge |
 | 05 | **Trip** | Route bands + fares, trip readiness (85/100), pre-trip checklist with copy-sync |
 | 06 | **Daily Reading** | News feeds (local AI, hardware platforms, open models…) with show-more |
 
@@ -58,22 +58,23 @@ in `config.json`, run the refresh, commit — never hand-edit generated files. E
 
 ## The stack (full analysis in `homelab.md`)
 
-- **One rack, zero mini-PCs:** 12U–18U cabinet — Proxmox core (7900X + 128GB, RTX 3090 game VM →
-  Sunshine/Moonlight on every TV, ZFS mirrors, PXE) + two bare-metal CachyOS inference nodes
-  carrying 5× AMD BC-250 boards (~80GB GDDR6 total) over 10GbE, plus a bare-metal 3060 Windows box
-  for kernel anti-cheat titles.
-- **Proxmox services:** Game VM, Home Assistant, Jellyfin, Frigate NVR, Samba/NFS, AdGuard,
-  Uptime Kuma/Grafana, NUT, dashboard, downloads (`homelab.md` §9).
+- **One rack, zero mini-PCs, no high-end tower:** 12U–18U cabinet — cheap AM4 Proxmox core
+  (5700G + 128GB DDR4, iGPU VAAPI, ZFS mirrors, PXE) + two bare-metal CachyOS nodes carrying
+  **6× AMD BC-250 boards (~81GB usable model pool)** over 10GbE (2 planner + 3 workers + 1 flex
+  game board), plus a bare-metal 3060 Windows box for kernel anti-cheat titles. The 3090 waits at
+  optional P3 — `homelab.md` §13 has the limits sheet.
+- **Proxmox services:** Game VM (optional 3090), Home Assistant, Jellyfin, Frigate NVR, Samba/NFS,
+  AdGuard, Uptime Kuma/Grafana, NUT, dashboard, downloads (`homelab.md` §9).
 - **Two golden images:** `golden-infer.img` (default) and `golden-console.img` (SteamOS Beta +
-  **bc250-steamos-real-toolkit**) — PXE-boot a carrier to turn the rack into a couch gaming
+  **bc250-steamos-real-toolkit**) — PXE-boot the flex board to turn it into a couch gaming
   console, Clonezilla multicasts ~100GB in ~3 min. Toolkit verdict: adopt the **Mild-undervolt
-  profile** (3.5 GHz/1600 MHz), CoolerControl PWM curves and UMA split on all nodes; SteamOS lives
-  only on the console image (`homelab.md` §12).
+  profile** (3.5 GHz/1600 MHz), CoolerControl PWM curves, UMA split and the **24→40CU unlock**
+  (+1.54× llama.cpp); SteamOS lives only on the console image (`homelab.md` §12).
 - **Inference tiers** (`homelab.md` §10):
   - **Tier 0 — DeepSeek-V4.1-Flash via API:** 763B params ≈ 380 GB at 4-bit = 4.7× the whole
-    cluster → API-only, spend capped ~150 SAR/mo, long-context agentic escalation, never the brief.
+    pool → API-only, spend capped ~150 SAR/mo, long-context agentic escalation, never the brief.
   - **Tier 1** Node A planner (14B–32B local) · **Tier 2** Node B workers (7B–8B parallel) ·
-    **Tier 3** 3090 batch when not gaming.
+    **Tier 3** 70B-class batch across 4+ boards (or the optional 3090 if bought).
 - **KV-cache future-proofing:** llama.cpp KV-quant + prefix reuse now; KV offload later onto the
   dedicated 2TB KV-scratch NVMe — DeepSeek's 890 B/token KV is why 1M-ctx API sessions are cheap
   and why the next compression advance should be a config change, not a purchase (`homelab.md` §11).

@@ -6,57 +6,66 @@ Single source of truth for the trip + purchases. The dashboard (`index.html`) re
 
 | Line | Budget (SAR) | Scope |
 |---|---|---|
-| Server & tech | 24,800 | Proxmox core host, 5x BC-250 planner/worker nodes, anti-cheat box, 10GbE backbone, rack + 3D-printed airflow kit, KV-scratch NVMe, endpoints, cameras |
-| Home furnishing | 25,200 | Sofas, kitchen, bath, bedroom (no wardrobe), lighting, decor, controllers, light electronics |
+| Server & tech | 23,000 | Cheap AM4 Proxmox host (5700G + 128GB DDR4), 6x BC-250 (2 planner + 3 workers + 1 flex), anti-cheat box, 10GbE backbone (6 NICs), rack + 3D-printed airflow kit, KV-scratch NVMe, endpoints, cameras |
+| Home furnishing | 27,000 | Sofas, kitchen, bath, bedroom (no wardrobe), lighting, decor, controllers, light electronics |
 | **Total** | **50,000** | Includes 8,500 freight + 15% tax + 10% reserve (5,000) held back → **45,000 deployable ceiling** |
 
-Rebalanced Sep 2026 (+1,800 server / −1,800 home, total unchanged) for airflow/3D-printing parts,
-the 3rd (KV) NVMe and the 2000W PSU sizing — home still covers its full P3 scope with large headroom.
+Rebalanced Sep 2026 (BC-250-first rebuild: −1,800 server / +1,800 home, total unchanged): the
+premium core PC (7900X + X670E + DDR5 + 3090) was replaced by a cheap AM4 host, the fleet grew to
+6 boards, and the 3090 moved to optional P3 — server P3 now lands ≈22.0K of 23K with every
+capability except premium silicon still funded; the home line is restored to 27K with large headroom.
 
 Freight model: one consolidated sea shipment, ~8,500 SAR fixed → heavier carts cost less per kilo.
 Tax model: 15% on goods value (edit `data/config.json` if the real rate differs).
 
 ## 2. Architecture (locked decisions)
 
-- **Core host (NAS / virtualization)** — Ryzen 9 7900X + X670E + 128GB DDR5 + RTX 3090.
-  Proxmox: Game VM (GPU passthrough) + Sunshine → Moonlight to every TV;   LXCs for Jellyfin, AdGuard, cameras;
+- **Core host (NAS / virtualization, cheap AM4)** — Ryzen 5 5700G + B550 + 128GB DDR4 (iGPU VAAPI
+  for Jellyfin transcode). Proxmox: LXCs for Jellyfin, AdGuard, cameras;
   storage: 2x 2TB NVMe (VM/models + game library) + two ZFS mirror pairs (8TB x4 = 16TB usable);
-  PXE host for the fleet. Second physical box: used OEM tower + RTX 3060, bare-metal Windows,
-  for kernel anti-cheat games (Valorant / Fortnite / PUBG refuse VMs) — non-negotiable if those games matter.
-- **BC-250 cluster (LLM compute) — 5x AMD BC-250 16GB GDDR6 boards from Xianyu (~650–850 CNY each)**
-  (ex-mining cut-down PS5 APU: 6C Zen2 + 24 RDNA2 CU, 16GB shared @ 448 GB/s, 220W, Linux/RADV only):
-  - **Node A — 2x BC-250 (~32GB VRAM):** Planner / Orchestrator. Runs the 14B–32B quantized orchestrator
+  PXE host for the fleet. The **RTX 3090 is now optional (P3)** — bought only if 1440p/4K/RT AAA or
+  CUDA proves necessary after the trip (adds a Game VM via passthrough). Second physical box: used
+  OEM tower + RTX 3060, bare-metal Windows, for kernel anti-cheat games (Valorant / Fortnite / PUBG
+  refuse VMs) — non-negotiable if those games matter.
+- **BC-250 cluster (LLM + gaming compute) — 6x AMD BC-250 16GB GDDR6 boards from Xianyu (~650–850 CNY each)**
+  (ex-mining cut-down PS5 APU: 6C Zen2 (8C unlock) + 24→40 RDNA2 CU unlock, 16GB shared @ 448 GB/s,
+  220W, Linux/RADV only):
+  - **Node A — 2x BC-250 (~28GB usable):** Planner / Orchestrator. Runs the 14B–32B quantized orchestrator
     (e.g. Qwen-32B Q4) via llama.cpp Vulkan.
-  - **Node B — 3x BC-250 (~48GB VRAM):** Execution / Agentic worker. Runs parallel 7B/8B tool-calling
-    agents without VRAM swapping.
-  - Each node is a cheap used carrier host (board + CPU + 32GB) + ConnectX-3 NIC, mounted in an open
-    frame / 4U rack in a 12U–18U cabinet.
-- **10GbE SFP+ backbone (mandatory)** — 3x Mellanox ConnectX-3 (~100–150 CNY each) + TP-Link TL-ST1008F
-  8-port switch (~750 CNY). ~1.1 GB/s between Node A / Node B / core: llama.cpp RPC KV-cache and tensor
-  transfer are the whole reason this exists — 1GbE (~110 MB/s) would strangle it.
-- **Power & cooling** — 1600–2000W redundant (1+1) enterprise PSU + 12V breakout board feeds the 5x 220W
-  BC-250 spikes; Delta-class 4000+ RPM fans aimed at the passive heatsinks **and the GDDR6** (runs extremely hot).
+  - **Node B — 4x BC-250 (~54GB usable):** 3 boards run parallel 7B/8B tool-calling agents; the 4th
+    board is the **flex** — flips between a 4th worker and a Sunshine game session (inference never
+    drops below 2+3 while someone plays).
+  - Each board is a standalone computer on its own **IO carrier** (PCIe riser + boot NVMe + 12V feed)
+    with a ConnectX-3 NIC, on open-frame shelves in a 12U–18U cabinet.
+- **10GbE SFP+ backbone (mandatory)** — 6x Mellanox ConnectX-3 (one per board, ~100–150 CNY each) +
+  TP-Link TL-ST1008F 8-port switch (~750 CNY). ~1.1 GB/s between Node A / Node B / core: llama.cpp
+  RPC KV-cache and tensor transfer are the whole reason this exists — 1GbE (~110 MB/s) would strangle it.
+- **Power & cooling** — 2000W+2000W redundant (1+1) enterprise PSU + 12V breakout board feeds the 6x
+  boards (Mild-undervolt holds 24/7 at ~1.1kW; worst-case 8c+40CU can touch one 2000W leg — stagger);
+  Delta-class 4000+ RPM fans aimed at the passive heatsinks **and the GDDR6** (runs extremely hot).
 - **Endpoints per room** — TV boxes (Mi Box x2), not mini-PCs: Moonlight/Jellyfin decode at the TV,
   KB/mouse pair to the endpoint, never to the server.
-- **AI split** — LLMs live on the BC-250 nodes (planner + workers); the 3090 keeps the Game VM and
-  doubles as the CUDA box for 70B-class jobs when nobody is gaming.
+- **AI split** — LLMs live on the BC-250 nodes (~81GB usable pool); gaming = BC-250 flex sessions +
+  the 3060 anti-cheat box, with the optional 3090 (P3) adding a full-quality Game VM if bought.
 - **Mass OS deployment (PXE multicast)** — Clonezilla SE on the NAS pushes golden 100GB NVMe images
-  (CachyOS/Ubuntu + Mesa RADV + `amdgpu.sg_display=0` + BC-250 SMU governor script) to all 5 node drives
+  (CachyOS/Ubuntu + Mesa RADV + `amdgpu.sg_display=0` + BC-250 SMU governor script) to all 6 node drives
   over 10GbE in under ~3 minutes per batch. **Two goldens:** `golden-infer.img` (default) and
   `golden-console.img` (SteamOS Beta + bc250-steamos-real-toolkit — see below).
 - **Toolkit adoption (bc250-steamos-real-toolkit, read & decided)** — nodes keep CachyOS but adopt the
   toolkit's **Mild (undervolt) profile** (CPU 3.5GHz/GPU 1600MHz, tested stable 8c+40CU on 460W),
-  **CoolerControl PWM fan curves**, and the **UMA 512MB split**; 8c/40CU unlocks are opt-in flags after
-  base stability. SteamOS Beta's kernel churn is accepted ONLY on the console image, where PXE
-  re-clones in minutes. **Console mode:** one Node B carrier PXE-boots the console image for couch
-  gaming (FSR4/Sunshine) — same rack, second simultaneous gaming path beside the 3090 Game VM.
+  **CoolerControl PWM fan curves**, **UMA 512MB split** and the **24→40CU unlock** (verified +1.54x
+  llama.cpp pp512); 8c unlock is an opt-in flag after base stability. SteamOS Beta's kernel churn is
+  accepted ONLY on the console image, where PXE re-clones in minutes. **Console mode:** Node B's flex
+  board PXE-boots the console image for couch gaming (FSR4/Sunshine) — workers keep 3, second
+  simultaneous gaming path beside the anti-cheat box (and beside the 3090 Game VM, if bought).
 - **Inference tiers** — Tier 0 = **DeepSeek-V4.1-Flash via API** (763B params ≈ 380GB at 4-bit = 4.7×
-  the whole cluster → API-only; 1M-ctx agentic escalation, spend capped ~150 SAR/mo, never the daily
-  brief). Tier 1 = Node A planner (14B–32B local), Tier 2 = Node B workers (7B–8B), Tier 3 = 3090
-  batch. KV-cache compression (890B/token in V4.1) is tracked as the roadmap: llama.cpp KV-quant +
-  prefix reuse now, KV offload later onto the **dedicated 2TB KV-scratch NVMe** (bought so the next
-  compression advance is config, not hardware). Full analysis: `homelab.md` §10–§12.
-- **Proxmox service map** — Game VM (3090), Home Assistant, Jellyfin, Frigate NVR, Samba/NFS,
+  the whole pool → API-only; 1M-ctx agentic escalation, spend capped ~150 SAR/mo, never the daily
+  brief). Tier 1 = Node A planner (14B–32B local), Tier 2 = Node B workers (7B–8B), Tier 3 = 70B-class
+  batch across 4+ boards (or the optional 3090). KV-cache compression (890B/token in V4.1) is tracked
+  as the roadmap: llama.cpp KV-quant + prefix reuse now, KV offload later onto the **dedicated 2TB
+  KV-scratch NVMe** (bought so the next compression advance is config, not hardware). Full analysis:
+  `homelab.md` §10–§12.
+- **Proxmox service map** — Game VM (3090, optional P3), Home Assistant, Jellyfin, Frigate NVR, Samba/NFS,
   AdGuard, Uptime Kuma+Grafana, NUT, dashboard, downloads — table in `homelab.md` §9. ZFS pools
   native to Proxmox (no nested NAS OS); nodes stay bare-metal CachyOS.
 - Network: Ethernet per room (run cables **before** furniture lands) on top of the 10GbE core.
@@ -65,9 +74,9 @@ Tax model: 15% on goods value (edit `data/config.json` if the real rate differs)
 
 | Phase | What | Why this order |
 |---|---|---|
-| 1 — commit early | case, mobo, CPU, PSU, UPS, AIO, node carrier hosts, redundant 2000W PSU + breakout, 10GbE NICs/switch, rack + cabinet, network, sofa/kitchen/bed | These age slowest; order day one |
-| 2 — mid | RAM, NVMe (incl. KV scratch), BC-250 boards (+ 10 PWM fans, 3D-print kit), Mi Boxes, controllers, peripherals, cameras, decor, lighting/curtains | Used boards: validate one carrier first, then the rest |
-| 3 — last | GPUs (3090, 3060), HDDs, OEM box, gadgets, 3D printer (skip if owned) | Most volatile prices — verify locally before paying |
+| 1 — commit early | case, mobo, CPU, PSU, UPS, air cooler, IO carriers, redundant 2000W PSU + breakout, 10GbE NICs/switch, rack + cabinet, network, sofa/kitchen/bed | These age slowest; order day one |
+| 2 — mid | RAM, NVMe (incl. KV scratch), BC-250 boards (+ 10 PWM fans, 3D-print kit), Mi Boxes, HDMI dongle, controllers, peripherals, cameras, decor, lighting/curtains | Used boards: validate one carrier first, then the rest |
+| 3 — last | GPUs (3090 optional, 3060), HDDs, OEM box, gadgets, 3D printer (skip if owned) | Most volatile prices — verify locally before paying |
 
 **Rules:** ATX PSU + UPS = new only (the redundant mining PSU for the BC-250 nodes is the one used exception — load-test it).
 Everything else used is fair game — but GPU-Z VRAM + 10-min fan test before cash, and a live boot test on every BC-250.
@@ -99,7 +108,7 @@ Sourcing: **Shenzhen / Huaqiangbei** for BC-250s, GPUs and 10GbE gear; **Foshan 
 - **Route locked:** direct **RUH ↔ SZX nonstop** (China Southern CZ5007, ~8h, 3×/week; Saudia's RUH–SZX
   nonstop is cargo-only). JED and PVG bands remain as fallbacks — all banded in the dashboard with deep links.
 - Sourcing map: **Shenzhen (Huaqiangbei/SEG)** → BC-250s, GPUs, 10GbE gear · **Foshan (Lecong)** → bedroom + furniture ·
-  **Xianyu** → used enterprise hardware, carrier hosts, ConnectX-3.
+  **Xianyu** → used enterprise hardware, IO carriers, ConnectX-3.
 - Stays: Shenzhen/Foshan ¥120–450/night — converted live in the Travel section.
 
 ## 7. How to keep it fresh
@@ -123,7 +132,7 @@ Edit prices freely in `data/products.json`; budgets/logistics/tips live in `data
 
 ## 9. Server-route comparison (15K SAR cap)
 
-- **What it is** — a second, alternative path: instead of the 50K buy plan, pick one platform for a single ~15K-SAR all-in home server. `data/config.json` carries the whole dataset: `route.priorities` (six requirement rows with a current `pick`), `route.overall` verdict, `platforms` (7 cards: used-Threadripper-PRO build, new 3090 build, Chinese Strix Halo, global Strix Halo, DGX Spark, Mac Studio, Xiaomi AI Cube — each with price vs-cap bar, memory/bandwidth/power/AI/OS, variants, pros/cons, `bestFor`), and `modelClasses`/`fitColumns` for the fit matrix.
+- **What it is** — a second, alternative path: instead of the 50K buy plan, pick one platform for a single ~15K-SAR all-in home server. `data/config.json` carries the whole dataset: `route.priorities` (six requirement rows with a current `pick`), `route.overall` verdict, `platforms` (7 cards: the BC-250 rig (this plan), used-Threadripper-PRO build, Chinese Strix Halo, global Strix Halo, DGX Spark, Mac Studio, Xiaomi AI Cube — each with price vs-cap bar, memory/bandwidth/power/AI/OS, variants, pros/cons, `bestFor`), and `modelClasses`/`fitColumns` for the fit matrix.
 - **The deciding factor — "What Runs Where"** — a local-model fit matrix: 6 model classes (8–14B → 405B/cluster) × 6 platforms, colored `fast / fits / slow / tight / dual / —`. Rendered by `renderFit()` in `app.js` as a sticky-header table (scrolls horizontally on mobile) plus a legend. The recommended row is the only one where Proxmox + GPU passthrough + anti-cheat gaming + 8TB all fit under the cap; Chinese Strix Halo is the value pick (~7.8K for 128GB after the DRAM shortage doubled prices), used TR PRO the CUDA pick.
 - **Wiring** — Server Route sits between the cost sections and the buy list (`#sec-route`, jump-nav pill, scrollspy). The news feeds were re-pointed to platform/local-AI queries so relevant headlines (Strix restocks, DGX pricing, Mac launches) surface daily, and the LLM brief prompt (`decide.mjs: buildPrompt`) now receives `route` + `platforms` so it can flag any headline that changes the platform verdict.
 - **Mobile** — the whole UI is mobile-first (base CSS is the phone layout; `min-width` at 640/900/1120). Buy list becomes labelled cards below 640px via `data-label`/`td::before`, jump-nav is a sticky scrollable pill row, fit table scrolls inside its wrapper.
