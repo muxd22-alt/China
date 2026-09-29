@@ -1,13 +1,37 @@
 {
-  "generatedAt": "2026-09-28T12:44:52.347Z",
+  "generatedAt": "2026-09-29T11:00:15.378Z",
   "items": [
+    {
+      "feed": "fx",
+      "feedLabel": "Currency & Markets",
+      "title": "PBOC is expected to set the USD/CNY reference rate at 6.7177 – Reuters estimate - investingLive",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS01iNkxxWmN2UHhvMjRzdUk2WGxFRmtmeWdZNmhaZE1ES3hkc2d2UzhtQkZMcnNTRHozejhrMHdDeFdZaTI5V21xZlFUaEtsSk41WDVxekhVWUN2X2lCaWtZaDVhcTRFa3d1NGdVX0E5WVFNZW5nc2tZcF9FTXhkWGtPMmFQN1NoblJqMnM0MjBKcWlZTDUwdXpLLXJOTnlTU1lTNmZtWlhVM2Z2ME51SGV4bE1BMm05VVE?oc=5",
+      "pubDate": "Tue, 29 Sep 2026 00:57:35 GMT",
+      "ts": 1790643455000
+    },
     {
       "feed": "localai",
       "feedLabel": "Local AI & LLMs",
-      "title": "LM Studio and Gemma 4, a local AI guide for private business documents - pasqualepillitteri.it",
+      "title": "MiniCPM5-2B vs Qwen3.5-4B vs Gemma 3 4B: 53.9 Score [2026] - tech-insider.org",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBLMG9RY3U5cW1HYjNUWnlrUm1rR0xKV2RFc2pxbmotQXcwR0tvM1hoS2I0bkFRR3lwM3ViMWppMDF4bTcxWHBOQ0ctUUZoTGhmdEFZaGxUZTJYS3plby1xUmMyRGxFUUVQMEotem5vck5DU2RqU21QbVVnU3R1Zw?oc=5",
+      "pubDate": "Tue, 29 Sep 2026 00:23:58 GMT",
+      "ts": 1790641438000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "LM Studio and Gemma 4, a local AI guide for private business documents - Pasquale Pillitteri",
       "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdVZHTzhuSkQ5TjlVZ0ZhY2xka1U1djA4a1FUdEE2eUNReUtaQjhBQi1lNjRpZUEtWWw5S2pVTHN3NUE5enhEbzJYZWpINTUxMEFnZGJUU1NBRUxoM2E3cHppYncydnAyYXVRUnhITW5qZ2FwN0Jvb1RzeHk1VUMzRkRUdi03alJHM09QVjZTV21CVTg?oc=5",
       "pubDate": "Fri, 25 Sep 2026 14:42:08 GMT",
       "ts": 1790347328000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "Cisco CAIRN detects AI malware without opening the binary - Techzine Global",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVHRnUThiTFRnbVd0S0R3REt1V2hGMzRzcGVhRVVUU1M3d0ZWS3N2QnEzRjlaQVdfaU1CTm5zaFk3VUp2bzVsd0FxcTZjX0dMOTdNLTJTX05ZYmVScjRaXzlQdU44c0lRSU9MWTNnRlJMOUZDNjRuMXhDSzYtLWZ6dEhqRG5qakZGeGVfWmxudkU1d2lKekZqV0R4QjRiUmV1aVpXTW1B?oc=5",
+      "pubDate": "Wed, 23 Sep 2026 07:43:16 GMT",
+      "ts": 1790149396000
     },
     {
       "feed": "platforms",
@@ -20,7 +44,7 @@
     {
       "feed": "localai",
       "feedLabel": "Local AI & LLMs",
-      "title": "CAIRN - A New Tool to Track AI Malware That Operates Without Human Control - CyberSecurityNews",
+      "title": "CAIRN - A New Tool to Track AI Malware That Operates Without Human Control - cybersecuritynews.com",
       "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4wdHIydHNCWWZxYVpTZjc4VUlqdzhNdU9XUl8yWkk4dW1ZUXNybEtDMDJ4ZHItbXJXM0ZGQmZzRlRjaHo4RWd5OFVlTWx1bk9ZM0JOR0VjSnlmbS1LRGFiekc1SEhZM3F2aExXeU1fUG1ITW_SAXhBVV95cUxNMzNXR01PODBIQUJoMGZsNlpEQWozOXItaEE5M1BIaG1uaDdHd09jX3VWMEVteV9jeFZpWDZaOF9tbE0yekhKTV9DTE1hQ1JRazlYLXBHQ1JBUzJ5dmhjNXpZcDZodDhxdlBpRXdsNFNRRml1akxEZEY?oc=5",
       "pubDate": "Tue, 22 Sep 2026 15:27:12 GMT",
       "ts": 1790090832000
@@ -32,22 +56,6 @@
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVXdNQmMtaFZrc2xtR2RoRWtFeEk4RzRWNDhzNHFNZWZYQUNabDdRR0hsWnNfaXNFUVRKMC1lbk5aWEE4UDdxOUhaQkg0V01tcExhbkhYS3RFc3ktdGhGNV84RVBRenhra3AzNVRVVmJxQVBacXVEeV9NRlZ3N0ZidFJGQ1VyWGpURjBn?oc=5",
       "pubDate": "Tue, 22 Sep 2026 12:08:40 GMT",
       "ts": 1790078920000
-    },
-    {
-      "feed": "localai",
-      "feedLabel": "Local AI & LLMs",
-      "title": "Mac mini M6 for Local AI: 16GB vs 24GB vs 32GB Tested - zeera wireless",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOODlZdjJHVFBCcnNZal82eXE2SDVoLWxjcW5tQXR3ZU9uZXc2cGN1T3lFamtyRHI1dVVRcnJDNHRyTXhNVFNQbUVjUzJHQ3pfYzFuRUtCdDhWQ3MtR3lwSU9GMW1PSy1XMTY5TmwzX0NFOThNazcwQ0VudTRfcmdmZXRWelE?oc=5",
-      "pubDate": "Tue, 22 Sep 2026 04:20:47 GMT",
-      "ts": 1790050847000
-    },
-    {
-      "feed": "localai",
-      "feedLabel": "Local AI & LLMs",
-      "title": "Best Open-Source Agent Harnesses for Local LLMs in 2026 - marktechpost.com",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWHJZZjJYcmQ3dm5EaGFjc3lnUzM5QUR6MVV2dkJQRFoxV1ZOREdsU090YmR0dnlubGhVYTNnX2Z0elJRTUVJclhNRlFieVJQVExkSlVDXy1VSGEwWHhhQV8zdlFkNWFQSWZGSGN2WDZ6Qk9uS21WSldNQmJ1QzVnM1FHamJrcmdMSzRhRDdJYmlfYzU3VDByUUVjREjSAaIBQVVfeXFMUGxndGJ3ZGtYSzd0bHdEVWJUdThsRF8zbnFYck5UQll5dkg4LUFUbHMzQ05tVUNvWVpObi1uU05faXRDbmI3cWhGTHBiQThJcVAzQ2puS0ZXU2k4WkhtQWVMczdWajVIUGFrcEFUTlJNSFQyRk5GZE1jSU5MU0xhVVVoeVhqOEFFcGpQa0xDb2c5aHBGM0JOMTZhei1Pb3QwM2VR?oc=5",
-      "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
-      "ts": 1789714800000
     },
     {
       "feed": "tech",
@@ -92,14 +100,6 @@
     {
       "feed": "tech",
       "feedLabel": "GPU & PC Hardware",
-      "title": "GPU price tracking 2026 — Lowest price on every graphics card from Nvidia, AMD, and Intel today - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBhTEV0WktCaVlybTNSQk83V2RiQ05UUG4ySzNuWVRHSE5hYTBTMUVMaUFUTXJ3dDkxWUVFYXJZeWQ1bTZVS0ZDS1NXTF9MTzM0andZT0xfcElyTFpob3laRDV6QkJvU3RILXR6WG9hMUswQUd2dlpjUmJycHJ1QXM?oc=5",
-      "pubDate": "Mon, 14 Sep 2026 07:00:00 GMT",
-      "ts": 1789369200000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "GPU & PC Hardware",
       "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - How-To Geek",
       "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1NUdYLXZWTFcxcVRsenRPSlVoRDFEbHk0cUw4Z0FiSUlSNWdDVWtrY2NFZFFWY0o1RkJTRFZSU0xLZVNFbVVEMVk4enF2ckJ4NmFMM2hMNG1HVEFLTlYzNGVxZXNOdXZIdzJTaFNSTnlUUQ?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
@@ -112,6 +112,14 @@
       "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJQTRNWFdsLXVib1dzZWo5WGhzWUUxTEhSTExJMEdURHd3U2lXU2czYU40UUI3VUM1NFhGa2ZPR29aeTJaWXYwanpn?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
       "ts": 1789196400000
+    },
+    {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
+      "title": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original - Tom's Hardware",
+      "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYm9td29NWG9COFRMZEJickpxang3THpuQ3ZtWW82ZzE0bldKQ2phbnJxNmU5UEJoeUpUc2hBWmo1WVB3Ny1uNTdOUFNfdzEyNXh0WFAtNVZ2QVk5VnVrZHM4c1Fyc0VKaWVrVmtnSWdJVHlJMDBBOU9QT1FIT0RuS0doamFXX291dXlQYnlxU1dHLUVpdHBzU3JqMEZ0eFVmY1ZkRnlDZEtLZVRwVWVnOU83b24yRWU2Wm5UMWdya1V6Rms2bmJWMDF1ZE9TWG1UY3RJSVJFbHk3aE53MzNQZlFFbnUtV3hHSVgwNXpyU0ttNlhnTXpfZHNPU0xfTWFKeVdBYVpFakczdUJLTkItc3o0bFEyenZsYzZhRng2QnNPVDIxM2JB?oc=5",
+      "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
+      "ts": 1789110000000
     },
     {
       "feed": "platforms",
@@ -140,7 +148,7 @@
     {
       "feed": "trade",
       "feedLabel": "China-Saudi Trade",
-      "title": "Saudi Arabia, at the 2026 China International Fair for Investment and Trade, emphasizes strengthening economic integration between the two countries - maaal.com",
+      "title": "Saudi Arabia, at the 2026 China International Fair for Investment and Trade, emphasizes strengthening economic integration between the two countries - صحيفة مال",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1JbFhuZmJzVEMxSVB3UHlGT1dwVVlFOE1mQ0ZELXg5Q05XQVVCODlabE15RGlfbkdrazBNTmlwWWtsc01nMzdFU2loY2ptX013QWZ4SzhUSzlZODRxU29YX3JXOEVpcG0xRWRN?oc=5",
       "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
       "ts": 1788850800000
@@ -196,7 +204,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - carnegieendowment.org",
+      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - Carnegie Endowment for International Peace",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQlBkZGZGcEc1ZXlxdTFZakl6NndJTTRyd19mVXNKbGwyR1VXWVlyTkI1UGhzd3FZcFVLWk1kLWtlRlV1X1E2cGlGaENmMzFGMXQyVnBFWWptNHdXNmlTUXZxV1JkSDRMWmZhTU0tb2hseGlBUmVnZHI1V2tJMWtraHNNbmR6MkJ0ZHAzczMwaEg4YXEyaTJxekt4dm5YSXlM?oc=5",
       "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
       "ts": 1785222000000
@@ -220,7 +228,7 @@
     {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "Best Local LLMs You Can Run on a Single 24GB GPU in 2026: Qwen, Gemma, Mistral, DeepSeek Compared - marktechpost.com",
+      "title": "Best Local LLMs You Can Run on a Single 24GB GPU in 2026: Qwen, Gemma, Mistral, DeepSeek Compared - MarkTechPost",
       "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNM1lxZUVLcUVnWHJGQW1IcWxKQ0hTMl85TS1hTUdqMTF1cEdnanNOcmNtcHJCLXFfMXo5Wk5nTFlicUZwWWU4S1ViNVc0TEVoUERqZFZPUGk5S1ROaGQyOVdaRHhhNFc1Q2ZWQ3E2MFVrTW5FZjhsNjg0UVhfVDJpdmw4WFAxSlM0Y1UwSTRGRGlzN054Y0J6VkV0ejB6RkNXbFlvMjkxZUpjQnMxZ2l0endjcnZ1bWloVk9wOWs0MkZjd2xCbjQxQndRQ2ExRW_SAdQBQVVfeXFMUDR4MllIMl9MSUZQOTdBOWFUVmUwMkdZUDNKYkRfaEhpNmdsOV9LRm9abFpRZ2ZxaEMzaVFEZ2swSjJHc1Q0Tl9VTGF3QVBrY21BMFNjT3Zkc1lpU19NdVZBaWZIQmNyQy1wSkhYTGdpQjRnQUhZcUg1ckxUM0lhczZXSFZNMXlHX0l0SVh5S3lVMkwzRUVmY1d1MFJHajc2Nk11REktLUFEdkpmRGV2RGVQcFZ2MGZibjZhVzFJaVBSWTRsQjFHTV9KbWVBcXVjWk9EOFk?oc=5",
       "pubDate": "Sun, 19 Jul 2026 07:00:00 GMT",
       "ts": 1784444400000
@@ -232,14 +240,6 @@
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9reEVDUmpRSnRrWGI5ek1WM3FVcF85cFFHdmFINkhzR3BuMmV4d2dKNmVISE4teUo1d3VDelRQTEp3MmJ2VUVSMzNXSDlhTThWSEcza3ZtTW9WenZmV3IzSGI2ekcxZw?oc=5",
       "pubDate": "Sat, 18 Jul 2026 07:00:00 GMT",
       "ts": 1784358000000
-    },
-    {
-      "feed": "fx",
-      "feedLabel": "Currency & Markets",
-      "title": "Charting the renminbi's path to global currency - The World Economic Forum",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbnA5dUxaRzl2eTY2V1RoYzZiZ2ZIRU15TC10ZzZTVDItclZQMDFKY1dIZXNPc25jN2JrZm9ZWjBuTWduTy1oQlpYcEc3ajQ4YW1ieEtBSl9WUFI1TUJoZ0MwWmlKQTVFUEtZUjh5empENGk5UzVrZzNONC1GeVd4YnJXQmh1V094NHllejFwV2o3VnZ5Yi1GUWNDOFBVeE5NUllOQUNONWtkQUs0bXFHOW92OA?oc=5",
-      "pubDate": "Mon, 13 Jul 2026 07:00:00 GMT",
-      "ts": 1783926000000
     },
     {
       "feed": "fx",
@@ -268,7 +268,7 @@
     {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "10 Free AI Tools Beyond ChatGPT, Claude and Gemini (2026) - pasqualepillitteri.it",
+      "title": "10 Free AI Tools Beyond ChatGPT, Claude and Gemini (2026) - Pasquale Pillitteri",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBiN3FqTlhJNVY5SkowTVI0ei1MVXVXTGMyYWlyMGZzbUpCNXBYWVVzWDVrdllyMm9VUHNyMTA3eGhfUGFkb0ZpeUJueUJaVnhDelpoVUxTU3ZsTDdXRHVCbTBzSTlYQVRjb19TS21HQUViajhIdk1uZFdEYw?oc=5",
       "pubDate": "Mon, 06 Jul 2026 07:00:00 GMT",
       "ts": 1783321200000

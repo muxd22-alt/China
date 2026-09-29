@@ -1,6 +1,7 @@
 {
 "entries": [
 {"date":"2026-09-27","verdict":"WATCH","confidence":"VERIFIED","driver":"no statistical edge today","inputs":{"sarCny":1.794409,"pctVsAvg":0.03,"signal":"NEUTRAL","landed":28415,"headroom":16585,"crossed":0,"readiness":85,"goodsCny":37180}},
-{"date":"2026-09-28","verdict":"WATCH","confidence":"VERIFIED","driver":"no statistical edge today","inputs":{"sarCny":1.791864,"pctVsAvg":-0.07,"signal":"NEUTRAL","landed":34357,"headroom":10643,"crossed":0,"readiness":85,"goodsCny":47005}}
+{"date":"2026-09-28","verdict":"WATCH","confidence":"VERIFIED","driver":"no statistical edge today","inputs":{"sarCny":1.791864,"pctVsAvg":-0.07,"signal":"NEUTRAL","landed":34357,"headroom":10643,"crossed":0,"readiness":85,"goodsCny":47005}},
+{"date":"2026-09-29","verdict":"BOOK FLIGHT","confidence":"ESTIMATE","driver":"trip readiness reached READY","inputs":{"sarCny":1.792421,"pctVsAvg":-0.05,"signal":"NEUTRAL","landed":34348,"headroom":10652,"crossed":0,"readiness":85,"goodsCny":47005}}
 ]
 }
