@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-09-29T15:11:55.232Z",
+  "generatedAt": "2026-09-30T10:54:27.605Z",
   "budgets": {
     "server": {
       "tiers": {
         "P0": {
-          "goods": 1891.3,
-          "tax": 283.69,
+          "goods": 1892.34,
+          "tax": 283.85,
           "shipping": 608.55,
-          "landed": 2783.54,
+          "landed": 2784.75,
           "budget": 23000,
-          "remaining": 20216.46,
-          "pct": 12.1,
+          "remaining": 20215.25,
+          "pct": 12.11,
           "status": "ok"
         },
         "P1": {
-          "goods": 11676.94,
-          "tax": 1751.54,
+          "goods": 11683.41,
+          "tax": 1752.51,
           "shipping": 3757.23,
-          "landed": 17185.72,
+          "landed": 17193.16,
           "budget": 23000,
-          "remaining": 5814.28,
-          "pct": 74.72,
+          "remaining": 5806.84,
+          "pct": 74.75,
           "status": "ok"
         },
         "P2": {
-          "goods": 12965.7,
-          "tax": 1944.86,
+          "goods": 12972.88,
+          "tax": 1945.93,
           "shipping": 4171.91,
-          "landed": 19082.47,
+          "landed": 19090.73,
           "budget": 23000,
-          "remaining": 3917.53,
-          "pct": 82.97,
+          "remaining": 3909.27,
+          "pct": 83,
           "status": "ok"
         },
         "P3": {
-          "goods": 15057.85,
-          "tax": 2258.68,
+          "goods": 15066.18,
+          "tax": 2259.93,
           "shipping": 4845.09,
-          "landed": 22161.61,
+          "landed": 22171.2,
           "budget": 23000,
-          "remaining": 838.39,
-          "pct": 96.35,
+          "remaining": 828.8,
+          "pct": 96.4,
           "status": "ok"
         }
       }
@@ -48,43 +48,43 @@
     "home": {
       "tiers": {
         "P0": {
-          "goods": 4128.49,
-          "tax": 619.27,
+          "goods": 4130.78,
+          "tax": 619.62,
           "shipping": 1328.41,
-          "landed": 6076.17,
+          "landed": 6078.8,
           "budget": 27000,
-          "remaining": 20923.83,
-          "pct": 22.5,
+          "remaining": 20921.2,
+          "pct": 22.51,
           "status": "ok"
         },
         "P1": {
-          "goods": 8591.73,
-          "tax": 1288.76,
+          "goods": 8596.49,
+          "tax": 1289.47,
           "shipping": 2764.52,
-          "landed": 12645.01,
+          "landed": 12650.48,
           "budget": 27000,
-          "remaining": 14354.99,
-          "pct": 46.83,
+          "remaining": 14349.52,
+          "pct": 46.85,
           "status": "ok"
         },
         "P2": {
-          "goods": 11079.99,
-          "tax": 1662,
+          "goods": 11086.12,
+          "tax": 1662.92,
           "shipping": 3565.15,
-          "landed": 16307.14,
+          "landed": 16314.19,
           "budget": 27000,
-          "remaining": 10692.86,
-          "pct": 60.4,
+          "remaining": 10685.81,
+          "pct": 60.42,
           "status": "ok"
         },
         "P3": {
-          "goods": 11358.94,
-          "tax": 1703.84,
+          "goods": 11365.23,
+          "tax": 1704.78,
           "shipping": 3654.91,
-          "landed": 16717.69,
+          "landed": 16724.92,
           "budget": 27000,
-          "remaining": 10282.31,
-          "pct": 61.92,
+          "remaining": 10275.08,
+          "pct": 61.94,
           "status": "ok"
         }
       }
@@ -93,17 +93,17 @@
       "totalBudget": 50000,
       "contingencyReserve": 5000,
       "deployable": 45000,
-      "coreLanded": 31808.97,
+      "coreLanded": 31821.89,
       "coreWithinDeployable": true,
       "shippingSAR": 8500,
       "taxRate": 0.15,
-      "sarPerCny": 0.557905
+      "sarPerCny": 0.558214
     }
   },
   "tip": {
-    "index": 2,
+    "index": 3,
     "total": 18,
-    "text": "BC-250 setup: flash the community BIOS (VRAM split), run the SMU governor for clocks and idle power, and put fans directly on the GDDR6 - it runs extremely hot. Boards are Linux-only (RADV/Vulkan); Windows has no driver."
+    "text": "The 10GbE SFP+ backbone exists for one reason: KV-cache / tensor traffic between the BC-250 planner and worker nodes. Never run llama.cpp RPC over 1GbE - 110 MB/s will strangle it."
   },
   "travel": {
     "routes": [
@@ -175,25 +175,29 @@
     "taxOn": "goods",
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
-  "warnings": [],
+  "warnings": [
+    "1 FX history point(s) unavailable",
+    "LLM brief failed: typesafe/jev-router unparseable | nvidia/nemotron-3-ultra-550b-a55b:free unparseable | google/gemma-4-31b-it:free HTTP 429 | nvidia/nemotron-3-super-120b-a12b:free unparseable",
+    "stale brief from 2026-09-29 kept"
+  ],
   "newsCount": 34,
   "call": {
     "verdict": "BOOK FLIGHT",
     "confidence": "ESTIMATE",
     "driver": "trip readiness reached READY",
-    "reasoning": "1 SAR = 1.7924 CNY - 0.05% below its 9-point average (signal NEUTRAL, -0.53% drift); dual-source FX verified. Core plan lands at 29,831 SAR vs 45,000 deployable - 15,169 SAR headroom, 5,000 SAR reserve held back. 43 targets set, none crossed - closest is 2TB PCIe 4.0 NVMe (x2: VMs/models + game library) at +5.1% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
+    "reasoning": "1 SAR = 1.7914 CNY - 0.06% below its 8-point average (signal NEUTRAL, -0.44% drift); dual-source FX verified. Core plan lands at 29,844 SAR vs 45,000 deployable - 15,156 SAR headroom, 5,000 SAR reserve held back. 43 targets set, none crossed - closest is 2TB PCIe 4.0 NVMe (x2: VMs/models + game library) at +5.1% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
     "inputs": {
-      "sarCny": 1.792421,
-      "pctVsAvg": -0.05,
+      "sarCny": 1.791429,
+      "pctVsAvg": -0.06,
       "signal": "NEUTRAL",
-      "landed": 29831,
-      "headroom": 15169,
+      "landed": 29844,
+      "headroom": 15156,
       "crossed": 0,
       "readiness": 85,
       "goodsCny": 47350
     }
   },
-  "diff": "Since yesterday: WATCH → BOOK FLIGHT · CNY vs avg steady at -0.05% · landed -4526 SAR · confidence VERIFIED → ESTIMATE.",
+  "diff": "Since yesterday: call held at BOOK FLIGHT · CNY vs avg steady at -0.06% · landed +13 SAR.",
   "crossed": {
     "crossed": [],
     "withTargets": 43,
@@ -224,7 +228,7 @@
         "key": "fx",
         "label": "FX trend stability",
         "score": 100,
-        "value": "-0.53% drift over 8 pts"
+        "value": "-0.44% drift over 7 pts"
       },
       {
         "key": "targets",
@@ -367,6 +371,22 @@
         "signal": "NEUTRAL",
         "landed": 29831,
         "headroom": 15169,
+        "crossed": 0,
+        "readiness": 85,
+        "goodsCny": 47350
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "verdict": "BOOK FLIGHT",
+      "confidence": "ESTIMATE",
+      "driver": "trip readiness reached READY",
+      "inputs": {
+        "sarCny": 1.791429,
+        "pctVsAvg": -0.06,
+        "signal": "NEUTRAL",
+        "landed": 29844,
+        "headroom": 15156,
         "crossed": 0,
         "readiness": 85,
         "goodsCny": 47350

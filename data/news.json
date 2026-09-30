@@ -1,6 +1,14 @@
 {
-  "generatedAt": "2026-09-29T15:11:55.232Z",
+  "generatedAt": "2026-09-30T10:54:27.605Z",
   "items": [
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "Speculative Decoding Setup: 13 Steps, 90 Min [2026] - tech-insider.org",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9YeEtTTzZWc3ZqSVg4S1d1Sm1yN05OTXpjRmJmdlplNWFPUHlnRmZ6NHk2SmpYeUUweTRyUGxrckQ3STktWTNrRWswRXZOYUlKV1dKS1NDcDN0Y3RWaFFqaWpJaFF5UFlw?oc=5",
+      "pubDate": "Tue, 29 Sep 2026 10:14:36 GMT",
+      "ts": 1790676876000
+    },
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
@@ -26,12 +34,12 @@
       "ts": 1790347328000
     },
     {
-      "feed": "localai",
-      "feedLabel": "Local AI & LLMs",
-      "title": "Cisco CAIRN detects AI malware without opening the binary - Techzine Global",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVHRnUThiTFRnbVd0S0R3REt1V2hGMzRzcGVhRVVUU1M3d0ZWS3N2QnEzRjlaQVdfaU1CTm5zaFk3VUp2bzVsd0FxcTZjX0dMOTdNLTJTX05ZYmVScjRaXzlQdU44c0lRSU9MWTNnRlJMOUZDNjRuMXhDSzYtLWZ6dEhqRG5qakZGeGVfWmxudkU1d2lKekZqV0R4QjRiUmV1aVpXTW1B?oc=5",
-      "pubDate": "Wed, 23 Sep 2026 07:43:16 GMT",
-      "ts": 1790149396000
+      "feed": "platforms",
+      "feedLabel": "AI Hardware Platforms",
+      "title": "GMKtec Evo-X3 review: Strix Halo in a brand new suit - Tom's Hardware",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPLWRHTXZpRFRoeVIwNlpzTDkyb0hKX0pvYWtEamVVaFN5ckduZE9mZC1zM1U2MVZqbkNDRHUzU3FYcDJ0TElQeEh2ekxlSGlPZnc1N3NyT3ZTN3VXYTlvLXdBU05ubE5kdkFNMUpoUW5EQy1GLUN0a2pJNWJvc05SczlfLVQ1RnF0bXM4UXlwOU9HQ3c?oc=5",
+      "pubDate": "Thu, 24 Sep 2026 13:00:00 GMT",
+      "ts": 1790254800000
     },
     {
       "feed": "platforms",
@@ -52,7 +60,7 @@
     {
       "feed": "localai",
       "feedLabel": "Local AI & LLMs",
-      "title": "7 Open-Source Alternatives to ChatGPT You Can Run Locally - kdnuggets.com",
+      "title": "7 Open-Source Alternatives to ChatGPT You Can Run Locally - KDnuggets",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVXdNQmMtaFZrc2xtR2RoRWtFeEk4RzRWNDhzNHFNZWZYQUNabDdRR0hsWnNfaXNFUVRKMC1lbk5aWEE4UDdxOUhaQkg0V01tcExhbkhYS3RFc3ktdGhGNV84RVBRenhra3AzNVRVVmJxQVBacXVEeV9NRlZ3N0ZidFJGQ1VyWGpURjBn?oc=5",
       "pubDate": "Tue, 22 Sep 2026 12:08:40 GMT",
       "ts": 1790078920000
@@ -100,7 +108,7 @@
     {
       "feed": "tech",
       "feedLabel": "GPU & PC Hardware",
-      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - howtogeek.com",
+      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - How-To Geek",
       "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1NUdYLXZWTFcxcVRsenRPSlVoRDFEbHk0cUw4Z0FiSUlSNWdDVWtrY2NFZFFWY0o1RkJTRFZSU0xLZVNFbVVEMVk4enF2ckJ4NmFMM2hMNG1HVEFLTlYzNGVxZXNOdXZIdzJTaFNSTnlUUQ?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
       "ts": 1789196400000
@@ -116,8 +124,8 @@
     {
       "feed": "tech",
       "feedLabel": "GPU & PC Hardware",
-      "title": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYm9td29NWG9COFRMZEJickpxang3THpuQ3ZtWW82ZzE0bldKQ2phbnJxNmU5UEJoeUpUc2hBWmo1WVB3Ny1uNTdOUFNfdzEyNXh0WFAtNVZ2QVk5VnVrZHM4c1Fyc0VKaWVrVmtnSWdJVHlJMDBBOU9QT1FIT0RuS0doamFXX291dXlQYnlxU1dHLUVpdHBzU3JqMEZ0eFVmY1ZkRnlDZEtLZVRwVWVnOU83b24yRWU2Wm5UMWdya1V6Rms2bmJWMDF1ZE9TWG1UY3RJSVJFbHk3aE53MzNQZlFFbnUtV3hHSVgwNXpyU0ttNlhnTXpfZHNPU0xfTWFKeVdBYVpFakczdUJLTkItc3o0bFEyenZsYzZhRng2QnNPVDIxM2JB?oc=5",
+      "title": "Desktop graphics card shipments hit four-year high of 12.5 million despite increasing prices — Nvidia takes 90% share as gamers rush to beat looming price spikes - Tom's Hardware",
+      "link": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQQURvMjl0ZHdVSDB6dHBoSUdvZzZEZkZGdmptcldXUmFXQm5WNzc2RUdIY2M0NVFIQ05Vdm5teHFuNDc1bnZBTDZUOGg2NV83emdSVEhNWlpfaksyZm1tMzdtekJVZTFBNzNMX2ZLNUNxQkVXYnhtN05Xdm5hSW53Ri16RHdvV1lGRmVvUzUzeXBRd09EbDJCSzk5TUpRSkNlWFk2VFZqUW4xMUJrWndIMVRIRWFtY096Y2FFWHd5WFdwMWxzUXlKWEVKYmtvZUhOVkVtc3dZR0VSUURQVVJuNTZVNlBlMDlQVU1kLVVGcjVRVVM5MVFCM0JwcDBaT3AtUE1ydERyRlg1UTdWSDZnYjV6dFlMNHR2QWowc3RvclU0djVXQUp6ZS11NFBUZzhEN3g2WGlRZXpadw?oc=5",
       "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
       "ts": 1789110000000
     },
@@ -132,7 +140,7 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "Mac Studio M5 Ultra vs Nvidia DGX Spark: Compared for Local AI - Geeky Gadgets",
+      "title": "Mac Studio M5 Ultra vs Nvidia DGX Spark: Compared for Local AI - geeky-gadgets.com",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE16STFnT1NsclNTUHdPc2llY0NEU0xITEROZm9NVVFsRGFxNlA0Nl9ueFM2MG01Qk9MTnVEZ3B5NUJiZ1ViWFZhUUpXX0NJX2JseW1PYTZNNWJRR0hyc2FqUm03R0NjTWs?oc=5",
       "pubDate": "Thu, 10 Sep 2026 07:00:00 GMT",
       "ts": 1789023600000
@@ -152,14 +160,6 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1JbFhuZmJzVEMxSVB3UHlGT1dwVVlFOE1mQ0ZELXg5Q05XQVVCODlabE15RGlfbkdrazBNTmlwWWtsc01nMzdFU2loY2ptX013QWZ4SzhUSzlZODRxU29YX3JXOEVpcG0xRWRN?oc=5",
       "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
       "ts": 1788850800000
-    },
-    {
-      "feed": "platforms",
-      "feedLabel": "AI Hardware Platforms",
-      "title": "Ryzen AI Max PRO 400: 192GB Memory Runs 300B LLMs [2026] - tech-insider.org",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPT25tNE15aHRrclIweVhBME45ZzBrSFoxcndBVEJQM0xNU3AxLU5oc01IODBlRENCemNmQXFjUUZOX0V3SGo5bV9tNzJUelBuczJxU2ZGT2VVaVp6SXNhcXU4bWRHcDRGNFgzWkFaTGdhUGRxby1ma1J1bm1lZzBYR013?oc=5",
-      "pubDate": "Sun, 06 Sep 2026 07:00:00 GMT",
-      "ts": 1788678000000
     },
     {
       "feed": "trade",
@@ -196,7 +196,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "China steadies yuan as exporters feel currency squeeze - asia.nikkei.com",
+      "title": "China steadies yuan as exporters feel currency squeeze - Nikkei Asia",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQLXV3VUliR1ZlTDcwTUpGUjJfeHhSZEZjY1FGWVZNaVBlX2w4OENFaXJqcHhRSVlIaVlMS25WN0JvaUVicXV4XzV1NDNhMy1Ma2pHYnQ3VDBuelhJVDNzSzJBRHhiSUg1NWhsMWtYbDdzcjBnaGEyeXBETjF1THRMSlJ1RWxTTXhuRFR4a3lTTnBBbzdJRzdlaWpXTm9lX2hKTnBYS2hLMkM5QQ?oc=5",
       "pubDate": "Thu, 13 Aug 2026 07:00:00 GMT",
       "ts": 1786604400000
@@ -204,7 +204,7 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - Carnegie Endowment for International Peace",
+      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - carnegieendowment.org",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQlBkZGZGcEc1ZXlxdTFZakl6NndJTTRyd19mVXNKbGwyR1VXWVlyTkI1UGhzd3FZcFVLWk1kLWtlRlV1X1E2cGlGaENmMzFGMXQyVnBFWWptNHdXNmlTUXZxV1JkSDRMWmZhTU0tb2hseGlBUmVnZHI1V2tJMWtraHNNbmR6MkJ0ZHAzczMwaEg4YXEyaTJxekt4dm5YSXlM?oc=5",
       "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
       "ts": 1785222000000
@@ -228,7 +228,7 @@
     {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "Best Local LLMs You Can Run on a Single 24GB GPU in 2026: Qwen, Gemma, Mistral, DeepSeek Compared - marktechpost.com",
+      "title": "Best Local LLMs You Can Run on a Single 24GB GPU in 2026: Qwen, Gemma, Mistral, DeepSeek Compared - MarkTechPost",
       "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNM1lxZUVLcUVnWHJGQW1IcWxKQ0hTMl85TS1hTUdqMTF1cEdnanNOcmNtcHJCLXFfMXo5Wk5nTFlicUZwWWU4S1ViNVc0TEVoUERqZFZPUGk5S1ROaGQyOVdaRHhhNFc1Q2ZWQ3E2MFVrTW5FZjhsNjg0UVhfVDJpdmw4WFAxSlM0Y1UwSTRGRGlzN054Y0J6VkV0ejB6RkNXbFlvMjkxZUpjQnMxZ2l0endjcnZ1bWloVk9wOWs0MkZjd2xCbjQxQndRQ2ExRW_SAdQBQVVfeXFMUDR4MllIMl9MSUZQOTdBOWFUVmUwMkdZUDNKYkRfaEhpNmdsOV9LRm9abFpRZ2ZxaEMzaVFEZ2swSjJHc1Q0Tl9VTGF3QVBrY21BMFNjT3Zkc1lpU19NdVZBaWZIQmNyQy1wSkhYTGdpQjRnQUhZcUg1ckxUM0lhczZXSFZNMXlHX0l0SVh5S3lVMkwzRUVmY1d1MFJHajc2Nk11REktLUFEdkpmRGV2RGVQcFZ2MGZibjZhVzFJaVBSWTRsQjFHTV9KbWVBcXVjWk9EOFk?oc=5",
       "pubDate": "Sun, 19 Jul 2026 07:00:00 GMT",
       "ts": 1784444400000
@@ -244,10 +244,10 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - barrons.com",
+      "title": "China Renminbi Strengthens Due to Iran War | July 8 Global Signals - Barron's",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNEFORUJKRVhhNGUtUC1pUFVkTkhyS0pzMEE0dzFnSWJGcjZ5OHMzcW94SzJQS3ZTTUMwVWVveG43SjFqNm5pc2ZJSWV0MWtUMWdxRHpzTWE5bG5mQTA4WHRIcGt1TnVFMlVpQjE2eGRsdEZPS3BUNzQ3RzRGdTZWZ251NV95NV9pZ2lPU2NmUmxHanQzbWJVVGVPS2lrUW5DODBsdlppRDI0TzBJcS05Y1RadVM1TUk?oc=5",
-      "pubDate": "Thu, 09 Jul 2026 07:00:00 GMT",
-      "ts": 1783580400000
+      "pubDate": "Thu, 09 Jul 2026 10:57:41 GMT",
+      "ts": 1783594661000
     },
     {
       "feed": "openmodels",
@@ -268,10 +268,10 @@
     {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "10 Free AI Tools Beyond ChatGPT, Claude and Gemini (2026) - Pasquale Pillitteri",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBiN3FqTlhJNVY5SkowTVI0ei1MVXVXTGMyYWlyMGZzbUpCNXBYWVVzWDVrdllyMm9VUHNyMTA3eGhfUGFkb0ZpeUJueUJaVnhDelpoVUxTU3ZsTDdXRHVCbTBzSTlYQVRjb19TS21HQUViajhIdk1uZFdEYw?oc=5",
-      "pubDate": "Mon, 06 Jul 2026 07:00:00 GMT",
-      "ts": 1783321200000
+      "title": "DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% - VentureBeat",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOHZDQWRkY1hKUVJwUjFsZlpWT1F0ck9CcWJoajNnd1RXWjJxVXZBYVZBWTdxS1drelFFbW05LVFZcEtiWVNBUExJM3FwNC1vb2tCSzUzZmFja09URkExUTNsRE9pUUhYRmNPU1FOdUtseFE2VzhDT2pCVE1ES0kzSW5BQ2hQdTJhVm1CZmMySUdTUFRvT3RtRGV2MHRkd0NiZFpmQ0VXbldCcWJleTZfOV9IaE1GSFpSaHpWTA?oc=5",
+      "pubDate": "Mon, 29 Jun 2026 07:00:00 GMT",
+      "ts": 1782716400000
     }
   ]
 }
