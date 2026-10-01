@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-30T10:54:27.605Z",
+  "generatedAt": "2026-10-01T11:23:19.481Z",
   "items": [
+    {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
+      "title": "Nvidia GPU Prices Surge 41% in Europe, AMD Up 28% [2026] - shattered.io",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1hMmFFMXZFWVc0aVhaR0RfZ3BnanByS1RxUTZoQ0F1cDhTWC1kRnIza3Ztb1AtUnUwTnJzNGVWaVQ4LTA5VEo2bzYycFF3LWpNLVB4UTZmaEItZDhXQ3FaZVhzTWFzVzJIN29YdFBB?oc=5",
+      "pubDate": "Thu, 01 Oct 2026 02:22:16 GMT",
+      "ts": 1790821336000
+    },
+    {
+      "feed": "trade",
+      "feedLabel": "China-Saudi Trade",
+      "title": "Opinion | Saudi Arabia’s mBridge exit shows the limits of financial de-dollarisation - South China Morning Post",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeUpnY3lObWhoLUF5dDhpQ0J1VUUwSXVOSWpEN1ZseEVxWVhCM2Z1dDdzel95dmVZM1VPc0s3Qnp1SFZQazVoY0tSd3Voa19qN0tuN01pbWRORUN0MHlPaHlCSU1ZRG9iSDlrRHlRdWlaR0dxU2FpRWdPMDlNSk1BbXl0bU1sdWtrNHhNbmdnRXJCTzZWWVdtYlNvYVU2SGtFbGZOaWpkaHBGVG8yYl8wT1ZYZ003R1o3OWJxVThpWDFKQdIBwgFBVV95cUxObG44RUxISXI0Z1BWYmxwTFV4WW12Mi1tdF9YWHhZdHpQZDRPUXdZamM2aXpvNDhKTHdHdHZKam56c1ZCR1ZkREhnUzRsTU1Ga0VJdnNZYWpxU0VFTlFtQTBnN0h2QmREX0ZwamxySlNGZDQ2ajJwazJLUDZ3YXFObHBVMV9kUjI0OUN2TjFnQUpIelBNZW9JaVkxVDIwMzdsMW9IMzNpa3JUVFlDOThqMTUweGNMOXJWalVHeGVOZDlZUQ?oc=5",
+      "pubDate": "Wed, 30 Sep 2026 08:30:08 GMT",
+      "ts": 1790757008000
+    },
+    {
+      "feed": "travel",
+      "feedLabel": "Flights & Travel",
+      "title": "Passengers foil bid to crash Israel-bound flight after co-pilot stabs captain - South China Morning Post",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOaXRmdTNyUEZXUlB4UnIwQUhPOHlscUFSNENhS2xtYVl0U043aFRWRGd0MnBNdDlmQWNEcERkTjdYTEpEM1pVYzQ5ZEFsN1BaNGlsRFJwUGJDMUpMQ3UwV2xQR1BWcXd5WXZmZTkwTVp3NldrVHVpOG9lQkgyZzJPRnNSNy1WUm1RYk5ENWFPTEtlUjM3WlBqNU5aWE4tSjlXbU5lNzZiNjZHTFNIMjB1RG5LQXhYOWdrNDNPX25GaGh2dm5kR0HSAcYBQVVfeXFMTlVTalQyQkxzRE1yLTZTVkpLYTBFM2h0ZkNBODl4TGxLTW1XWlVESkVNTU55dDkxMDNjcUU2TC1OUWcyUFpSa1FYNGVYRjhDOGFmb0NRLUg3aVF6V01SdGdPb2x1SGFXakJEa1NySjlnbEJvUkEzN0NNT180OHAxRjJDNkhUVWlJeTlrZVdIZDRQNXNEandHb0o1OU1yN3lOSU1qdWhKbjJiOEIycUt6MlNDbHdiSGZZWTAwQXpyUzRyUG1FVzhR?oc=5",
+      "pubDate": "Wed, 30 Sep 2026 07:54:04 GMT",
+      "ts": 1790754844000
+    },
     {
       "feed": "localai",
       "feedLabel": "Local AI & LLMs",
@@ -10,20 +34,28 @@
       "ts": 1790676876000
     },
     {
-      "feed": "fx",
-      "feedLabel": "Currency & Markets",
-      "title": "PBOC is expected to set the USD/CNY reference rate at 6.7177 – Reuters estimate - investingLive",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS01iNkxxWmN2UHhvMjRzdUk2WGxFRmtmeWdZNmhaZE1ES3hkc2d2UzhtQkZMcnNTRHozejhrMHdDeFdZaTI5V21xZlFUaEtsSk41WDVxekhVWUN2X2lCaWtZaDVhcTRFa3d1NGdVX0E5WVFNZW5nc2tZcF9FTXhkWGtPMmFQN1NoblJqMnM0MjBKcWlZTDUwdXpLLXJOTnlTU1lTNmZtWlhVM2Z2ME51SGV4bE1BMm05VVE?oc=5",
-      "pubDate": "Tue, 29 Sep 2026 00:57:35 GMT",
-      "ts": 1790643455000
-    },
-    {
       "feed": "localai",
       "feedLabel": "Local AI & LLMs",
       "title": "MiniCPM5-2B vs Qwen3.5-4B vs Gemma 3 4B: 53.9 Score [2026] - tech-insider.org",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBLMG9RY3U5cW1HYjNUWnlrUm1rR0xKV2RFc2pxbmotQXcwR0tvM1hoS2I0bkFRR3lwM3ViMWppMDF4bTcxWHBOQ0ctUUZoTGhmdEFZaGxUZTJYS3plby1xUmMyRGxFUUVQMEotem5vck5DU2RqU21QbVVnU3R1Zw?oc=5",
       "pubDate": "Tue, 29 Sep 2026 00:23:58 GMT",
       "ts": 1790641438000
+    },
+    {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
+      "title": "GPU price tracking 2026 — Lowest price on every graphics card from Nvidia, AMD, and Intel today - tomshardware.com",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBhTEV0WktCaVlybTNSQk83V2RiQ05UUG4ySzNuWVRHSE5hYTBTMUVMaUFUTXJ3dDkxWUVFYXJZeWQ1bTZVS0ZDS1NXTF9MTzM0andZT0xfcElyTFpob3laRDV6QkJvU3RILXR6WG9hMUswQUd2dlpjUmJycHJ1QXM?oc=5",
+      "pubDate": "Mon, 28 Sep 2026 15:39:45 GMT",
+      "ts": 1790609985000
+    },
+    {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
+      "title": "Nvidia GPUs are massively overpriced, and AMD's performance advantage is too big to ignore just for DLSS - How-To Geek",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZTJCcUtVVm9xYUJTZVNsYTdJTmRiN2dmdHZXRHN1bV9Iak1MUjlSdzdMSmJVXzZ5VDY5enBVbEV2LWQwZnNqN2U5emxDV1NGdG9TemlySkM1TFA0UlhYVEZmUlBXR01wZW16ZnliaFlXSUZ3Sk9qVWhTeFdUeXRjNmNocUxPaGxkRzVVZ3ZSU2tIdURucG9odGlad1BGdEpsNDhvUXFnVDBnVXVrU2tRN1p4eXdUUWdXbDJzTGh1NWZvUUdaRUozeA?oc=5",
+      "pubDate": "Sat, 26 Sep 2026 22:00:14 GMT",
+      "ts": 1790460014000
     },
     {
       "feed": "localai",
@@ -36,10 +68,18 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "GMKtec Evo-X3 review: Strix Halo in a brand new suit - Tom's Hardware",
+      "title": "GMKtec Evo-X3 review: Strix Halo in a brand new suit - tomshardware.com",
       "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPLWRHTXZpRFRoeVIwNlpzTDkyb0hKX0pvYWtEamVVaFN5ckduZE9mZC1zM1U2MVZqbkNDRHUzU3FYcDJ0TElQeEh2ekxlSGlPZnc1N3NyT3ZTN3VXYTlvLXdBU05ubE5kdkFNMUpoUW5EQy1GLUN0a2pJNWJvc05SczlfLVQ1RnF0bXM4UXlwOU9HQ3c?oc=5",
       "pubDate": "Thu, 24 Sep 2026 13:00:00 GMT",
       "ts": 1790254800000
+    },
+    {
+      "feed": "localai",
+      "feedLabel": "Local AI & LLMs",
+      "title": "Cisco Talos Launches CAIRN Tool to Hunt and Track AI-Integrated Malware - gbhackers.com",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSTR0cVRQdEdVd0NRUlpfODEtLU8zQ2ltbTdGdmJDQlo3YTFsd3kxZmhfRE1VN1gwQkhRNTJpWk40ZkZzcW1lY1lvY0ZwMjNuN2Vzb3hqZUtvd1FXVy00cEVDQkJGN0JkODZoMzM5cFJuTzN6REtQSHM1eFllcUNjb1l6U2kzQUc3RElVZ3BzWXZvb1Q0SUtXamVB0gGfAUFVX3lxTE8wSTNURDhwdTNPUGVRN0FzYnRDM2JQWHNYSlM4QVQyOHlHamJHS0pIa0x3VVg5cDNsUGNiUmRMQWJCbDJVMUJkUlo4YXRTS1d1WjVHTk92YmpsSTE2RDZQUnlHXzF6ZkQ5bFNyVXRDaFVET3E3VDhaOG02bjFqZGpGT2xqc0FzZXp4Nnp6NE1HSzB4WFl1VkJVS3BNcVZBOA?oc=5",
+      "pubDate": "Wed, 23 Sep 2026 07:39:43 GMT",
+      "ts": 1790149183000
     },
     {
       "feed": "platforms",
@@ -52,23 +92,23 @@
     {
       "feed": "localai",
       "feedLabel": "Local AI & LLMs",
-      "title": "CAIRN - A New Tool to Track AI Malware That Operates Without Human Control - CyberSecurityNews",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4wdHIydHNCWWZxYVpTZjc4VUlqdzhNdU9XUl8yWkk4dW1ZUXNybEtDMDJ4ZHItbXJXM0ZGQmZzRlRjaHo4RWd5OFVlTWx1bk9ZM0JOR0VjSnlmbS1LRGFiekc1SEhZM3F2aExXeU1fUG1ITW_SAXhBVV95cUxNMzNXR01PODBIQUJoMGZsNlpEQWozOXItaEE5M1BIaG1uaDdHd09jX3VWMEVteV9jeFZpWDZaOF9tbE0yekhKTV9DTE1hQ1JRazlYLXBHQ1JBUzJ5dmhjNXpZcDZodDhxdlBpRXdsNFNRRml1akxEZEY?oc=5",
-      "pubDate": "Tue, 22 Sep 2026 15:27:12 GMT",
-      "ts": 1790090832000
-    },
-    {
-      "feed": "localai",
-      "feedLabel": "Local AI & LLMs",
       "title": "7 Open-Source Alternatives to ChatGPT You Can Run Locally - KDnuggets",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVXdNQmMtaFZrc2xtR2RoRWtFeEk4RzRWNDhzNHFNZWZYQUNabDdRR0hsWnNfaXNFUVRKMC1lbk5aWEE4UDdxOUhaQkg0V01tcExhbkhYS3RFc3ktdGhGNV84RVBRenhra3AzNVRVVmJxQVBacXVEeV9NRlZ3N0ZidFJGQ1VyWGpURjBn?oc=5",
-      "pubDate": "Tue, 22 Sep 2026 12:08:40 GMT",
-      "ts": 1790078920000
+      "pubDate": "Tue, 22 Sep 2026 07:00:00 GMT",
+      "ts": 1790060400000
     },
     {
       "feed": "tech",
       "feedLabel": "GPU & PC Hardware",
-      "title": "Best Gaming PC Deals 2026 — deals from Amazon, Best Buy, Newegg, Dell, Lenovo, and others - Tom's Hardware",
+      "title": "These are the cheapest GPUs that can run DLSS 5 (you probably own one already) - How-To Geek",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUDBoaGstU2JJTG51Q29NYTZsSEhiQTNDckg2SFlseWVLaThQSVpmRlZacnZ0d3ZpbTBYT0Q0SDVZUEdLWGFGSHhDQkpscFNUZmo0ZExsUXdKeWRTNUpCeE1IS2htc1FVWG1LblJXMnNCWmRnY2tIR29vbHVwZGlIOW1tQzZVMW1yeG9pYnZORVhMNFFibEtIMzJZOHhSb1EtUWpJdFln?oc=5",
+      "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
+      "ts": 1789714800000
+    },
+    {
+      "feed": "tech",
+      "feedLabel": "GPU & PC Hardware",
+      "title": "Best Gaming PC Deals 2026 — deals from Amazon, Best Buy, Newegg, Dell, Lenovo, and others - tomshardware.com",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQLW03bHZtT3VvMno5T2FaUnhqdkZNSmZDQlowUUI2U2RXVnh5V0hhQk9FVTJoTERzZUlkSHBVZ0N4bVZhZVRYaXQzRkpmRW10Vzczb0YtckV6MU1WYXBHUUN2ZnduTjN3UnlweVBtT08xT0VRT1BqTFV2U19scWJxVVEyWWVpUQ?oc=5",
       "pubDate": "Fri, 18 Sep 2026 07:00:00 GMT",
       "ts": 1789714800000
@@ -90,44 +130,12 @@
       "ts": 1789542000000
     },
     {
-      "feed": "tech",
-      "feedLabel": "GPU & PC Hardware",
-      "title": "Best gaming GPU deals 2026 — deals on Nvidia, AMD, and Intel graphics cards - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOd21TM0VUZVF2ek8yNWxRbDRnek9PU3c3eG0ycnRqaFJvUFNpTHFMa3hPZnhITjhKd0NwZzgwc1M3Nk8yZnFYN0VNNmZvZC1PNV9pVzN6RmlSY3lEaE1vcmRRQ3cta19udklHR3laaU9aTmdYRk1ISHJETVRCM1RYR2tMR01oeF9nMk5F?oc=5",
-      "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
-      "ts": 1789455600000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "GPU & PC Hardware",
-      "title": "AMD's Radeon RX 9070 GRE graphics card returns to its lowest-ever price of $499 — rare deal places this current-generation 12GB GPU below its MSRP launch price - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNOXdHZzhlb0pLZnlMTXZERzhlbmNBR1FxMjI2TlNKVUR6RGxCTExucVl3U19KM3NzNC1MWWFPZW5SZUY3d1Y0cFRKY05vNy04dkdXRmhDZTlTUmZkcldUN3lWZTNZMDhxemNSVmhEZ1o2ci1PM1RqYUM1SUdXWHZzOGFnclo3VWgyNDdwMFpBRUJhZVVHZU9mYnYtekowR1BoU0NyVnpyWGtDTmZDbDhvM21MUExTN3BsUmlKWWowMGV4VkdFXzJ3emdiNEVCZmZBSkJmSk5CRTZ2NUpQa2NXV1RLUVp2QkVLZkpJVzFSbjhnOFVrTFB1djFGdThtVmx1RkRMb1l4VEdEUmtJR1BGZU15b0JzTmlZQXBsSm5tY2Y1Z3pUaVdvbXJqSHZuMEU?oc=5",
-      "pubDate": "Tue, 15 Sep 2026 07:00:00 GMT",
-      "ts": 1789455600000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "GPU & PC Hardware",
-      "title": "I've built PCs for 20 years, and buying a prebuilt was my smartest move this year - How-To Geek",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1NUdYLXZWTFcxcVRsenRPSlVoRDFEbHk0cUw4Z0FiSUlSNWdDVWtrY2NFZFFWY0o1RkJTRFZSU0xLZVNFbVVEMVk4enF2ckJ4NmFMM2hMNG1HVEFLTlYzNGVxZXNOdXZIdzJTaFNSTnlUUQ?oc=5",
-      "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
-      "ts": 1789196400000
-    },
-    {
       "feed": "trade",
       "feedLabel": "China-Saudi Trade",
       "title": "Saudi Arabia Concludes Guest of Honor Participation at China Investment, Trade Fair - وكالة الأنباء السعودية",
       "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJQTRNWFdsLXVib1dzZWo5WGhzWUUxTEhSTExJMEdURHd3U2lXU2czYU40UUI3VUM1NFhGa2ZPR29aeTJaWXYwanpn?oc=5",
       "pubDate": "Sat, 12 Sep 2026 07:00:00 GMT",
       "ts": 1789196400000
-    },
-    {
-      "feed": "tech",
-      "feedLabel": "GPU & PC Hardware",
-      "title": "Desktop graphics card shipments hit four-year high of 12.5 million despite increasing prices — Nvidia takes 90% share as gamers rush to beat looming price spikes - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQQURvMjl0ZHdVSDB6dHBoSUdvZzZEZkZGdmptcldXUmFXQm5WNzc2RUdIY2M0NVFIQ05Vdm5teHFuNDc1bnZBTDZUOGg2NV83emdSVEhNWlpfaksyZm1tMzdtekJVZTFBNzNMX2ZLNUNxQkVXYnhtN05Xdm5hSW53Ri16RHdvV1lGRmVvUzUzeXBRd09EbDJCSzk5TUpRSkNlWFk2VFZqUW4xMUJrWndIMVRIRWFtY096Y2FFWHd5WFdwMWxzUXlKWEVKYmtvZUhOVkVtc3dZR0VSUURQVVJuNTZVNlBlMDlQVU1kLVVGcjVRVVM5MVFCM0JwcDBaT3AtUE1ydERyRlg1UTdWSDZnYjV6dFlMNHR2QWowc3RvclU0djVXQUp6ZS11NFBUZzhEN3g2WGlRZXpadw?oc=5",
-      "pubDate": "Fri, 11 Sep 2026 07:00:00 GMT",
-      "ts": 1789110000000
     },
     {
       "feed": "platforms",
@@ -140,7 +148,7 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "Mac Studio M5 Ultra vs Nvidia DGX Spark: Compared for Local AI - geeky-gadgets.com",
+      "title": "Mac Studio M5 Ultra vs Nvidia DGX Spark: Compared for Local AI - Geeky Gadgets",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE16STFnT1NsclNTUHdPc2llY0NEU0xITEROZm9NVVFsRGFxNlA0Nl9ueFM2MG01Qk9MTnVEZ3B5NUJiZ1ViWFZhUUpXX0NJX2JseW1PYTZNNWJRR0hyc2FqUm03R0NjTWs?oc=5",
       "pubDate": "Thu, 10 Sep 2026 07:00:00 GMT",
       "ts": 1789023600000
@@ -148,10 +156,18 @@
     {
       "feed": "platforms",
       "feedLabel": "AI Hardware Platforms",
-      "title": "Benchmarking Qwen 3.8 27B on RTX 5090 and beyond - Tom's Hardware",
-      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNb2Nma0xjR2FTSGtFcEFjemljVE9IdWwybVhQUmVSaS1mU3YxYzhjTGNUQWxHNTlyRDlmdFFNQVE1MFl2RWZvNklhVGVaYklpMXZWbm9EUTYwdU9jd0phLUpKX2lEZkRHdktULUpINkNLenl0Mk5CQXZDOVc1Q1FhNHRnWkNjVE55QzlLd2Rad3g2cnVlVTRhWHhEVEZSSWpreEJSajFtREZiSU9GSExVOEhBY2c3VU1qbm8yTE9SaTM4MDJ0cnN6Z0lNN3pacHItbEYwd0NvUDU1MjQ4NURBQWd2NlU0bjNnckRZLXA5cGppNlNlb0dKMWxrbjZWWFZRdzJIYllfdFJzZUg3NkJBZ3NJem5HcTZEMkRFQmVuTzhILTFT?oc=5",
-      "pubDate": "Tue, 08 Sep 2026 07:00:00 GMT",
-      "ts": 1788850800000
+      "title": "DGX Spark Alternatives in 2026: 7 Cheaper Ways to Run AI Locally - Memeburn",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFA5RjNDelFKV0k3cEF0SENiYXZTd3pXUG85TUR5aFl0UHE4T1ZLR0pycmVKNVVheVJhQ3ZiV05Udkx4aWFFNmJRMVlLUHdoTkQyQ1VnRFhwUQ?oc=5",
+      "pubDate": "Thu, 10 Sep 2026 06:39:09 GMT",
+      "ts": 1789022349000
+    },
+    {
+      "feed": "trade",
+      "feedLabel": "China-Saudi Trade",
+      "title": "Saudi Arabia highlights expanding partnership with China at CIFIT 2026 - Arab News",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNExQLXVIX0FCRUt1ZnRadjJVek96Y1Y5a192b0t0ZFlnZ0dDemw0ei1WU1htdnRJTlp6M2tjNXVzeVBPTENnQlZxWnMtVTEyaDFzWUF5dld0dVRYSnBlUnM3dGg1aEhNaTZwQVIwTXY1WjlUVFVpVGM4cDdiTFA5cUxBMkR2VDh6NHVBdjA0UUx5eGRtZ0I5RW9Qc1Rsdko0WXdkVHVVSUV1NGp5bHd6QmFR?oc=5",
+      "pubDate": "Wed, 09 Sep 2026 07:00:00 GMT",
+      "ts": 1788937200000
     },
     {
       "feed": "trade",
@@ -162,34 +178,18 @@
       "ts": 1788850800000
     },
     {
-      "feed": "trade",
-      "feedLabel": "China-Saudi Trade",
-      "title": "Finland, Saudi Arabia guest countries of honor at 26th China int'l investment, trade fair - Xinhua",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBYcjE5cFlNWE5xMGNFb3c1YVJwUmZMT3NuMnM5WkxKZU45VU9CcC1XSEl0dVZlamNidlFEbGZsMzU2ODZRUUNTMmNvMGpuc2lLSkVOeFZXYTc0WEpyMFk4aUk4ZC1mMy12Z2NEci1tZkUxRklTYlV5MWk5WmE?oc=5",
-      "pubDate": "Tue, 25 Aug 2026 07:00:00 GMT",
-      "ts": 1787641200000
-    },
-    {
-      "feed": "fx",
-      "feedLabel": "Currency & Markets",
-      "title": "China’s Yuan Is Quietly Becoming A Stronger-Currency Story - Exchange Rates UK",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUVpDZ2FPUVhMNnlES3pKTHY2cDhMdWpPMlFBUVFVb3hWVlIxTTBwcVZTV1pzdnBVZW1CeTZYdHk5eHB2WVRwdDNBOXJNcU83Y1ZqQ1Q1dENNbXlhSkxxUjlnZXN0YnMwTkQ3dEs0X2VlMDRhYXQtTi1TR3pRQmRmOUl3X2I2ODVFOVQ2S29aYWlRQlFXN0h2U2VaR0lwODVtdzVtc3N6aHVia2lyWUVGOVlydzBqR2U5cmc?oc=5",
-      "pubDate": "Tue, 25 Aug 2026 07:00:00 GMT",
-      "ts": 1787641200000
+      "feed": "travel",
+      "feedLabel": "Flights & Travel",
+      "title": "Saudi Air Connectivity Program Welcomes China Southern Airlines' Inaugural Flight from Guangzhou to Riyadh - وكالة الأنباء السعودية",
+      "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9NYTVyV0N2MjNjZnNZWC1yZHFISHpmQmk0UDh0UUVwamVLSlpWNjhvUlU5LVJsdXJvU0Mwdl9zWVRmQ3dzYVE?oc=5",
+      "pubDate": "Fri, 04 Sep 2026 06:04:22 GMT",
+      "ts": 1788501862000
     },
     {
       "feed": "travel",
       "feedLabel": "Flights & Travel",
-      "title": "Saudi Arabia-US flights increase as Saudia goes daily to New York and expands China routes - Arabian Business",
+      "title": "Saudi Arabia-US flights increase as Saudia goes daily to New York and expands China routes - arabianbusiness.com",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOWpkVlpvWGdWV0xoeWNoX2NBUDRfTHBHU1FzRGk0SzJsQS1vQWJZYTduVklzbE1qeVFYeGJHQW1WOG1UTnNja2lXZTdsVURBZWpUeWZtdkFZTGU3T3hRZWVhMWRrNFNDdW5LTzlZRVdQQTk5MHpNNC0yb29DOElLaWd2RnY4NGh2Mlc3NFpVb3FIRkJOWGEzR1BDVVo?oc=5",
-      "pubDate": "Thu, 20 Aug 2026 07:00:00 GMT",
-      "ts": 1787209200000
-    },
-    {
-      "feed": "travel",
-      "feedLabel": "Flights & Travel",
-      "title": "Saudi Air Connectivity Program, Saudia Boost Operational Capacity to China and the US - ASHARQ AL-AWSAT English",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNOXgyNTB3bW9RUEtFOWF0WjhIamd3b0VSUnA1T09mbl9JcW1xcTNZNzdVZi1mTjVPRGctLVJ1Z1RNSEJfbWdaU0k4Vm5VR01iVDAweFktb2xqUGo5WDlKWDJkb0NCT2hnamRQUnZISWVyRXRhNGZKT21CQWFUOHdMNnZtMENGZk8zZ1l5eVBHNUhuV19XVGZlQm5KS1AxakVhWDJad3BvVlFscU5vT2x3aEstYTRoR1R6c3U1TWlR?oc=5",
       "pubDate": "Thu, 20 Aug 2026 07:00:00 GMT",
       "ts": 1787209200000
     },
@@ -204,26 +204,18 @@
     {
       "feed": "fx",
       "feedLabel": "Currency & Markets",
-      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - carnegieendowment.org",
+      "title": "The Channels of China’s Currency Promotion in Gulf Markets - Carnegie Endowment for International Peace",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSHpVcEREYVVFVEhOdF84eTREbjg4d3dPbEhCMk5DcGdxNU93SV9FTkc2dVpPNmdrM1VtMzRDQjlfVWpzVWFDVmtxa0xObW92QzhPdUdpWmZ1eWNacHFNTUN5VmEwQnhPbkhia2dObTBXUDMzWjZySldZQUlUTERva3RiWl9rMEhGa0Z3N3lCbnBMdFN6THRZUXhTOVdlNGNvakE?oc=5",
+      "pubDate": "Thu, 30 Jul 2026 07:00:00 GMT",
+      "ts": 1785394800000
+    },
+    {
+      "feed": "fx",
+      "feedLabel": "Currency & Markets",
+      "title": "The Hormuz Conflict and the Limits of Renminbi Internationalization - Carnegie Endowment for International Peace",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQlBkZGZGcEc1ZXlxdTFZakl6NndJTTRyd19mVXNKbGwyR1VXWVlyTkI1UGhzd3FZcFVLWk1kLWtlRlV1X1E2cGlGaENmMzFGMXQyVnBFWWptNHdXNmlTUXZxV1JkSDRMWmZhTU0tb2hseGlBUmVnZHI1V2tJMWtraHNNbmR6MkJ0ZHAzczMwaEg4YXEyaTJxekt4dm5YSXlM?oc=5",
       "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
       "ts": 1785222000000
-    },
-    {
-      "feed": "travel",
-      "feedLabel": "Flights & Travel",
-      "title": "Mid-air scare: Power bank catches fire aboard China Eastern flight, raising safety concerns - Gulf News",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNV0E3aG9ZS2JFMFBvdW84UGpoZXlZenZtU1JlZDN2al9vUDFkMllrNU04UGNWOGJxRnpVU29BUDY1ZjVfb09iVDAzWlBPR0JzcE5lanhaS0tMU0Jhcmp3MnpuelQwLVBGZGVmcGdoZFhTVGxWZzk0Vnd6c1R2THlZb1dmVkJQQmc2UldVdTMwWEpLN1ctUjhBTUlnSlZtdElsUVhsTEVZZElVYTBWY0ZfelNMNTJLRm1FdjhQdkN0dXZfOURvWDh1b1FpSEVrZw?oc=5",
-      "pubDate": "Tue, 28 Jul 2026 07:00:00 GMT",
-      "ts": 1785222000000
-    },
-    {
-      "feed": "trade",
-      "feedLabel": "China-Saudi Trade",
-      "title": "China–GCC Relations in an Emerging Multipolar Order - Middle East Council on Global Affairs",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQ1lrcU9JaXRXUHFGM2QwYUhNbUFJZWd5SXBfMS1tVFdUV09sU1YzeU00SkZNblY3aDhTZFhwM2xsX1QyWTVRWlYtdGR5TTNFU1ExZnpoNmpOd18wVl9mcENOVVJKZ3lSSDZVWk81MGVreEEwbUJWZTZjWXc4a3pmaXIxMGs1SDBhOENsWDJxNA?oc=5",
-      "pubDate": "Wed, 22 Jul 2026 15:25:52 GMT",
-      "ts": 1784733952000
     },
     {
       "feed": "openmodels",
@@ -266,9 +258,17 @@
       "ts": 1783321200000
     },
     {
+      "feed": "fx",
+      "feedLabel": "Currency & Markets",
+      "title": "Can The Chinese Yuan Replace The US Dollar? UniCredit Says Not Yet - Exchange Rates UK",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdHdMUUZROTRnMG1lM2pSNi03NHEtWGI4Wng3LW80bUZnT2J4NmxjN1lRNVgxQ2ZaOFlKTUFsMjM4SlhqTnYyNndac1FjXzRDbld5SEJ6ZHR6ams4cmlGaTl6cTdRa1F3ZE9abFlMa1R4ZVRuWENNNGlhQS1YcHhFLUdjSjlTRGxkZHh5QTEyS2dTY2VoMFdfQS1OQWJSa3JCbktnZFpZYjJqVFQ4WUdvanBVQ2piTTRtd0hZYVBjei13SVk?oc=5",
+      "pubDate": "Wed, 01 Jul 2026 07:00:00 GMT",
+      "ts": 1782889200000
+    },
+    {
       "feed": "openmodels",
       "feedLabel": "Open Model Releases",
-      "title": "DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% - VentureBeat",
+      "title": "DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% - venturebeat.com",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOHZDQWRkY1hKUVJwUjFsZlpWT1F0ck9CcWJoajNnd1RXWjJxVXZBYVZBWTdxS1drelFFbW05LVFZcEtiWVNBUExJM3FwNC1vb2tCSzUzZmFja09URkExUTNsRE9pUUhYRmNPU1FOdUtseFE2VzhDT2pCVE1ES0kzSW5BQ2hQdTJhVm1CZmMySUdTUFRvT3RtRGV2MHRkd0NiZFpmQ0VXbldCcWJleTZfOV9IaE1GSFpSaHpWTA?oc=5",
       "pubDate": "Mon, 29 Jun 2026 07:00:00 GMT",
       "ts": 1782716400000
