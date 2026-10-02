@@ -4,6 +4,7 @@
 {"date":"2026-09-28","verdict":"WATCH","confidence":"VERIFIED","driver":"no statistical edge today","inputs":{"sarCny":1.791864,"pctVsAvg":-0.07,"signal":"NEUTRAL","landed":34357,"headroom":10643,"crossed":0,"readiness":85,"goodsCny":47005}},
 {"date":"2026-09-29","verdict":"BOOK FLIGHT","confidence":"ESTIMATE","driver":"trip readiness reached READY","inputs":{"sarCny":1.792421,"pctVsAvg":-0.05,"signal":"NEUTRAL","landed":29831,"headroom":15169,"crossed":0,"readiness":85,"goodsCny":47350}},
 {"date":"2026-09-30","verdict":"BOOK FLIGHT","confidence":"ESTIMATE","driver":"trip readiness reached READY","inputs":{"sarCny":1.791429,"pctVsAvg":-0.06,"signal":"NEUTRAL","landed":29844,"headroom":15156,"crossed":0,"readiness":85,"goodsCny":47350}},
-{"date":"2026-10-01","verdict":"BOOK FLIGHT","confidence":"ESTIMATE","driver":"trip readiness reached READY","inputs":{"sarCny":1.791167,"pctVsAvg":-0.08,"signal":"NEUTRAL","landed":29847,"headroom":15153,"crossed":0,"readiness":85,"goodsCny":47350}}
+{"date":"2026-10-01","verdict":"BOOK FLIGHT","confidence":"ESTIMATE","driver":"trip readiness reached READY","inputs":{"sarCny":1.791167,"pctVsAvg":-0.08,"signal":"NEUTRAL","landed":29847,"headroom":15153,"crossed":0,"readiness":85,"goodsCny":47350}},
+{"date":"2026-10-02","verdict":"BOOK FLIGHT","confidence":"ESTIMATE","driver":"trip readiness reached READY","inputs":{"sarCny":1.790548,"pctVsAvg":-0.22,"signal":"NEUTRAL","landed":29855,"headroom":15145,"crossed":0,"readiness":85,"goodsCny":47350}}
 ]
 }

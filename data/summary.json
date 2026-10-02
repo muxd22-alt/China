@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-10-01T11:23:19.481Z",
+  "generatedAt": "2026-10-02T10:53:21.993Z",
   "budgets": {
     "server": {
       "tiers": {
         "P0": {
-          "goods": 1892.62,
-          "tax": 283.89,
+          "goods": 1893.28,
+          "tax": 283.99,
           "shipping": 608.55,
-          "landed": 2785.07,
+          "landed": 2785.82,
           "budget": 23000,
-          "remaining": 20214.93,
+          "remaining": 20214.18,
           "pct": 12.11,
           "status": "ok"
         },
         "P1": {
-          "goods": 11685.12,
-          "tax": 1752.77,
+          "goods": 11689.16,
+          "tax": 1753.37,
           "shipping": 3757.23,
-          "landed": 17195.12,
+          "landed": 17199.77,
           "budget": 23000,
-          "remaining": 5804.88,
-          "pct": 74.76,
+          "remaining": 5800.23,
+          "pct": 74.78,
           "status": "ok"
         },
         "P2": {
-          "goods": 12974.78,
-          "tax": 1946.22,
+          "goods": 12979.27,
+          "tax": 1946.89,
           "shipping": 4171.91,
-          "landed": 19092.91,
+          "landed": 19098.07,
           "budget": 23000,
-          "remaining": 3907.09,
-          "pct": 83.01,
+          "remaining": 3901.93,
+          "pct": 83.04,
           "status": "ok"
         },
         "P3": {
-          "goods": 15068.39,
-          "tax": 2260.26,
+          "goods": 15073.6,
+          "tax": 2261.04,
           "shipping": 4845.09,
-          "landed": 22173.74,
+          "landed": 22179.73,
           "budget": 23000,
-          "remaining": 826.26,
-          "pct": 96.41,
+          "remaining": 820.27,
+          "pct": 96.43,
           "status": "ok"
         }
       }
@@ -48,43 +48,43 @@
     "home": {
       "tiers": {
         "P0": {
-          "goods": 4131.38,
-          "tax": 619.71,
+          "goods": 4132.81,
+          "tax": 619.92,
           "shipping": 1328.41,
-          "landed": 6079.5,
+          "landed": 6081.14,
           "budget": 27000,
-          "remaining": 20920.5,
+          "remaining": 20918.86,
           "pct": 22.52,
           "status": "ok"
         },
         "P1": {
-          "goods": 8597.75,
-          "tax": 1289.66,
+          "goods": 8600.72,
+          "tax": 1290.11,
           "shipping": 2764.52,
-          "landed": 12651.93,
+          "landed": 12655.35,
           "budget": 27000,
-          "remaining": 14348.07,
-          "pct": 46.86,
+          "remaining": 14344.65,
+          "pct": 46.87,
           "status": "ok"
         },
         "P2": {
-          "goods": 11087.74,
-          "tax": 1663.16,
+          "goods": 11091.58,
+          "tax": 1663.74,
           "shipping": 3565.15,
-          "landed": 16316.06,
+          "landed": 16320.47,
           "budget": 27000,
-          "remaining": 10683.94,
-          "pct": 60.43,
+          "remaining": 10679.53,
+          "pct": 60.45,
           "status": "ok"
         },
         "P3": {
-          "goods": 11366.89,
-          "tax": 1705.03,
+          "goods": 11370.82,
+          "tax": 1705.62,
           "shipping": 3654.91,
-          "landed": 16726.83,
+          "landed": 16731.35,
           "budget": 27000,
-          "remaining": 10273.17,
-          "pct": 61.95,
+          "remaining": 10268.65,
+          "pct": 61.97,
           "status": "ok"
         }
       }
@@ -93,17 +93,17 @@
       "totalBudget": 50000,
       "contingencyReserve": 5000,
       "deployable": 45000,
-      "coreLanded": 31825.3,
+      "coreLanded": 31833.36,
       "coreWithinDeployable": true,
       "shippingSAR": 8500,
       "taxRate": 0.15,
-      "sarPerCny": 0.558295
+      "sarPerCny": 0.558488
     }
   },
   "tip": {
-    "index": 4,
+    "index": 5,
     "total": 18,
-    "text": "When CNY sits below the 8-week average, convert and place the big-ticket orders the same week. The dashboard flags this automatically."
+    "text": "Shipping is a fixed ~8,500 SAR - heavier carts lower cost per kilo. Consolidate furniture AND tech into ONE shipment."
   },
   "travel": {
     "routes": [
@@ -176,6 +176,7 @@
     "note": "Sea freight ~8,500 SAR for the consolidated shipment. 15% import tax applied to goods value."
   },
   "warnings": [
+    "FX sources diverge on EUR",
     "LLM brief failed: typesafe/jev-router unparseable | nvidia/nemotron-3-ultra-550b-a55b:free unparseable | google/gemma-4-31b-it:free HTTP 429 | nvidia/nemotron-3-super-120b-a12b:free unparseable",
     "stale brief from 2026-09-29 kept"
   ],
@@ -184,19 +185,19 @@
     "verdict": "BOOK FLIGHT",
     "confidence": "ESTIMATE",
     "driver": "trip readiness reached READY",
-    "reasoning": "1 SAR = 1.7912 CNY - 0.08% below its 9-point average (signal NEUTRAL, -0.45% drift); dual-source FX verified. Core plan lands at 29,847 SAR vs 45,000 deployable - 15,153 SAR headroom, 5,000 SAR reserve held back. 43 targets set, none crossed - closest is 2TB PCIe 4.0 NVMe (x2: VMs/models + game library) at +5.1% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
+    "reasoning": "1 SAR = 1.7905 CNY - 0.22% below its 9-point average (signal NEUTRAL, -0.49% drift); FX sources diverge - treat as approximate. Core plan lands at 29,855 SAR vs 45,000 deployable - 15,145 SAR headroom, 5,000 SAR reserve held back. 43 targets set, none crossed - closest is 2TB PCIe 4.0 NVMe (x2: VMs/models + game library) at +5.1% above target. Trip readiness 85/100 (READY) - fx trend stability 100, p0/p1 target coverage 100, flight-fare movement 50; fares flat since 2026-09-28. Call: BOOK FLIGHT - driven by trip readiness reached READY.",
     "inputs": {
-      "sarCny": 1.791167,
-      "pctVsAvg": -0.08,
+      "sarCny": 1.790548,
+      "pctVsAvg": -0.22,
       "signal": "NEUTRAL",
-      "landed": 29847,
-      "headroom": 15153,
+      "landed": 29855,
+      "headroom": 15145,
       "crossed": 0,
       "readiness": 85,
       "goodsCny": 47350
     }
   },
-  "diff": "Since yesterday: call held at BOOK FLIGHT · CNY vs avg steady at -0.08% · landed +3 SAR.",
+  "diff": "Since yesterday: call held at BOOK FLIGHT · CNY vs avg -0.08% → -0.22% · landed +8 SAR.",
   "crossed": {
     "crossed": [],
     "withTargets": 43,
@@ -227,7 +228,7 @@
         "key": "fx",
         "label": "FX trend stability",
         "score": 100,
-        "value": "-0.45% drift over 8 pts"
+        "value": "-0.49% drift over 8 pts"
       },
       {
         "key": "targets",
@@ -402,6 +403,22 @@
         "signal": "NEUTRAL",
         "landed": 29847,
         "headroom": 15153,
+        "crossed": 0,
+        "readiness": 85,
+        "goodsCny": 47350
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "verdict": "BOOK FLIGHT",
+      "confidence": "ESTIMATE",
+      "driver": "trip readiness reached READY",
+      "inputs": {
+        "sarCny": 1.790548,
+        "pctVsAvg": -0.22,
+        "signal": "NEUTRAL",
+        "landed": 29855,
+        "headroom": 15145,
         "crossed": 0,
         "readiness": 85,
         "goodsCny": 47350
